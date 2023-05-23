@@ -21,12 +21,9 @@
         <div>login</div>
     </nav>
 <br>
-    <form class="registerform">
+    <form class="registerform" onsubmit="onHandleAddUser(event)">
         <label for="name"> Full Name:</label>
         <input type="text" name="name" id="fullname" required>
-
-        <label for="username"> Username</label>
-        <input type="text" name="username" id="username" required>
 
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
@@ -42,6 +39,15 @@
 
         <label for="cPass">Confirm Password:</label>
         <input type="password" name="cPass" id="cPass" required>
+
+        <label for="sl">Student / Lecture <br>
+        
+        <input type="radio" name="sl" value="student" id="student">
+        <label for="student">Student</label><br>
+
+        <input type="radio" name="sl" value="lecturer" id="lecturer">
+        <label for="lecturer">Lecturer</label>
+        </label>
         <button class="regBtn" type="submit">Submit</button>
     </form>
 </body>

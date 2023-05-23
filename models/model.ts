@@ -1,7 +1,6 @@
 class Person{
     
     constructor(
-        public username: string,
         public name: string,
         public email:string,
         public phone:number,
@@ -17,14 +16,13 @@ class Student extends Person{
     grades: number [] ;
     attendance: boolean [] ;
     constructor(
-        public username: string,
         public name: string,
         public email:string,
         public phone:number,
         public password:string,
         public address: string,
         ){
-            super(username, name, email, phone, password, address);
+            super( name, email, phone, password, address);
             this.uid = uniqueId()
         }
 }
@@ -35,14 +33,13 @@ class Lecturer extends Person{
     uid: string;
     courseTeach: Course[];
     constructor(
-        public username: string,
         public name: string,
         public email:string,
         public phone:number,
         public password:string,
         public address: string,
         ){
-            super(username, name, email, phone, password, address);
+            super( name, email, phone, password, address);
             this.uid = uniqueId()
         }
 }

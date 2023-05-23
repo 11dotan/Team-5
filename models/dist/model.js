@@ -12,8 +12,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(username, name, email, phone, password, address) {
-        this.username = username;
+    function Person(name, email, phone, password, address) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -24,9 +23,8 @@ var Person = /** @class */ (function () {
 }());
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
-    function Student(username, name, email, phone, password, address) {
-        var _this = _super.call(this, username, name, email, phone, password, address) || this;
-        _this.username = username;
+    function Student(name, email, phone, password, address) {
+        var _this = _super.call(this, name, email, phone, password, address) || this;
         _this.name = name;
         _this.email = email;
         _this.phone = phone;
@@ -39,9 +37,8 @@ var Student = /** @class */ (function (_super) {
 }(Person));
 var Lecturer = /** @class */ (function (_super) {
     __extends(Lecturer, _super);
-    function Lecturer(username, name, email, phone, password, address) {
-        var _this = _super.call(this, username, name, email, phone, password, address) || this;
-        _this.username = username;
+    function Lecturer(name, email, phone, password, address) {
+        var _this = _super.call(this, name, email, phone, password, address) || this;
         _this.name = name;
         _this.email = email;
         _this.phone = phone;
