@@ -12,8 +12,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(name, email, phone, password, address) {
+    function Person(name, id, email, phone, password, address) {
         this.name = name;
+        this.id = id;
         this.email = email;
         this.phone = phone;
         this.password = password;
@@ -23,38 +24,37 @@ var Person = /** @class */ (function () {
 }());
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
-    function Student(name, email, phone, password, address) {
-        var _this = _super.call(this, name, email, phone, password, address) || this;
+    function Student(name, id, email, phone, password, address) {
+        var _this = _super.call(this, name, id, email, phone, password, address) || this;
         _this.name = name;
+        _this.id = id;
         _this.email = email;
         _this.phone = phone;
         _this.password = password;
         _this.address = address;
-        _this.uid = uniqueId();
         return _this;
     }
     return Student;
 }(Person));
 var Lecturer = /** @class */ (function (_super) {
     __extends(Lecturer, _super);
-    function Lecturer(name, email, phone, password, address) {
-        var _this = _super.call(this, name, email, phone, password, address) || this;
+    function Lecturer(name, id, email, phone, password, address) {
+        var _this = _super.call(this, name, id, email, phone, password, address) || this;
         _this.name = name;
+        _this.id = id;
         _this.email = email;
         _this.phone = phone;
         _this.password = password;
         _this.address = address;
-        _this.uid = uniqueId();
         return _this;
     }
     return Lecturer;
 }(Person));
 var Course = /** @class */ (function () {
-    function Course(nameCourse, datesCourse, lecturer, studentsCourse) {
+    function Course(nameCourse, datesCourse, lecturer) {
         this.nameCourse = nameCourse;
         this.datesCourse = datesCourse;
         this.lecturer = lecturer;
-        this.studentsCourse = studentsCourse;
         this.uid = uniqueId();
     }
     return Course;
@@ -62,6 +62,12 @@ var Course = /** @class */ (function () {
 var courses = [];
 var lecturers = [];
 var students = [];
+lecturers.push(new Lecturer("Ron mizrahi", 123456789, "ron@gmail.com", +972565820, "123456", "ramat hasharon"));
+lecturers.push(new Lecturer("mor oren", 123456789, "mor@gmail.com", +972565820, "159753", "ramat hasharon"));
+lecturers.push(new Lecturer("ilan haim", 25134587, "ilan@gmail.com", +972565820, "2222", "ramat hasharon"));
+courses.push(new Course("Full Stuck", ["1.2", "8.2", "13.2"], lecturers[0]));
+courses.push(new Course("Design", ["1.2", "8.2", "13.2"], lecturers[1]));
+courses.push(new Course("QA", ["1.2", "8.2", "13.2"], lecturers[2]));
 function uniqueId() {
     return "id: " + Math.random();
 }
