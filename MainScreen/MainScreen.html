@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team-5 Student System</title>
-    <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="./dist/style.css" />
     <script src="./dist/view.js" defer></script>
     <script src="./dist/model.js" defer></script>
     <script src="./dist/MainScreen.js" defer></script>
   </head>
   <body>
     <header class="header">
-      <div class="logo">INT</div>
+      <div class="logo"><img src="./images/logo.png" /></div>
       <button class="homeBtn">Home</button>
     </header>
+
     <nav class="navbar">
       <div>about us</div>
       <div>contact</div>
       <div>courses</div>
       <div>login</div>
     </nav>
-    <br />
-    <form class="registerform" onsubmit="HandleSubmit(event)">
+
+    <form class="registerForm" onsubmit="HandleSubmit(event)">
       <label for="name"> Full Name:</label>
       <input type="text" name="name" required />
 
