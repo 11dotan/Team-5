@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./lecturer.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/action_page.php">
+      <label for="students">student Name:</label>
+      <select name="students" id="students">
+        <option value="Danielle Yehezkel">Danielle Yehezkel</option>
+        <option value="Idan Hershman">Idan Hershman</option>
+        <option value="Amit">Amit</option>
+        <option value="Ziv Vekstein">Ziv Vekstein</option>
+        <option value="Idan Hershman">Idan Hershman</option>
+        <option value="Amit">Amit</option>
+        <option value="Ron Yaakov">Ron Yaakov</option>
+        <option value="Guy Izraelov">Guy Izraelov</option>
+        <option value="Aliyah Mesika">Aliyah Mesika</option>
+        <option value="Dotan Toledano">Dotan Toledano</option>
+        <option value="Lihi Sapir">Lihi Sapir</option>
+        <option value="Lital">Lital</option>
+        <option value="Galit">Galit</option>
+        <option value="Matan Shlomo">Matan Shlomo</option>
+        <option value="Anastasia">Anastasia</option>
+        <option value="Gal">Gal</option>
+        <option value="Zohar">Zohar</option>
+        <option value="Tom">Tom</option>
+        <option value="Amir Ram">Amir Ram</option>
+        <option value=" Yarin Eliyahu">Yarin Eliyahu</option>
+        <option value="Shlomo">Shlomo</option>
+        <option value="Oshrat Arvili">Oshrat Arvili</option>
+        <option value="Rut">Rut</option>
+        <option value="Rachel Wasy">Rachel Wasy</option>
+        <option value="Or">Or</option>
+        <option value="Josef">Josef</option>
+        <option value="Daniel">Daniel</option>
+        <option value="Alon">Alon</option>
+      </select>
+      <br /><br />
+    </form>
+
+    <form onsubmit="addGrade(event)">
+      <label for="grade"> grade :</label>
+      <input type="text" name="grade" id="grade" required />
+      <label for="note"> note :</label>
+      <input type="text" name="note" id="note" required />
+      <button class="button" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
