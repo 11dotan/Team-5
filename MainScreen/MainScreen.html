@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team-5 Student System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="../models/dist/model.js" defer></script>
     <script src="./dist/MainScreen.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">INT</div>
-        <button class="homeBtn">Home</button>
+      <div class="logo">INT</div>
+      <button class="homeBtn">Home</button>
     </header>
     <nav class="navbar">
-        <div>about us</div>
-        <div>contact</div>
-        <div>courses</div>
-        <div>login</div>
+      <div>about us</div>
+      <div>contact</div>
+      <div>courses</div>
+      <div>login</div>
     </nav>
-<br>
+    <br />
     <form class="registerform" onsubmit="onHandleAddUser(event)">
-        <label for="name"> Full Name:</label>
-        <input type="text" name="name" id="fullname" required>
+      <label for="name"> Full Name:</label>
+      <input type="text" name="name" id="fullname" required />
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
 
-        <label for="number"> Phone Number:</label>
-        <input type="number" name="number" id="number" required>
+      <label for="number"> Phone Number:</label>
+      <input type="number" name="number" id="number" required />
 
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address">
+      <label for="address">Address:</label>
+      <input type="text" name="address" id="address" />
 
-        <label for="pass">Password:</label>
-        <input type="password" name="pass" id="pass" required>
+      <label for="pass">Password:</label>
+      <input type="password" name="pass" id="pass" required />
 
-        <label for="cPass">Confirm Password:</label>
-        <input type="password" name="cPass" id="cPass" required>
+      <label for="cPass">Confirm Password:</label>
+      <input type="password" name="cPass" id="cPass" required />
 
-        <label for="sl">Student / Lecture <br>
-        
-        <input type="radio" name="sl" value="student" id="student">
-        <label for="student">Student</label><br>
+      <label for="sl"
+        >Student / Lecture <br />
 
-        <input type="radio" name="sl" value="lecturer" id="lecturer">
+        <input type="radio" name="sl" value="student" id="student" />
+        <label for="student">Student</label><br />
+
+        <input type="radio" name="sl" value="lecturer" id="lecturer" />
         <label for="lecturer">Lecturer</label>
-        </label>
-        <button class="regBtn" type="submit">Submit</button>
+      </label>
+      <button class="regBtn" type="submit">Submit</button>
     </form>
-</body>
+  </body>
 </html>
