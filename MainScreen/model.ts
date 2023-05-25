@@ -90,7 +90,3 @@ lecturers.push(
 courses.push(new Course("Full Stuck", ["1.2", "8.2", "13.2"], lecturers[0]));
 courses.push(new Course("Design", ["1.2", "8.2", "13.2"], lecturers[1]));
 courses.push(new Course("QA", ["1.2", "8.2", "13.2"], lecturers[2]));
-
-function uniqueId(): string {
-  return `id: ${Math.random()}`;
-}

@@ -6,48 +6,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team-5 Student System</title>
     <link rel="stylesheet" href="./dist/style.css" />
+    <script src="./dist/helper.js" defer></script>
     <script src="./dist/view.js" defer></script>
     <script src="./dist/model.js" defer></script>
+    <script src="./dist/controller.js" defer></script>
     <script src="./dist/MainScreen.js" defer></script>
   </head>
   <body>
     <header class="header">
       <div class="logo"><img src="./images/logo.png" /></div>
-      <button class="homeBtn">Home</button>
     </header>
 
     <nav class="navbar">
-      <div>about us</div>
-      <div>contact</div>
-      <div>courses</div>
-      <div>login</div>
+      <a href="#"><img src="./images/home.png" /></a>
+      <div><a href="#">about us</a></div>
+      <div><a href="#">contact</a></div>
+      <div><a href="#">courses</a></div>
+      <div class="navbar__login"><a href="#">login</a></div>
     </nav>
+    <div class="enterUser">
+      <div class="enterUser__boxes">
+        <button class="enterUser__boxes__lecturer" style="display: none">
+          Lecturer
+        </button>
+        <button class="enterUser__boxes__student" style="display: none">
+          Student
+        </button>
+      </div>
 
-    <form class="registerForm" onsubmit="HandleSubmit(event)">
-      <label for="name"> Full Name:</label>
-      <input type="text" name="name" required />
+      <form
+        class="loginLecturerForm"
+        style="display: none"
+        onsubmit="HandleLecturerLogin(event)"
+      >
+        <h2>Login Lecturer</h2>
+        <div class="loginLecturerForm__line">
+          <label for="emailCheck">Email:</label>
+          <input
+            class="loginLecturerForm__line__inputS"
+            type="email"
+            name="emailCheck"
+            required
+          />
+        </div>
+        <div class="loginLecturerForm__line">
+          <label for="passCheck">Password:</label>
+          <input
+            class="loginLecturerForm__line__inputS"
+            type="password"
+            name="passCheck"
+            required
+          />
+        </div>
+        <button
+          class="loginLecturerForm__regBtn"
+          type="submit"
+          value="LecturerLogin"
+        >
+          Login
+        </button>
+        <div class="wrongInfo"></div>
+      </form>
 
-      <label for="id"> ID Number:</label>
-      <input type="number" name="id" required />
+      <form
+        class="loginStudentForm"
+        style="display: none"
+        onsubmit="handleStudentLogin(event)"
+      >
+        <h2>Login Student</h2>
+        <div class="loginStudentForm__line">
+          <label for="emailCheck">Email:</label>
+          <input
+            class="loginStudentForm__line__inputS"
+            type="email"
+            name="emailCheck"
+            required
+          />
+        </div>
+        <div class="loginStudentForm__line">
+          <label for="passCheck">Password:</label>
+          <input
+            class="loginStudentForm__line__inputS"
+            type="password"
+            name="passCheck"
+            required
+          />
+        </div>
+        <button
+          class="loginStudentForm__regBtn"
+          type="submit"
+          value="StudentLogin"
+        >
+          Login
+        </button>
+        <div class="wrongInfo"></div>
+      </form>
+    </div>
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" required />
-
-      <label for="phone"> Phone Number:</label>
-      <input type="number" name="phone" required />
-
-      <label for="address">Address:</label>
-      <input type="text" name="address" />
-
-      <label for="pass">Password:</label>
-      <input type="password" name="pass" required />
-
-      <label for="cPass">Confirm Password:</label>
-      <input type="password" name="cPass" required />
-
-      <div class="listCourse"></div>
-
-      <button class="regBtn" type="submit" value="Submit">Submit</button>
-    </form>
+    <div class="mainContainer">
+      <div class="box1">FullStuck</div>
+      <div class="box2">DevOps</div>
+      <div class="box3">Cyber</div>
+      <form class="registerForm" onsubmit="HandleSubmit(event)">
+        <h2>Register To Your Future...</h2>
+        <div class="registerForm__line">
+          <label for="name"> Full Name:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="text"
+            name="name"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="id"> ID Number:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="number"
+            name="id"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="email">Email:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="phone"> Phone Number:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="number"
+            name="phone"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="address">Address:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="text"
+            name="address"
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="pass">Password:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="password"
+            name="pass"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="cPass">Confirm Password:</label>
+          <input
+            class="registerForm__line__inputS"
+            type="password"
+            name="cPass"
+            required
+          />
+        </div>
+        <div class="registerForm__line">
+          <label for="courses">Choose a course:</label>
+          <div class="registerForm__line__listCourse"></div>
+        </div>
+        <button class="registerForm__regBtn" type="submit" value="Submit">
+          Submit
+        </button>
+      </form>
+    </div>
   </body>
 </html>
