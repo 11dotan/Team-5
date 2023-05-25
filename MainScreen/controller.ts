@@ -125,10 +125,7 @@ function HandleLecturerLogin(e) {
       (lecturer) => lecturer.password === passCheck
     );
     if (indexEmail !== -1 && indexPass !== -1 && indexEmail === indexPass) {
-      const url = new URL(
-        "../userScreen/userScreen.html",
-        window.location.href
-      );
+      const url = new URL("../lecturer/lecturer.html", window.location.href);
       url.searchParams.set("indexPass", indexPass);
       window.location.href = url.href;
     } else {

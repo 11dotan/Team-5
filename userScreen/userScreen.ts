@@ -1,19 +1,12 @@
 const params = new URLSearchParams(window.location.search);
-let indexPass = params.get("indexPass");
 let indexEmail = params.get("indexEmail");
 
-userInnerFunc(indexPass, indexEmail);
+userInnerFunc(indexEmail);
 
-// renderVideos(videos);
-
-function userInnerFunc(indexPass, indexEmail) {
+function userInnerFunc(indexEmail) {
   try {
-    if (!indexPass && !indexEmail) throw new Error(`user not found`);
-    if (indexPass) {
-      userMenuName.innerHTML = `Hello ${lecturers[indexPass].name}`;
-    } else {
-      userMenuName.innerHTML = `Hello ${students[indexEmail].name}`;
-    }
+    if (!indexEmail) throw new Error(`user not found`);
+    userMenuName.innerHTML = `Hello ${students[indexEmail].name}`;
   } catch (error) {
     console.log(error);
   }

@@ -5,10 +5,10 @@ if (_students) {
 
 const _courses = getCourseFromLS();
 if (_courses) {
-  courses.push(..._courses);
+  courses = _courses;
 }
 
 const _lecturers = getLecturerFromLS();
 if (_lecturers) {
-  lecturers.push(..._lecturers);
+  lecturers = _lecturers;
 }

@@ -99,7 +99,7 @@ function HandleLecturerLogin(e) {
         var indexEmail = lecturers.findIndex(function (lecturer) { return lecturer.email === emailCheck_1; });
         var indexPass = lecturers.findIndex(function (lecturer) { return lecturer.password === passCheck_1; });
         if (indexEmail !== -1 && indexPass !== -1 && indexEmail === indexPass) {
-            var url = new URL("../userScreen/userScreen.html", window.location.href);
+            var url = new URL("../lecturer/lecturer.html", window.location.href);
             url.searchParams.set("indexPass", indexPass);
             window.location.href = url.href;
         }

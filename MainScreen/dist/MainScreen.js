@@ -4,9 +4,9 @@ if (_students) {
 }
 var _courses = getCourseFromLS();
 if (_courses) {
-    courses.push.apply(courses, _courses);
+    courses = _courses;
 }
 var _lecturers = getLecturerFromLS();
 if (_lecturers) {
-    lecturers.push.apply(lecturers, _lecturers);
+    lecturers = _lecturers;
 }
