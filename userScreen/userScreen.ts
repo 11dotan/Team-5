@@ -1,4 +1,4 @@
-const params = new URLSearchParams(window.location.search);
+let params = new URLSearchParams(window.location.search);
 let indexEmail = params.get("indexEmail");
 
 userInnerFunc(indexEmail);

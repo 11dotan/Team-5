@@ -1,0 +1,64 @@
+body {
+  color: rgba(0, 0, 0, 0.654);
+  font-size: 26px;
+  margin-right: 12%;
+  margin-left: 12%;
+}
+
+.navbar {
+  border-top: 1px solid black;
+  margin-top: 120px;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  a {
+    padding: 13px 20px 13px 20px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.654);
+    &:hover {
+      background-color: rgba(50, 132, 186, 0.472);
+      border-radius: 10px;
+    }
+  }
+}
+
+.mainContainer {
+  $self: &;
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 22% 1fr;
+  grid-template-areas:
+    "userMenu"
+    "inner";
+
+  &__adminMenu {
+    grid-area: userMenu;
+    box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+    padding: 20px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &____adminMenu__fullName {
+    font-size: 32px;
+  }
+
+  &____adminMenu__fullName,
+  &__adminMenu__addCourse,
+  &__adminMenu__addLecturer {
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+      background-color: rgba(50, 132, 186, 0.472);
+      cursor: pointer;
+    }
+  }
+}

@@ -19,17 +19,21 @@ function HandleSubmit(e) {
         throw new Error("Passwords Are Not Match");
     }
     var newStudent = new Student(name, id, email, phone, password, address);
-    newStudent.coursesUser = [];
     var index = courses.findIndex(function (course) { return course.nameCourse === courseUser; });
-    newStudent.coursesUser.push(new Course(courses[index].nameCourse, courses[index].datesCourse, courses[index].lecturer));
+    courses[index].studentsCourse.push(newStudent);
     students.push(newStudent);
     console.log(students);
+    console.log(courses[index].studentsCourse);
     saveStudentToLS(students);
     var indexEmail = students.length - 1;
     var url = new URL("../userScreen/userScreen.html", window.location.href);
     url.searchParams.set("indexEmail", indexEmail);
     window.location.href = url.href;
 }
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
+saveStudentToLS(students);
+saveAdminToLS(admins);
 function saveStudentToLS(students) {
     try {
         if (!students)
@@ -75,21 +79,43 @@ function getCourseFromLS() {
     var _courses = JSON.parse(data);
     return _courses;
 }
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
+function saveAdminToLS(admins) {
+    try {
+        if (!admins)
+            throw new Error("admins is null");
+        localStorage.setItem("admins", JSON.stringify(admins));
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+function getAdminFromLS() {
+    var data = localStorage.getItem("admins");
+    var _admins = JSON.parse(data);
+    return _admins;
+}
 login.addEventListener("click", function (e) {
     loginLecturer.style.display = "block";
     loginStudent.style.display = "block";
+    loginAdmin.style.display = "block";
 });
 loginLecturer.addEventListener("click", function (e) {
     loginLecturerForm.style.display = "block";
     loginLecturer.style.display = "none";
     loginStudent.style.display = "none";
+    loginAdmin.style.display = "none";
 });
 loginStudent.addEventListener("click", function (e) {
     loginStudentForm.style.display = "block";
     loginLecturer.style.display = "none";
     loginStudent.style.display = "none";
+    loginAdmin.style.display = "none";
+});
+loginAdmin.addEventListener("click", function (e) {
+    loginAdminForm.style.display = "block";
+    loginLecturer.style.display = "none";
+    loginStudent.style.display = "none";
+    loginAdmin.style.display = "none";
 });
 function HandleLecturerLogin(e) {
     try {
@@ -121,6 +147,26 @@ function handleStudentLogin(e) {
         if (indexEmail !== -1 && indexPass !== -1 && indexEmail === indexPass) {
             var url = new URL("../userScreen/userScreen.html", window.location.href);
             url.searchParams.set("indexEmail", indexEmail);
+            window.location.href = url.href;
+        }
+        else {
+            wrongInfo.innerHTML = "You entered wrong userName or Password";
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+function HandleAdminLogin(e) {
+    try {
+        e.preventDefault();
+        var emailCheck_3 = e.target.elements.emailCheck.value;
+        var passCheck_3 = e.target.elements.passCheck.value;
+        var indexEmail = admins.findIndex(function (admin) { return admin.email === emailCheck_3; });
+        var indexPassA = admins.findIndex(function (admin) { return admin.password === passCheck_3; });
+        if (indexEmail !== -1 && indexPassA !== -1 && indexEmail === indexPassA) {
+            var url = new URL("../adminScreen/adminScreen.html", window.location.href);
+            url.searchParams.set("indexPassA", indexPassA);
             window.location.href = url.href;
         }
         else {

@@ -41,7 +41,8 @@ body {
     text-align: center;
   }
   &__boxes__lecturer,
-  &__boxes__student {
+  &__boxes__student,
+  &__boxes__admin {
     border: none;
     background-color: rgba(19, 62, 90, 0.472);
     box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
@@ -57,7 +58,7 @@ body {
 }
 
 .mainContainer {
-  margin-top: 80px;
+  margin-top: 20px;
   display: grid;
   grid-template-rows: 35% 1fr;
   //   grid-template-rows: 35% 35% 1fr;

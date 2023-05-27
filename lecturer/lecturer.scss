@@ -38,11 +38,11 @@ body {
     "userMenu"
     "inner";
 
-  &__lecturerMenu {
+  &__lecturerMenu,
+  &__lecturerCourseM {
     grid-area: userMenu;
     box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
     padding: 20px;
-    // border-right: 1px solid black;
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -56,25 +56,43 @@ body {
   &____lecturerMenu__fullName,
   &__lecturerMenu__courses,
   &__lecturerMenu__profile,
-  &__lecturerMenu__contact {
+  &__lecturerMenu__contact,
+  &__lecturerCourseM__attendance,
+  &__lecturerCourseM__grades,
+  &__lecturerCourseM__video,
+  &__lecturerCourseM__zoom {
     padding: 10px;
     border-radius: 10px;
     &:hover {
       background-color: rgba(50, 132, 186, 0.472);
       cursor: pointer;
     }
-    // &:marker {
-    //   background-color: rgba(50, 132, 186, 0.472);
-    // }
   }
 
-  &__lecturerMenu__fullName {
+  &__lecturerMenu__fullName,
+  &__lecturerCourseM__courseName {
     font-weight: bold;
     font-size: 30px;
   }
 
-  &__inner {
+  &__inner,
+  &__attendance {
     margin-left: 100px;
+  }
+
+  &__attendance {
+    flex-direction: column;
+  }
+
+  &__lecturerCourseM__top {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 60px;
+      height: 30px;
+    }
   }
 }
 

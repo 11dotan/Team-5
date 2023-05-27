@@ -27,6 +27,7 @@ for (let i = 0; i < students.length; i++) {
   listItem.appendChild(document.createTextNode(student.name));
   studentsList.appendChild(listItem);
 }
+
 const submitButton = document.createElement("button");
 submitButton.textContent = "Submit";
 submitButton.addEventListener("click", () => {

@@ -24,22 +24,17 @@ function HandleSubmit(e) {
   }
 
   const newStudent = new Student(name, id, email, phone, password, address);
-  newStudent.coursesUser = [];
 
   const index: number = courses.findIndex(
     (course) => course.nameCourse === courseUser
   );
 
-  newStudent.coursesUser.push(
-    new Course(
-      courses[index].nameCourse,
-      courses[index].datesCourse,
-      courses[index].lecturer
-    )
-  );
+  courses[index].studentsCourse.push(newStudent);
   students.push(newStudent);
 
   console.log(students);
+  console.log(courses[index].studentsCourse);
+
   saveStudentToLS(students);
 
   const indexEmail: number = students.length - 1;
@@ -47,6 +42,11 @@ function HandleSubmit(e) {
   url.searchParams.set("indexEmail", indexEmail);
   window.location.href = url.href;
 }
+
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
+saveStudentToLS(students);
+saveAdminToLS(admins);
 
 function saveStudentToLS(students: Student[]) {
   try {
@@ -93,24 +93,46 @@ function getCourseFromLS(): Course[] | undefined {
   return _courses;
 }
 
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
+function saveAdminToLS(admins: Admin[]) {
+  try {
+    if (!admins) throw new Error("admins is null");
+    localStorage.setItem("admins", JSON.stringify(admins));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function getAdminFromLS(): Admin[] | undefined {
+  const data = localStorage.getItem("admins");
+  const _admins = JSON.parse(data);
+  return _admins;
+}
 
 login.addEventListener("click", (e) => {
   loginLecturer.style.display = "block";
   loginStudent.style.display = "block";
+  loginAdmin.style.display = "block";
 });
 
 loginLecturer.addEventListener("click", (e) => {
   loginLecturerForm.style.display = "block";
   loginLecturer.style.display = "none";
   loginStudent.style.display = "none";
+  loginAdmin.style.display = "none";
 });
 
 loginStudent.addEventListener("click", (e) => {
   loginStudentForm.style.display = "block";
   loginLecturer.style.display = "none";
   loginStudent.style.display = "none";
+  loginAdmin.style.display = "none";
+});
+
+loginAdmin.addEventListener("click", (e) => {
+  loginAdminForm.style.display = "block";
+  loginLecturer.style.display = "none";
+  loginStudent.style.display = "none";
+  loginAdmin.style.display = "none";
 });
 
 function HandleLecturerLogin(e) {
@@ -153,6 +175,31 @@ function handleStudentLogin(e) {
         window.location.href
       );
       url.searchParams.set("indexEmail", indexEmail);
+      window.location.href = url.href;
+    } else {
+      wrongInfo.innerHTML = `You entered wrong userName or Password`;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function HandleAdminLogin(e) {
+  try {
+    e.preventDefault();
+    const emailCheck = e.target.elements.emailCheck.value;
+    const passCheck = e.target.elements.passCheck.value;
+    const indexEmail = admins.findIndex((admin) => admin.email === emailCheck);
+    const indexPassA = admins.findIndex(
+      (admin) => admin.password === passCheck
+    );
+
+    if (indexEmail !== -1 && indexPassA !== -1 && indexEmail === indexPassA) {
+      const url = new URL(
+        "../adminScreen/adminScreen.html",
+        window.location.href
+      );
+      url.searchParams.set("indexPassA", indexPassA);
       window.location.href = url.href;
     } else {
       wrongInfo.innerHTML = `You entered wrong userName or Password`;

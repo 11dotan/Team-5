@@ -32,6 +32,9 @@
         <button class="enterUser__boxes__student" style="display: none">
           Student
         </button>
+        <button class="enterUser__boxes__admin" style="display: none">
+          Admin
+        </button>
       </div>
 
       <form
@@ -103,6 +106,36 @@
       </form>
     </div>
 
+    <form
+      class="loginAdminForm"
+      style="display: none"
+      onsubmit="HandleAdminLogin(event)"
+    >
+      <h2>Login Admin</h2>
+      <div class="loginAdminForm__line">
+        <label for="emailCheck">Email:</label>
+        <input
+          class="loginAdminForm__line__inputS"
+          type="email"
+          name="emailCheck"
+          required
+        />
+      </div>
+      <div class="loginAdminForm__line">
+        <label for="passCheck">Password:</label>
+        <input
+          class="loginAdminForm__line__inputS"
+          type="password"
+          name="passCheck"
+          required
+        />
+      </div>
+      <button class="loginAdminForm__regBtn" type="submit" value="AdminLogin">
+        Login
+      </button>
+      <div class="wrongInfo"></div>
+    </form>
+
     <div class="mainContainer">
       <div class="box1">FullStuck</div>
       <div class="box2">DevOps</div>
@@ -111,7 +144,12 @@
         <h2>Register To Your Future...</h2>
         <div class="registerForm__line">
           <label for="name"> Full Name:</label>
-          <input class="registerForm__line__inputS" type="text" required />
+          <input
+            class="registerForm__line__inputS"
+            type="text"
+            name="name"
+            required
+          />
         </div>
         <div class="registerForm__line">
           <label for="id"> ID Number:</label>

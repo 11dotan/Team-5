@@ -32,12 +32,16 @@ var Student = /** @class */ (function (_super) {
         _this.phone = phone;
         _this.password = password;
         _this.address = address;
+        // this.coursesUser = [];
+        _this.grades = [];
+        _this.attendance = [];
         return _this;
     }
     return Student;
 }(Person));
 var Lecturer = /** @class */ (function (_super) {
     __extends(Lecturer, _super);
+    //   courseTeach: Course[];
     function Lecturer(name, id, email, phone, password, address) {
         var _this = _super.call(this, name, id, email, phone, password, address) || this;
         _this.name = name;
@@ -47,8 +51,23 @@ var Lecturer = /** @class */ (function (_super) {
         _this.password = password;
         _this.address = address;
         return _this;
+        // this.courseTeach = [];
     }
     return Lecturer;
+}(Person));
+var Admin = /** @class */ (function (_super) {
+    __extends(Admin, _super);
+    function Admin(name, id, email, phone, password, address) {
+        var _this = _super.call(this, name, id, email, phone, password, address) || this;
+        _this.name = name;
+        _this.id = id;
+        _this.email = email;
+        _this.phone = phone;
+        _this.password = password;
+        _this.address = address;
+        return _this;
+    }
+    return Admin;
 }(Person));
 var Course = /** @class */ (function () {
     function Course(nameCourse, datesCourse, lecturer) {
@@ -56,35 +75,21 @@ var Course = /** @class */ (function () {
         this.datesCourse = datesCourse;
         this.lecturer = lecturer;
         this.uid = uniqueId();
+        this.studentsCourse = [];
     }
     return Course;
 }());
 var courses = [];
 var lecturers = [];
 var students = [];
-lecturers.push(new Lecturer("Ron mizrahi", 123456789, "ron@gmail.com", +972565820, "123456", "ramat hasharon"));
-lecturers.push(new Lecturer("mor oren", 147258369, "mor@gmail.com", +972565820, "159753", "ramat hasharon"));
-lecturers.push(new Lecturer("ilan haim", 789456123, "ilan@gmail.com", +972565820, "2222", "ramat hasharon"));
-// lecturers[0].courseTeach = [];
-// lecturers[1].courseTeach = [];
-// lecturers[2].courseTeach = [];
-courses.push(new Course("Full Stuck", ["1.5.23", "8.5.23", "15.5.23", "22.5.23", "29.5.23", "5.6.23"], lecturers[0]));
-// lecturers[0].courseTeach.push(
-//   new Course(courses[0].nameCourse, courses[0].datesCourse, courses[0].lecturer)
-// );
-courses.push(new Course("DevOps", [
-    "17.5.23",
-    "24.5.23",
-    "31.5.23",
-    "7.6.23",
-    "14.6.23",
-    "21.6.23",
-    "28.6.23",
-], lecturers[1]));
-// lecturers[1].courseTeach.push(
-//   new Course(courses[1].nameCourse, courses[1].datesCourse, courses[1].lecturer)
-// );
-courses.push(new Course("QA", [
+var admins = [];
+var ronL = new Lecturer("Ron mizrahi", 123456789, "ron@gmail.com", +972565820, "123456", "ramat hasharon");
+var morL = new Lecturer("mor oren", 147258369, "mor@gmail.com", +972565820, "159753", "ramat hasharon");
+var ilanL = new Lecturer("ilan haim", 789456123, "ilan@gmail.com", +972565820, "2222", "ramat hasharon");
+lecturers.push(ronL, morL, ilanL);
+var fullC = new Course("Full Stuck", ["1.5.23", "8.5.23", "15.5.23", "22.5.23", "29.5.23", "5.6.23"], lecturers[0]);
+var devopsC = new Course("DevOps", ["17.5.23", "24.5.23", "31.5.23", "7.6.23", "14.6.23", "21.6.23", "28.6.23"], lecturers[1]);
+var qaC = new Course("QA", [
     "11.5.23",
     "18.5.23",
     "25.5.23",
@@ -93,7 +98,21 @@ courses.push(new Course("QA", [
     "15.6.23",
     "22.6.23",
     "29.6.23",
-], lecturers[2]));
-// lecturers[2].courseTeach.push(
-//   new Course(courses[2].nameCourse, courses[2].datesCourse, courses[2].lecturer)
-// );
+], lecturers[2]);
+courses.push(fullC, devopsC, qaC);
+// ronL.courseTeach.push(fullC);
+// morL.courseTeach.push(devopsC);
+// ilanL.courseTeach.push(qaC);
+var fullS1 = new Student("oshrat sebbag", 200670054, "oshrat@gmail.com", 9725063214564, "159", "kinor 20");
+var fullS2 = new Student("dotan toledano", 123485725, "dotan@gmail.com", 972546042815, "25826", "kineret 2");
+var fullS3 = new Student("daniel daniel", 15248759, "daniel@gmail.com", 972506547825, "321456", "tamar 10");
+var fullS4 = new Student("amit balsan", 122548743, "amit@gmail.com", 972523514875, "11147", "reshef 42");
+fullC.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
+var admin1 = new Admin("admin admin", 555555555, "admin@gmail.com", 97254875425, "admin", "hermon 7");
+admins.push(admin1);
+console.log(admins);
+// fullS1.coursesUser.push(fullC);
+// fullS2.coursesUser.push(fullC);
+// fullS3.coursesUser.push(fullC);
+// fullS4.coursesUser.push(fullC);
+students.push(fullS1, fullS2, fullS3, fullS4);

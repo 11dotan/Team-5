@@ -33,7 +33,7 @@ body {
   grid-template-columns: 22% 1fr;
   grid-template-areas: "userMenu" "inner";
 }
-.mainContainer__lecturerMenu {
+.mainContainer__lecturerMenu, .mainContainer__lecturerCourseM {
   grid-area: userMenu;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
   padding: 20px;
@@ -45,20 +45,32 @@ body {
 .mainContainer____lecturerMenu__fullName {
   font-size: 32px;
 }
-.mainContainer____lecturerMenu__fullName, .mainContainer__lecturerMenu__courses, .mainContainer__lecturerMenu__profile, .mainContainer__lecturerMenu__contact {
+.mainContainer____lecturerMenu__fullName, .mainContainer__lecturerMenu__courses, .mainContainer__lecturerMenu__profile, .mainContainer__lecturerMenu__contact, .mainContainer__lecturerCourseM__attendance, .mainContainer__lecturerCourseM__grades, .mainContainer__lecturerCourseM__video, .mainContainer__lecturerCourseM__zoom {
   padding: 10px;
   border-radius: 10px;
 }
-.mainContainer____lecturerMenu__fullName:hover, .mainContainer__lecturerMenu__courses:hover, .mainContainer__lecturerMenu__profile:hover, .mainContainer__lecturerMenu__contact:hover {
+.mainContainer____lecturerMenu__fullName:hover, .mainContainer__lecturerMenu__courses:hover, .mainContainer__lecturerMenu__profile:hover, .mainContainer__lecturerMenu__contact:hover, .mainContainer__lecturerCourseM__attendance:hover, .mainContainer__lecturerCourseM__grades:hover, .mainContainer__lecturerCourseM__video:hover, .mainContainer__lecturerCourseM__zoom:hover {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
 }
-.mainContainer__lecturerMenu__fullName {
+.mainContainer__lecturerMenu__fullName, .mainContainer__lecturerCourseM__courseName {
   font-weight: bold;
   font-size: 30px;
 }
-.mainContainer__inner {
+.mainContainer__inner, .mainContainer__attendance {
   margin-left: 100px;
+}
+.mainContainer__attendance {
+  flex-direction: column;
+}
+.mainContainer__lecturerCourseM__top {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.mainContainer__lecturerCourseM__top img {
+  width: 60px;
+  height: 30px;
 }
 
 .CourseCard {

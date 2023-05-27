@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/lecturer.css" />
-    <script src="./dist/helper.js" defer></script>
-    <script src="./dist/view.js" defer></script>
-    <script src="./dist/model.js" defer></script>
-    <script src="./dist/controller.js" defer></script>
     <script src="../MainScreen/dist/helper.js" defer></script>
     <script src="../MainScreen/dist/view.js" defer></script>
     <script src="../MainScreen/dist/model.js" defer></script>
     <script src="../MainScreen/dist/controller.js" defer></script>
     <script src="../MainScreen/dist/MainScreen.js" defer></script>
+    <script src="./dist/helper.js" defer></script>
+    <script src="./dist/view.js" defer></script>
+    <script src="./dist/model.js" defer></script>
+    <script src="./dist/controller.js" defer></script>
     <script src="./dist/lecturer.js" defer></script>
     <title>DODA College</title>
   </head>
@@ -39,7 +39,24 @@
         <div class="mainContainer__lecturerMenu__profile">Profile</div>
         <div class="mainContainer__lecturerMenu__contact">Contact Us</div>
       </div>
+
+      <div class="mainContainer__lecturerCourseM" style="display: none">
+        <div class="mainContainer__lecturerCourseM__top">
+          <div class="mainContainer__lecturerCourseM__back">
+            <img src="./images/back.png" />
+          </div>
+          <div class="mainContainer__lecturerCourseM__courseName"></div>
+        </div>
+        <div class="mainContainer__lecturerCourseM__attendance">
+          Upload Attendance
+        </div>
+        <div class="mainContainer__lecturerCourseM__grades">Upload Grades</div>
+        <div class="mainContainer__lecturerCourseM__video">Upload Videos</div>
+        <div class="mainContainer__lecturerCourseM__zoom">Upload ZOOM Link</div>
+      </div>
+
       <div class="mainContainer__inner"></div>
+      <div class="mainContainer__attendance" style="display: none"></div>
     </div>
   </body>
 </html>

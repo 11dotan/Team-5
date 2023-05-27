@@ -38,7 +38,7 @@ body {
   align-items: center;
   text-align: center;
 }
-.enterUser__boxes__lecturer, .enterUser__boxes__student {
+.enterUser__boxes__lecturer, .enterUser__boxes__student, .enterUser__boxes__admin {
   border: none;
   background-color: rgba(19, 62, 90, 0.472);
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
@@ -47,13 +47,13 @@ body {
   font-size: 40px;
   font-weight: bold;
 }
-.enterUser__boxes__lecturer:hover, .enterUser__boxes__student:hover {
+.enterUser__boxes__lecturer:hover, .enterUser__boxes__student:hover, .enterUser__boxes__admin:hover {
   background-color: rgba(19, 62, 90, 0.139);
   cursor: pointer;
 }
 
 .mainContainer {
-  margin-top: 80px;
+  margin-top: 20px;
   display: grid;
   grid-template-rows: 35% 1fr;
   grid-template-columns: 50% 50%;

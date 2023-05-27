@@ -1,5 +1,5 @@
-var params = new URLSearchParams(window.location.search);
-var indexPass = params.get("indexPass");
+var paramsL = new URLSearchParams(window.location.search);
+var indexPass = paramsL.get("indexPass");
 lecturerInnerFunc(indexPass);
 console.log(courses);
 console.log(lecturers);

@@ -1,14 +1,19 @@
-const _students = getStudentFromLS();
+let _students = getStudentFromLS();
 if (_students) {
-  students.push(..._students);
+  students = _students;
 }
 
-const _courses = getCourseFromLS();
+let _courses = getCourseFromLS();
 if (_courses) {
   courses = _courses;
 }
 
-const _lecturers = getLecturerFromLS();
+let _lecturers = getLecturerFromLS();
 if (_lecturers) {
   lecturers = _lecturers;
+}
+
+let _admins = getAdminFromLS();
+if (_admins) {
+  admins = _admins;
 }
