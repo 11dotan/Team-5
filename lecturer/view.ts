@@ -37,3 +37,7 @@ const lecturerInnerAttendance = document.querySelector(
 const courseAttendance = document.querySelector(
   ".mainContainer__lecturerCourseM__attendance"
 ) as HTMLDivElement;
+
+const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
+const studentsList = document.getElementById("studentsList");
+const submitButton = document.querySelector(".submitButton") as HTMLButtonElement;

@@ -33,7 +33,7 @@ var Student = /** @class */ (function (_super) {
         _this.password = password;
         _this.address = address;
         // this.coursesUser = [];
-        _this.grades = [];
+        // this.grades = [];
         _this.attendance = [];
         return _this;
     }

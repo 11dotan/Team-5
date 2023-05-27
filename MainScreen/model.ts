@@ -11,8 +11,8 @@ class Person {
 
 class Student extends Person {
   //   coursesUser: Course[];
-  grades: number[];
-  attendance: boolean[];
+  // grades: number[];
+  attendance: number[];
   constructor(
     public name: string,
     public id: number,
@@ -23,7 +23,7 @@ class Student extends Person {
   ) {
     super(name, id, email, phone, password, address);
     // this.coursesUser = [];
-    this.grades = [];
+    // this.grades = [];
     this.attendance = [];
   }
 }

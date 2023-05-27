@@ -8,3 +8,6 @@ var courseMenu = document.querySelector(".mainContainer__lecturerCourseM");
 var courseName = document.querySelector(".mainContainer__lecturerCourseM__courseName");
 var lecturerInnerAttendance = document.querySelector(".mainContainer__attendance");
 var courseAttendance = document.querySelector(".mainContainer__lecturerCourseM__attendance");
+var checkbox = document.querySelector(".checkbox");
+var studentsList = document.getElementById("studentsList");
+var submitButton = document.querySelector(".submitButton");

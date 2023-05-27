@@ -38,9 +38,6 @@ function getindex() {
     return JSON.parse(data);
 }
 var _courseindex = getindex();
-console.log(_courseindex);
-console.log(courses);
-lecturerInnerAttendance.innerHTML = "<h1>" + courses[_courseindex].nameCourse + " </h1><br><br>";
 for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     var student = courses[_courseindex].studentsCourse[i];
     var listItem = document.createElement("li");
@@ -48,10 +45,22 @@ for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     checkbox.type = "checkbox";
     listItem.appendChild(checkbox);
     listItem.appendChild(document.createTextNode(student.name));
-    lecturerInnerAttendance.appendChild(listItem);
+    studentsList === null || studentsList === void 0 ? void 0 : studentsList.appendChild(listItem);
 }
-// function toggleAttendance(index) {
-//   students[index].attendance = true;
-//   console.log(`Attendance toggled for ${students[index].name}`);
-//   console.log(students[index].attendance);
-// }
+submitButton.addEventListener("click", function () {
+    for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+        var checkbox = studentsList === null || studentsList === void 0 ? void 0 : studentsList.children[i].querySelector("input[type=checkbox]");
+        if (checkbox === null || checkbox === void 0 ? void 0 : checkbox.checked) {
+            var studentI = courses[_courseindex].studentsCourse[i];
+            studentI.attendance.push(1);
+            console.log(courses[_courseindex].studentsCourse[i]);
+        }
+        else {
+            courses[_courseindex].studentsCourse[i].attendance.push(0);
+            // console.log(courses[_courseindex].studentsCourse[i].attendance);
+        }
+    }
+    saveCourseToLS(courses);
+});
+console.log(students[1]);
+console.log(students[1].attendance);
