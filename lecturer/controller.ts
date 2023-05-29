@@ -55,7 +55,7 @@ function attendanceCourse() {
   let html: string = "";
   for (let i = 0; i < datesArr.length; i++) {
     html += `
-    <div class="cardDate" onclick="markAttendance('${_courseindex}')">
+    <div class="cardDate" onclick="markAttendance('${i}')">
     <h1>Lesson ${i + 1}</h1>
     <h3>Date: ${datesArr[i]}</h3>
   </div>
@@ -64,7 +64,10 @@ function attendanceCourse() {
   lecturerInnerAttendance.innerHTML = html;
 }
 
-function markAttendance(_courseindex) {
+function markAttendance(numlesson: number) {
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
   lecturerInnerAttendance.style.display = "none";
   lecturerInnerLessons.style.display = "flex";
   lecturerInnerLessons.style.flexDirection = "column";
@@ -84,12 +87,19 @@ function markAttendance(_courseindex) {
         "input[type=checkbox]"
       );
       if (checkbox?.checked) {
-        const studentI = courses[_courseindex].studentsCourse[i];
-        studentI.attendance.push(1);
+        const studentI =
+          courses[_courseindex].lesson[numlesson].studentsCourse[i];
+        studentI.attendance = 1;
+        console.log(studentI);
 
         console.log(courses[_courseindex].studentsCourse[i]);
       } else {
-        courses[_courseindex].studentsCourse[i].attendance.push(0);
+        courses[_courseindex].lesson[numlesson].studentsCourse[
+          i
+        ].attendance = 0;
+
+        // console.log(3);
+
         // console.log(courses[_courseindex].studentsCourse[i].attendance);
       }
     }
