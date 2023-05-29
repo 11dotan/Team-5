@@ -72,6 +72,19 @@ body {
   width: 60px;
   height: 30px;
 }
+.mainContainer__lessons {
+  grid-template-columns: 35rem 35rem;
+  grid-template-rows: 20rem 20rem 20rem;
+  margin-left: 7rem;
+}
+.mainContainer__lessons--les1, .mainContainer__lessons--les2, .mainContainer__lessons--les3, .mainContainer__lessons--les4, .mainContainer__lessons--les5, .mainContainer__lessons--les6 {
+  width: 25rem;
+  height: 18rem;
+  border-radius: 50px;
+  box-shadow: 0.6em 0.6em 1.2em #d7e7fc, -0.5em -0.5em 1em #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
 
 .CourseCard {
   background-color: #090e2b;

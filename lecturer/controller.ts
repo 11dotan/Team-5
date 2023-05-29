@@ -41,7 +41,9 @@ function HandleOpenCourse(
 
 courseAttendance.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerAttendance.style.display = "flex";
+  lecturerInnerLessons.style.display = "grid";
+  lecturerInnerAttendance.style.display = "none";
+  // lecturerInnerAttendance.innerHTML = "";
 });
 
 function getindex(): number {
