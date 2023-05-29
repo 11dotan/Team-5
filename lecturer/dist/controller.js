@@ -46,6 +46,8 @@ function attendanceCourse() {
 }
 function markAttendance(_courseindex) {
     lecturerInnerAttendance.style.display = "none";
+    lecturerInnerLessons.style.display = "flex";
+    lecturerInnerLessons.style.flexDirection = "column";
     for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
         var student = courses[_courseindex].studentsCourse[i];
         var listItem = document.createElement("li");
@@ -55,22 +57,21 @@ function markAttendance(_courseindex) {
         listItem.appendChild(document.createTextNode(student.name));
         studentsList === null || studentsList === void 0 ? void 0 : studentsList.appendChild(listItem);
     }
-    // submitButton.addEventListener("click", () => {
-    //   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-    //     const checkbox = studentsList?.children[i].querySelector(
-    //       "input[type=checkbox]"
-    //     );
-    //     if (checkbox?.checked) {
-    //       const studentI = courses[_courseindex].studentsCourse[i];
-    //       studentI.attendance.push(1);
-    //       console.log(courses[_courseindex].studentsCourse[i]);
-    //     } else {
-    //       courses[_courseindex].studentsCourse[i].attendance.push(0);
-    //       // console.log(courses[_courseindex].studentsCourse[i].attendance);
-    //     }
-    //   }
-    //   saveCourseToLS(courses);
-    // });
+    submitButton.addEventListener("click", function () {
+        for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+            var checkbox = studentsList === null || studentsList === void 0 ? void 0 : studentsList.children[i].querySelector("input[type=checkbox]");
+            if (checkbox === null || checkbox === void 0 ? void 0 : checkbox.checked) {
+                var studentI = courses[_courseindex].studentsCourse[i];
+                studentI.attendance.push(1);
+                console.log(courses[_courseindex].studentsCourse[i]);
+            }
+            else {
+                courses[_courseindex].studentsCourse[i].attendance.push(0);
+                // console.log(courses[_courseindex].studentsCourse[i].attendance);
+            }
+        }
+        saveCourseToLS(courses);
+    });
 }
 console.log(students[1]);
 console.log(students[1].attendance);

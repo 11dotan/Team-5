@@ -66,6 +66,8 @@ function attendanceCourse() {
 
 function markAttendance(_courseindex) {
   lecturerInnerAttendance.style.display = "none";
+  lecturerInnerLessons.style.display = "flex";
+  lecturerInnerLessons.style.flexDirection = "column";
   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     const student = courses[_courseindex].studentsCourse[i];
     const listItem = document.createElement("li");
@@ -76,23 +78,23 @@ function markAttendance(_courseindex) {
     studentsList?.appendChild(listItem);
   }
 
-  // submitButton.addEventListener("click", () => {
-  //   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-  //     const checkbox = studentsList?.children[i].querySelector(
-  //       "input[type=checkbox]"
-  //     );
-  //     if (checkbox?.checked) {
-  //       const studentI = courses[_courseindex].studentsCourse[i];
-  //       studentI.attendance.push(1);
+  submitButton.addEventListener("click", () => {
+    for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+      const checkbox = studentsList?.children[i].querySelector(
+        "input[type=checkbox]"
+      );
+      if (checkbox?.checked) {
+        const studentI = courses[_courseindex].studentsCourse[i];
+        studentI.attendance.push(1);
 
-  //       console.log(courses[_courseindex].studentsCourse[i]);
-  //     } else {
-  //       courses[_courseindex].studentsCourse[i].attendance.push(0);
-  //       // console.log(courses[_courseindex].studentsCourse[i].attendance);
-  //     }
-  //   }
-  //   saveCourseToLS(courses);
-  // });
+        console.log(courses[_courseindex].studentsCourse[i]);
+      } else {
+        courses[_courseindex].studentsCourse[i].attendance.push(0);
+        // console.log(courses[_courseindex].studentsCourse[i].attendance);
+      }
+    }
+    saveCourseToLS(courses);
+  });
 }
 
 console.log(students[1]);
