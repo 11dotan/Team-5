@@ -20,7 +20,7 @@ class Lesson {
 class Student extends Person {
   //   coursesUser: Course[];
   // grades: number[];
-  attendance: number;
+  attendance: number[];
   constructor(
     public name: string,
     public id: number,
@@ -32,7 +32,7 @@ class Student extends Person {
     super(name, id, email, phone, password, address);
     // this.coursesUser = [];
     // this.grades = [];
-    this.attendance = 0;
+    this.attendance = [];
   }
 }
 
@@ -204,16 +204,17 @@ console.log(admins);
 students.push(fullS1, fullS2, fullS3, fullS4);
 
 const lessons: Lesson[] = [];
-const lesson1 = new Lesson("1 / 5 / 2023", fullC.studentsCourse);
-const lesson2 = new Lesson("8 / 5 / 2023", fullC.studentsCourse);
-const lesson3 = new Lesson("15 / 5 / 2023", fullC.studentsCourse);
-const lesson4 = new Lesson("22 / 5 / 2023", fullC.studentsCourse);
-const lesson5 = new Lesson("29/ 5 / 2023", fullC.studentsCourse);
-const lesson6 = new Lesson("5/ 6 / 2023", fullC.studentsCourse);
+
+// const lesson1 = new Lesson("1 / 5 / 2023", fullC.studentsCourse);
+// const lesson2 = new Lesson("8 / 5 / 2023", fullC.studentsCourse);
+// const lesson3 = new Lesson("15 / 5 / 2023", fullC.studentsCourse);
+// const lesson4 = new Lesson("22 / 5 / 2023", fullC.studentsCourse);
+// const lesson5 = new Lesson("29/ 5 / 2023", fullC.studentsCourse);
+// const lesson6 = new Lesson("5/ 6 / 2023", fullC.studentsCourse);
 // lesson1.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 // lesson2.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 // lesson3.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 // lesson4.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 // lesson5.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 // lesson6.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-fullC.lesson.push(lesson1, lesson2, lesson3, lesson4, lesson5, lesson6);
+// fullC.lesson.push(lesson1, lesson2, lesson3, lesson4, lesson5, lesson6);
