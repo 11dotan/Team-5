@@ -27,6 +27,12 @@ function HandleOpenCourse(courseUid, nameCourseL, courseIndex) {
     courseMenu.style.display = "flex";
     courseName.innerHTML = "" + nameCourseL;
 }
+courseMenuBack.addEventListener("click", function (e) {
+    lecturerMenu.style.display = "flex";
+    courseMenu.style.display = "none";
+    lecturerInnerAttendance.style.display = "none";
+    lecturerInner.style.display = "flex";
+});
 courseAttendance.addEventListener("click", function (e) {
     lecturerInner.style.display = "none";
     lecturerInnerAttendance.style.display = "flex";

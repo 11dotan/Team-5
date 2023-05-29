@@ -39,6 +39,13 @@ function HandleOpenCourse(
   courseName.innerHTML = `${nameCourseL}`;
 }
 
+courseMenuBack.addEventListener("click", (e) => {
+  lecturerMenu.style.display = "flex";
+  courseMenu.style.display = "none";
+  lecturerInnerAttendance.style.display = "none";
+  lecturerInner.style.display = "flex";
+});
+
 courseAttendance.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
   lecturerInnerAttendance.style.display = "flex";

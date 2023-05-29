@@ -22,6 +22,10 @@ const lecturerMenu = document.querySelector(
   ".mainContainer__lecturerMenu"
 ) as HTMLDivElement;
 
+const courseMenuBack = document.querySelector(
+  ".mainContainer__lecturerCourseM__back"
+) as HTMLDivElement;
+
 const courseMenu = document.querySelector(
   ".mainContainer__lecturerCourseM"
 ) as HTMLDivElement;

@@ -4,6 +4,7 @@ var lecturerMenuProfile = document.querySelector(".mainContainer__lecturerMenu__
 var lecturerMenuContact = document.querySelector(".mainContainer__lecturerMenu__contact");
 var lecturerInner = document.querySelector(".mainContainer__inner");
 var lecturerMenu = document.querySelector(".mainContainer__lecturerMenu");
+var courseMenuBack = document.querySelector(".mainContainer__lecturerCourseM__back");
 var courseMenu = document.querySelector(".mainContainer__lecturerCourseM");
 var courseName = document.querySelector(".mainContainer__lecturerCourseM__courseName");
 var lecturerInnerLessons = document.querySelector(".mainContainer__lessons");
