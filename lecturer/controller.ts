@@ -80,32 +80,35 @@ function markAttendance(numlesson: number) {
     listItem.appendChild(document.createTextNode(student.name));
     studentsList?.appendChild(listItem);
   }
-
-  submitButton.addEventListener("click", () => {
-    for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-      const checkbox = studentsList?.children[i].querySelector(
-        "input[type=checkbox]"
-      );
-      if (checkbox?.checked) {
-        const studentI =
-          courses[_courseindex].lesson[numlesson].studentsCourse[i];
-        studentI.attendance = 1;
-        console.log(studentI);
-
-        console.log(courses[_courseindex].studentsCourse[i]);
-      } else {
-        courses[_courseindex].lesson[numlesson].studentsCourse[
-          i
-        ].attendance = 0;
-
-        // console.log(3);
-
-        // console.log(courses[_courseindex].studentsCourse[i].attendance);
-      }
-    }
-    saveCourseToLS(courses);
-  });
 }
+submitButton.addEventListener("click", () => {
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
+  for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+    const checkbox = studentsList?.children[i].querySelector(
+      "input[type=checkbox]"
+    );
+    if (checkbox?.checked) {
+      const studentI = courses[_courseindex].studentsCourse[i];
+      studentI.attendance.push(1);
+      console.log(studentI);
+
+      console.log(courses[_courseindex].studentsCourse[i]);
+    } else {
+      courses[_courseindex].studentsCourse[i].attendance.push(0);
+
+      // console.log(3);
+
+      // console.log(courses[_courseindex].studentsCourse[i].attendance);
+    }
+  }
+  saveCourseToLS(courses);
+  saveStudentToLS(students);
+  lecturerInnerAttendance.style.display = "flex";
+  lecturerInnerLessons.style.display = "none";
+  lecturerInnerLessons.innerHTML = "";
+});
 
 console.log(students[1]);
 console.log(students[1].attendance);

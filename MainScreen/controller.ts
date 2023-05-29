@@ -105,6 +105,11 @@ function getAdminFromLS(): Admin[] | undefined {
   return _admins;
 }
 
+saveStudentToLS(students);
+saveAdminToLS(admins);
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
+
 login.addEventListener("click", (e) => {
   loginLecturer.style.display = "block";
   loginStudent.style.display = "block";

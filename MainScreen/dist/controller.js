@@ -97,6 +97,10 @@ function getAdminFromLS() {
     var _admins = JSON.parse(data);
     return _admins;
 }
+saveStudentToLS(students);
+saveAdminToLS(admins);
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
 login.addEventListener("click", function (e) {
     loginLecturer.style.display = "block";
     loginStudent.style.display = "block";
