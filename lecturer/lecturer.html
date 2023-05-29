@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/lecturer.css" />
+    <script src="./dist/helper.js" defer></script>
+    <script src="./dist/view.js" defer></script>
+    <script src="./dist/model.js" defer></script>
+    <script src="./dist/controller.js" defer></script>
     <script src="../MainScreen/dist/helper.js" defer></script>
     <script src="../MainScreen/dist/view.js" defer></script>
     <script src="../MainScreen/dist/model.js" defer></script>
     <script src="../MainScreen/dist/controller.js" defer></script>
     <script src="../MainScreen/dist/MainScreen.js" defer></script>
-    <script src="./dist/helper.js" defer></script>
-    <script src="./dist/view.js" defer></script>
-    <script src="./dist/model.js" defer></script>
-    <script src="./dist/controller.js" defer></script>
     <script src="./dist/lecturer.js" defer></script>
     <title>DODA College</title>
   </head>
@@ -56,12 +56,12 @@
       </div>
 
       <div class="mainContainer__inner"></div>
-      <div class="mainContainer__attendance" style="display: none">
+      <!-- <div class="mainContainer__lessons" style="display: none"></div> -->
+      <div class="mainContainer__attendance" style="display: none"></div>
+      <div class="mainContainer__lessons" style="display: none">
         <ul id="studentsList"></ul>
         <button class="submitButton" type="submit">Submit</button>
       </div>
-      
     </div>
-    
   </body>
 </html>

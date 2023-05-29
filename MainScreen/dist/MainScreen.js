@@ -14,3 +14,7 @@ var _admins = getAdminFromLS();
 if (_admins) {
     admins = _admins;
 }
+saveStudentToLS(students);
+saveAdminToLS(admins);
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);

@@ -32,21 +32,14 @@ function HandleSubmit(e) {
   courses[index].studentsCourse.push(newStudent);
   students.push(newStudent);
 
-  console.log(students);
-  console.log(courses[index].studentsCourse);
-
   saveStudentToLS(students);
+  saveCourseToLS(courses);
 
   const indexEmail: number = students.length - 1;
   const url = new URL("../userScreen/userScreen.html", window.location.href);
   url.searchParams.set("indexEmail", indexEmail);
   window.location.href = url.href;
 }
-
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
-saveStudentToLS(students);
-saveAdminToLS(admins);
 
 function saveStudentToLS(students: Student[]) {
   try {
@@ -59,6 +52,7 @@ function saveStudentToLS(students: Student[]) {
 
 function getStudentFromLS(): Student[] | undefined {
   const data = localStorage.getItem("students");
+  if (!data) throw new Error(`data not found`);
   const _students = JSON.parse(data);
   return _students;
 }
@@ -74,6 +68,7 @@ function saveLecturerToLS(lecturers: Lecturer[]) {
 
 function getLecturerFromLS(): Lecturer[] | undefined {
   const data = localStorage.getItem("lecturers");
+  if (!data) throw new Error(`data not found`);
   const _lecturers = JSON.parse(data);
   return _lecturers;
 }
@@ -89,6 +84,7 @@ function saveCourseToLS(courses: Course[]) {
 
 function getCourseFromLS(): Course[] | undefined {
   const data = localStorage.getItem("courses");
+  if (!data) throw new Error(`data not found`);
   const _courses = JSON.parse(data);
   return _courses;
 }
@@ -104,14 +100,23 @@ function saveAdminToLS(admins: Admin[]) {
 
 function getAdminFromLS(): Admin[] | undefined {
   const data = localStorage.getItem("admins");
+  if (!data) throw new Error(`data not found`);
   const _admins = JSON.parse(data);
   return _admins;
 }
+
+saveStudentToLS(students);
+saveAdminToLS(admins);
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
 
 login.addEventListener("click", (e) => {
   loginLecturer.style.display = "block";
   loginStudent.style.display = "block";
   loginAdmin.style.display = "block";
+  loginLecturerForm.style.display = "none";
+  loginStudentForm.style.display = "none";
+  loginAdminForm.style.display = "none";
 });
 
 loginLecturer.addEventListener("click", (e) => {
