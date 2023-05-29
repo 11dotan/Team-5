@@ -31,7 +31,7 @@ body {
   margin-top: 150px;
   display: grid;
   grid-template-columns: 22% 1fr;
-  grid-template-areas: "userMenu" "inner";
+  grid-template-areas: "userMenu innerForms";
 }
 .mainContainer__adminMenu {
   grid-area: userMenu;
@@ -52,4 +52,38 @@ body {
 .mainContainer____adminMenu__fullName:hover, .mainContainer__adminMenu__addCourse:hover, .mainContainer__adminMenu__addLecturer:hover {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
+}
+.mainContainer .addLecturerForm,
+.mainContainer .addCourseForm {
+  grid-area: innerForms;
+  padding: 20px 50px 50px 50px;
+  margin: 0px 0px 100px 150px;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 600px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
+.mainContainer .addLecturerForm h2,
+.mainContainer .addCourseForm h2 {
+  text-align: center;
+}
+.mainContainer .addLecturerForm__line,
+.mainContainer .addCourseForm__line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.mainContainer .addLecturerForm__line__inputS,
+.mainContainer .addCourseForm__line__inputS {
+  width: 350px;
+  height: 25px;
+}
+.mainContainer .addLecturerForm__regBtn,
+.mainContainer .addCourseForm__regBtn {
+  margin-top: 50px;
+  width: 300px;
+  align-self: center;
+  height: 25px;
 }/*# sourceMappingURL=adminScreen.css.map */

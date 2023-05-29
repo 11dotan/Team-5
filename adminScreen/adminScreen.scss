@@ -34,9 +34,7 @@ body {
   margin-top: 150px;
   display: grid;
   grid-template-columns: 22% 1fr;
-  grid-template-areas:
-    "userMenu"
-    "inner";
+  grid-template-areas: "userMenu innerForms";
 
   &__adminMenu {
     grid-area: userMenu;
@@ -59,6 +57,38 @@ body {
     &:hover {
       background-color: rgba(50, 132, 186, 0.472);
       cursor: pointer;
+    }
+  }
+
+  .addLecturerForm,
+  .addCourseForm {
+    grid-area: innerForms;
+    $self: &;
+    padding: 20px 50px 50px 50px;
+    margin: 0px 0px 100px 150px;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 600px;
+    box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+    h2 {
+      text-align: center;
+    }
+    &__line {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    &__line__inputS {
+      width: 350px;
+      height: 25px;
+    }
+    &__regBtn {
+      margin-top: 50px;
+      width: 300px;
+      align-self: center;
+      height: 25px;
     }
   }
 }

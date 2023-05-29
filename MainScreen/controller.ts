@@ -32,10 +32,8 @@ function HandleSubmit(e) {
   courses[index].studentsCourse.push(newStudent);
   students.push(newStudent);
 
-  console.log(students);
-  console.log(courses[index].studentsCourse);
-
   saveStudentToLS(students);
+  saveCourseToLS(courses);
 
   const indexEmail: number = students.length - 1;
   const url = new URL("../userScreen/userScreen.html", window.location.href);

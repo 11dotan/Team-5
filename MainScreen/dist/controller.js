@@ -22,9 +22,8 @@ function HandleSubmit(e) {
     var index = courses.findIndex(function (course) { return course.nameCourse === courseUser; });
     courses[index].studentsCourse.push(newStudent);
     students.push(newStudent);
-    console.log(students);
-    console.log(courses[index].studentsCourse);
     saveStudentToLS(students);
+    saveCourseToLS(courses);
     var indexEmail = students.length - 1;
     var url = new URL("../userScreen/userScreen.html", window.location.href);
     url.searchParams.set("indexEmail", indexEmail);
