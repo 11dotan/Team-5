@@ -25,32 +25,37 @@ function HandleAddLecturer(e) {
   adminInnerMs.innerHTML = `<h2>Lecturer added successfully</h2>`;
 }
 
-const htmlL: string = lecturers
-  .map((lecturer) => {
-    return `<option> ${lecturer.name}</option>`;
-  })
-  .join(" ");
-listLecturers.innerHTML = `
-<select class="addCourseForm__line__listLecturers" name="lecturers">
-${htmlL}
-</select><br><br>`;
-
 adminMenuAddCourse.addEventListener("click", (e) => {
   addCourseForm.style.display = "flex";
   addLecturerForm.style.display = "none";
+
+  const htmlL: string = lecturers
+    .map((lecturer) => {
+      return `<option> ${lecturer.name}</option>`;
+    })
+    .join(" ");
+  listLecturers.innerHTML = `
+<select type="Lecturer[]" class="addCourseForm__line__listLecturers" name="lecturerC">
+${htmlL}
+</select><br><br>`;
 });
 
 function HandleAddCourse(e) {
   e.preventDefault();
   const name = e.target.elements.name.value;
   const dates = e.target.elements.dates.value;
-  const lecturers = e.target.elements.lecturers.value;
+  const lecturerC = e.target.elements.lecturerC.value;
 
-  const newCourse = new Course(name, dates, lecturers);
+  const datesArray = dates.split(" ");
+  const lecturerIndex = lecturers.findIndex(
+    (lecturer) => lecturer.name === lecturerC
+  );
+  const newCourse = new Course(name, datesArray, lecturers[lecturerIndex]);
 
   courses.push(newCourse);
 
   saveCourseToLS(courses);
+  console.log(lecturerC);
 
   adminInnerMs2.innerHTML = `<h2>Course added successfully</h2>`;
 }

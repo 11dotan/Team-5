@@ -29,10 +29,6 @@ function HandleSubmit(e) {
     url.searchParams.set("indexEmail", indexEmail);
     window.location.href = url.href;
 }
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
-saveStudentToLS(students);
-saveAdminToLS(admins);
 function saveStudentToLS(students) {
     try {
         if (!students)
@@ -45,6 +41,8 @@ function saveStudentToLS(students) {
 }
 function getStudentFromLS() {
     var data = localStorage.getItem("students");
+    if (!data)
+        throw new Error("data not found");
     var _students = JSON.parse(data);
     return _students;
 }
@@ -60,6 +58,8 @@ function saveLecturerToLS(lecturers) {
 }
 function getLecturerFromLS() {
     var data = localStorage.getItem("lecturers");
+    if (!data)
+        throw new Error("data not found");
     var _lecturers = JSON.parse(data);
     return _lecturers;
 }
@@ -75,6 +75,8 @@ function saveCourseToLS(courses) {
 }
 function getCourseFromLS() {
     var data = localStorage.getItem("courses");
+    if (!data)
+        throw new Error("data not found");
     var _courses = JSON.parse(data);
     return _courses;
 }
@@ -90,6 +92,8 @@ function saveAdminToLS(admins) {
 }
 function getAdminFromLS() {
     var data = localStorage.getItem("admins");
+    if (!data)
+        throw new Error("data not found");
     var _admins = JSON.parse(data);
     return _admins;
 }
@@ -97,6 +101,9 @@ login.addEventListener("click", function (e) {
     loginLecturer.style.display = "block";
     loginStudent.style.display = "block";
     loginAdmin.style.display = "block";
+    loginLecturerForm.style.display = "none";
+    loginStudentForm.style.display = "none";
+    loginAdminForm.style.display = "none";
 });
 loginLecturer.addEventListener("click", function (e) {
     loginLecturerForm.style.display = "block";

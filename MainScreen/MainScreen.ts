@@ -1,19 +1,24 @@
-let _students = getStudentFromLS();
+const _students = getStudentFromLS();
 if (_students) {
   students = _students;
 }
 
-let _courses = getCourseFromLS();
+const _courses = getCourseFromLS();
 if (_courses) {
   courses = _courses;
 }
 
-let _lecturers = getLecturerFromLS();
+const _lecturers = getLecturerFromLS();
 if (_lecturers) {
   lecturers = _lecturers;
 }
 
-let _admins = getAdminFromLS();
+const _admins = getAdminFromLS();
 if (_admins) {
   admins = _admins;
 }
+
+saveStudentToLS(students);
+saveAdminToLS(admins);
+saveCourseToLS(courses);
+saveLecturerToLS(lecturers);
