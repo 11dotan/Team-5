@@ -31,7 +31,7 @@ body {
   margin-top: 150px;
   display: grid;
   grid-template-columns: 22% 1fr;
-  grid-template-areas: "userMenu" "inner";
+  grid-template-areas: "userMenu inner";
 }
 .mainContainer__lecturerMenu, .mainContainer__lecturerCourseM {
   grid-area: userMenu;
@@ -58,6 +58,7 @@ body {
   font-size: 30px;
 }
 .mainContainer__inner, .mainContainer__attendance {
+  grid-area: inner;
   margin-left: 100px;
 }
 .mainContainer__attendance {

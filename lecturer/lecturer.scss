@@ -34,9 +34,7 @@ body {
   margin-top: 150px;
   display: grid;
   grid-template-columns: 22% 1fr;
-  grid-template-areas:
-    "userMenu"
-    "inner";
+  grid-template-areas: "userMenu inner";
 
   &__lecturerMenu,
   &__lecturerCourseM {
@@ -77,6 +75,7 @@ body {
 
   &__inner,
   &__attendance {
+    grid-area: inner;
     margin-left: 100px;
   }
 

@@ -41,44 +41,59 @@ function HandleOpenCourse(
 
 courseAttendance.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerLessons.style.display = "grid";
-  lecturerInnerAttendance.style.display = "none";
-  // lecturerInnerAttendance.innerHTML = "";
+  lecturerInnerAttendance.style.display = "flex";
+  attendanceCourse();
 });
 
-function getindex(): number {
+function attendanceCourse() {
   let data = localStorage.getItem("courseIndex");
   if (!data) throw new Error("data is null");
-  return JSON.parse(data);
-}
-const _courseindex = getindex();
+  const _courseindex = JSON.parse(data);
 
-for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-  const student = courses[_courseindex].studentsCourse[i];
-  const listItem = document.createElement("li");
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  listItem.appendChild(checkbox);
-  listItem.appendChild(document.createTextNode(student.name));
-  studentsList?.appendChild(listItem);
-}
+  const datesArr = courses[_courseindex].datesCourse;
 
-submitButton.addEventListener("click", () => {
-  for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-    const checkbox = studentsList?.children[i].querySelector(
-      "input[type=checkbox]"
-    );
-    if (checkbox?.checked) {
-      const studentI = courses[_courseindex].studentsCourse[i];
-      studentI.attendance.push(1);
-
-      console.log(courses[_courseindex].studentsCourse[i]);
-    } else {
-      courses[_courseindex].studentsCourse[i].attendance.push(0);
-      // console.log(courses[_courseindex].studentsCourse[i].attendance);
-    }
+  let html: string = "";
+  for (let i = 0; i < datesArr.length; i++) {
+    html += `
+    <div class="cardDate" onclick="markAttendance('${_courseindex}')">
+    <h1>Lesson ${i + 1}</h1>
+    <h3>Date: ${datesArr[i]}</h3>
+  </div>
+  `;
   }
-  saveCourseToLS(courses);
-});
+  lecturerInnerAttendance.innerHTML = html;
+}
+
+function markAttendance(_courseindex) {
+  lecturerInnerAttendance.style.display = "none";
+  for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+    const student = courses[_courseindex].studentsCourse[i];
+    const listItem = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    listItem.appendChild(checkbox);
+    listItem.appendChild(document.createTextNode(student.name));
+    studentsList?.appendChild(listItem);
+  }
+
+  // submitButton.addEventListener("click", () => {
+  //   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+  //     const checkbox = studentsList?.children[i].querySelector(
+  //       "input[type=checkbox]"
+  //     );
+  //     if (checkbox?.checked) {
+  //       const studentI = courses[_courseindex].studentsCourse[i];
+  //       studentI.attendance.push(1);
+
+  //       console.log(courses[_courseindex].studentsCourse[i]);
+  //     } else {
+  //       courses[_courseindex].studentsCourse[i].attendance.push(0);
+  //       // console.log(courses[_courseindex].studentsCourse[i].attendance);
+  //     }
+  //   }
+  //   saveCourseToLS(courses);
+  // });
+}
+
 console.log(students[1]);
 console.log(students[1].attendance);
