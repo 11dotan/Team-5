@@ -1,35 +1,3 @@
-var html = courses
-    .map(function (course) {
-    return "<option> " + course.nameCourse + "</option>";
-})
-    .join(" ");
-listCourse.innerHTML = "\n<select class=\"registerForm__line__listCourse\" name=\"courses\">\n" + html + "\n</select><br><br>";
-console.log(lecturers);
-function HandleSubmit(e) {
-    e.preventDefault();
-    var name = e.target.elements.name.value;
-    var id = e.target.elements.id.value;
-    var email = e.target.elements.email.value;
-    var phone = e.target.elements.phone.value;
-    var address = e.target.elements.address.value;
-    var password = e.target.elements.pass.value;
-    var cPass = e.target.elements.cPass.value;
-    var courseUser = e.target.elements.courses.value;
-    if (password != cPass) {
-        alert("Passwords Are Not Match");
-        throw new Error("Passwords Are Not Match");
-    }
-    var newStudent = new Student(name, id, email, phone, password, address);
-    var index = courses.findIndex(function (course) { return course.nameCourse === courseUser; });
-    courses[index].studentsCourse.push(newStudent);
-    students.push(newStudent);
-    saveStudentToLS(students);
-    saveCourseToLS(courses);
-    var indexEmail = students.length - 1;
-    var url = new URL("../userScreen/userScreen.html", window.location.href);
-    url.searchParams.set("indexEmail", indexEmail);
-    window.location.href = url.href;
-}
 function saveStudentToLS(students) {
     try {
         if (!students)
@@ -97,6 +65,41 @@ function getAdminFromLS() {
         throw new Error("data not found");
     var _admins = JSON.parse(data);
     return _admins;
+}
+var _courses = getCourseFromLS();
+if (_courses) {
+    courses = _courses;
+}
+var html = courses
+    .map(function (course) {
+    return "<option> " + course.nameCourse + "</option>";
+})
+    .join(" ");
+listCourse.innerHTML = "\n<select class=\"registerForm__line__listCourse\" name=\"courses\">\n" + html + "\n</select><br><br>";
+function HandleSubmit(e) {
+    e.preventDefault();
+    var name = e.target.elements.name.value;
+    var id = e.target.elements.id.value;
+    var email = e.target.elements.email.value;
+    var phone = e.target.elements.phone.value;
+    var address = e.target.elements.address.value;
+    var password = e.target.elements.pass.value;
+    var cPass = e.target.elements.cPass.value;
+    var courseUser = e.target.elements.courses.value;
+    if (password != cPass) {
+        alert("Passwords Are Not Match");
+        throw new Error("Passwords Are Not Match");
+    }
+    var newStudent = new Student(name, id, email, phone, password, address);
+    var index = courses.findIndex(function (course) { return course.nameCourse === courseUser; });
+    courses[index].studentsCourse.push(newStudent);
+    students.push(newStudent);
+    saveStudentToLS(students);
+    saveCourseToLS(courses);
+    var indexEmail = students.length - 1;
+    var url = new URL("../userScreen/userScreen.html", window.location.href);
+    url.searchParams.set("indexEmail", indexEmail);
+    window.location.href = url.href;
 }
 login.addEventListener("click", function (e) {
     loginLecturer.style.display = "block";

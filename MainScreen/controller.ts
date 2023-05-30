@@ -1,50 +1,3 @@
-
-const html: string = courses
-  .map((course) => {
-    return `<option> ${course.nameCourse}</option>`;
-  })
-  .join(" ");
-listCourse.innerHTML = `
-<select class="registerForm__line__listCourse" name="courses">
-${html}
-</select><br><br>`;
-
-console.log(lecturers);
-
-
-function HandleSubmit(e) {
-  e.preventDefault();
-  const name = e.target.elements.name.value;
-  const id = e.target.elements.id.value;
-  const email = e.target.elements.email.value;
-  const phone = e.target.elements.phone.value;
-  const address = e.target.elements.address.value;
-  const password = e.target.elements.pass.value;
-  const cPass = e.target.elements.cPass.value;
-  const courseUser = e.target.elements.courses.value;
-  if (password != cPass) {
-    alert("Passwords Are Not Match");
-    throw new Error("Passwords Are Not Match");
-  }
-
-  const newStudent = new Student(name, id, email, phone, password, address);
-
-  const index: number = courses.findIndex(
-    (course) => course.nameCourse === courseUser
-  );
-
-  courses[index].studentsCourse.push(newStudent);
-  students.push(newStudent);
-
-  saveStudentToLS(students);
-  saveCourseToLS(courses);
-
-  const indexEmail: number = students.length - 1;
-  const url = new URL("../userScreen/userScreen.html", window.location.href);
-  url.searchParams.set("indexEmail", indexEmail);
-  window.location.href = url.href;
-}
-
 function saveStudentToLS(students: Student[]) {
   try {
     if (!students) throw new Error("info is null");
@@ -107,6 +60,54 @@ function getAdminFromLS(): Admin[] | undefined {
   if (!data) throw new Error(`data not found`);
   const _admins = JSON.parse(data);
   return _admins;
+}
+
+const _courses = getCourseFromLS();
+if (_courses) {
+  courses = _courses;
+}
+
+const html: string = courses
+  .map((course) => {
+    return `<option> ${course.nameCourse}</option>`;
+  })
+  .join(" ");
+listCourse.innerHTML = `
+<select class="registerForm__line__listCourse" name="courses">
+${html}
+</select><br><br>`;
+
+function HandleSubmit(e) {
+  e.preventDefault();
+  const name = e.target.elements.name.value;
+  const id = e.target.elements.id.value;
+  const email = e.target.elements.email.value;
+  const phone = e.target.elements.phone.value;
+  const address = e.target.elements.address.value;
+  const password = e.target.elements.pass.value;
+  const cPass = e.target.elements.cPass.value;
+  const courseUser = e.target.elements.courses.value;
+  if (password != cPass) {
+    alert("Passwords Are Not Match");
+    throw new Error("Passwords Are Not Match");
+  }
+
+  const newStudent = new Student(name, id, email, phone, password, address);
+
+  const index: number = courses.findIndex(
+    (course) => course.nameCourse === courseUser
+  );
+
+  courses[index].studentsCourse.push(newStudent);
+  students.push(newStudent);
+
+  saveStudentToLS(students);
+  saveCourseToLS(courses);
+
+  const indexEmail: number = students.length - 1;
+  const url = new URL("../userScreen/userScreen.html", window.location.href);
+  url.searchParams.set("indexEmail", indexEmail);
+  window.location.href = url.href;
 }
 
 login.addEventListener("click", (e) => {
