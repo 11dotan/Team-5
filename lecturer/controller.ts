@@ -45,6 +45,7 @@ courseMenuBack.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "none";
   lecturerInner.style.display = "flex";
   lecturerInnerGrades.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
 });
 
 courseAttendance.addEventListener("click", (e) => {
@@ -52,8 +53,11 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "flex";
   lecturerInnerLessonsG.style.display = "none";
   lecturerInnerGrades.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
   attendanceCourse();
 });
+
+
 
 function attendanceCourse() {
   let data = localStorage.getItem("courseIndex");
@@ -123,6 +127,7 @@ courseGrades.addEventListener("click", (e) => {
   lecturerInnerLessonsG.style.display = "flex";
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
   gradesCourse();
 });
 
@@ -188,3 +193,13 @@ function markGrades() {
     console.log();
   });
 }
+
+
+courseVideo.addEventListener("click", (e) => {
+  lecturerInner.style.display = "none";
+  lecturerInnerLessonsG.style.display = "none";
+  lecturerInnerLessons.style.display = "none";
+  lecturerInnerLessonsV.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
+  lecturerInnerVideos.style.display = "flex";
+});

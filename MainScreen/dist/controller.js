@@ -1,13 +1,10 @@
-var _courses = getCourseFromLS();
-if (_courses) {
-    courses = _courses;
-}
 var html = courses
     .map(function (course) {
     return "<option> " + course.nameCourse + "</option>";
 })
     .join(" ");
 listCourse.innerHTML = "\n<select class=\"registerForm__line__listCourse\" name=\"courses\">\n" + html + "\n</select><br><br>";
+console.log(lecturers);
 function HandleSubmit(e) {
     e.preventDefault();
     var name = e.target.elements.name.value;

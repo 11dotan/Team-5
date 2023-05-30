@@ -58,6 +58,10 @@ const courseGrades = document.querySelector(
   ".mainContainer__lecturerCourseM__grades"
 ) as HTMLDivElement;
 
+const courseVideo = document.querySelector(
+  ".mainContainer__lecturerCourseM__video"
+) as HTMLDivElement;
+
 const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
 const studentsList = document.getElementById("studentsList");
 const submitButton = document.querySelector(
@@ -90,3 +94,12 @@ const studentsListG = document.getElementById(
 // const lessonF6 = document.querySelector(
 //   ".mainContainer__lessons--les6"
 // ) as HTMLDivElement;
+
+
+const lecturerInnerLessonsV = document.querySelector(
+  ".mainContainer__lessonsV"
+) as HTMLDivElement;
+
+const lecturerInnerVideos = document.querySelector(
+  ".mainContainer__Videos"
+) as HTMLDivElement;

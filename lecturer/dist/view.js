@@ -13,6 +13,7 @@ var lecturerInnerGrades = document.querySelector(".mainContainer__grades");
 var lecturerInnerLessonsG = document.querySelector(".mainContainer__lessonsG");
 var courseAttendance = document.querySelector(".mainContainer__lecturerCourseM__attendance");
 var courseGrades = document.querySelector(".mainContainer__lecturerCourseM__grades");
+var courseVideo = document.querySelector(".mainContainer__lecturerCourseM__video");
 var checkbox = document.querySelector(".checkbox");
 var studentsList = document.getElementById("studentsList");
 var submitButton = document.querySelector(".submitButton");
@@ -36,3 +37,5 @@ var studentsListG = document.getElementById("studentsListG");
 // const lessonF6 = document.querySelector(
 //   ".mainContainer__lessons--les6"
 // ) as HTMLDivElement;
+var lecturerInnerLessonsV = document.querySelector(".mainContainer__lessonsV");
+var lecturerInnerVideos = document.querySelector(".mainContainer__Videos");

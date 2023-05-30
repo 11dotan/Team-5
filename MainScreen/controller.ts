@@ -1,7 +1,3 @@
-const _courses = getCourseFromLS();
-if (_courses) {
-  courses = _courses;
-}
 
 const html: string = courses
   .map((course) => {
@@ -13,6 +9,7 @@ listCourse.innerHTML = `
 ${html}
 </select><br><br>`;
 
+console.log(lecturers);
 
 
 function HandleSubmit(e) {
