@@ -7,7 +7,6 @@ const _courses = getCourseFromLS();
 if (_courses) {
   courses = _courses;
 }
-
 const _lecturers = getLecturerFromLS();
 if (_lecturers) {
   lecturers = _lecturers;

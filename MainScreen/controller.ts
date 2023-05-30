@@ -9,7 +9,7 @@ function saveStudentToLS(students: Student[]) {
 
 function getStudentFromLS(): Student[] | undefined {
   const data = localStorage.getItem("students");
-  if (!data) throw new Error(`data not found`);
+  // if (!data) throw new Error(`data not found`);
   const _students = JSON.parse(data);
   return _students;
 }
@@ -25,7 +25,7 @@ function saveLecturerToLS(lecturers: Lecturer[]) {
 
 function getLecturerFromLS(): Lecturer[] | undefined {
   const data = localStorage.getItem("lecturers");
-  if (!data) throw new Error(`data not found`);
+  // if (!data) throw new Error(`data not found`);
   const _lecturers = JSON.parse(data);
   return _lecturers;
 }
@@ -41,7 +41,7 @@ function saveCourseToLS(courses: Course[]) {
 
 function getCourseFromLS(): Course[] | undefined {
   const data = localStorage.getItem("courses");
-  if (!data) throw new Error(`data not found`);
+  // if (!data) throw new Error(`data not found`);
   const _courses = JSON.parse(data);
   return _courses;
 }
@@ -57,14 +57,14 @@ function saveAdminToLS(admins: Admin[]) {
 
 function getAdminFromLS(): Admin[] | undefined {
   const data = localStorage.getItem("admins");
-  if (!data) throw new Error(`data not found`);
+  // if (!data) throw new Error(`data not found`);
   const _admins = JSON.parse(data);
   return _admins;
 }
 
-const _courses = getCourseFromLS();
-if (_courses) {
-  courses = _courses;
+const _coursesN = getCourseFromLS();
+if (_coursesN) {
+  courses = _coursesN;
 }
 
 const html: string = courses

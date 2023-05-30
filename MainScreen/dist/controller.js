@@ -10,8 +10,7 @@ function saveStudentToLS(students) {
 }
 function getStudentFromLS() {
     var data = localStorage.getItem("students");
-    if (!data)
-        throw new Error("data not found");
+    // if (!data) throw new Error(`data not found`);
     var _students = JSON.parse(data);
     return _students;
 }
@@ -27,8 +26,7 @@ function saveLecturerToLS(lecturers) {
 }
 function getLecturerFromLS() {
     var data = localStorage.getItem("lecturers");
-    if (!data)
-        throw new Error("data not found");
+    // if (!data) throw new Error(`data not found`);
     var _lecturers = JSON.parse(data);
     return _lecturers;
 }
@@ -44,8 +42,7 @@ function saveCourseToLS(courses) {
 }
 function getCourseFromLS() {
     var data = localStorage.getItem("courses");
-    if (!data)
-        throw new Error("data not found");
+    // if (!data) throw new Error(`data not found`);
     var _courses = JSON.parse(data);
     return _courses;
 }
@@ -61,14 +58,13 @@ function saveAdminToLS(admins) {
 }
 function getAdminFromLS() {
     var data = localStorage.getItem("admins");
-    if (!data)
-        throw new Error("data not found");
+    // if (!data) throw new Error(`data not found`);
     var _admins = JSON.parse(data);
     return _admins;
 }
-var _courses = getCourseFromLS();
-if (_courses) {
-    courses = _courses;
+var _coursesN = getCourseFromLS();
+if (_coursesN) {
+    courses = _coursesN;
 }
 var html = courses
     .map(function (course) {
