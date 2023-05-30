@@ -103,3 +103,7 @@ const lecturerInnerLessonsV = document.querySelector(
 const lecturerInnerVideos = document.querySelector(
   ".mainContainer__Videos"
 ) as HTMLDivElement;
+
+const videoContainer = document.querySelector(".videoContainer") as HTMLDivElement;
+const videoElement = document.getElementById('video') as HTMLVideoElement;
+const inputfile = document.getElementById('inputfile') as HTMLInputElement;

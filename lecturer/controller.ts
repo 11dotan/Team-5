@@ -194,6 +194,7 @@ function markGrades() {
   });
 }
 
+//---------------video
 
 courseVideo.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
@@ -203,3 +204,25 @@ courseVideo.addEventListener("click", (e) => {
   lecturerInnerVideos.style.display = "none";
   lecturerInnerVideos.style.display = "flex";
 });
+
+
+
+
+function HandleAddVideo(e){
+  e.preventDefault();
+  const div = document.createElement("div");
+  const vid = document.createElement("video");
+  const src = document.createElement("source");
+  vid.controls = true;
+  vid.appendChild(src)
+  div.appendChild(vid);
+  const file = inputfile.files?.[0];
+  if(file){
+      const videoURL = URL.createObjectURL(file);
+      src.src = videoURL;
+  }
+  else{
+      console.log("cant find file"); 
+  }
+  document.body.appendChild(div);
+}
