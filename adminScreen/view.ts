@@ -46,3 +46,10 @@ const listLecturersDel = document.querySelector(
 const deleteLecturersForm = document.querySelector(
   ".deleteLecturerForm"
 ) as HTMLDivElement;
+
+const listCoursesDel = document.querySelector(
+  ".deleteCourseForm__line__listCourses"
+) as HTMLDivElement;
+const deleteCoursesForm = document.querySelector(
+  ".deleteCourseForm"
+) as HTMLDivElement;

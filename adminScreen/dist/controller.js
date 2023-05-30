@@ -1,6 +1,8 @@
 adminMenuAddLecturer.addEventListener("click", function (e) {
     addLecturerForm.style.display = "flex";
     addCourseForm.style.display = "none";
+    deleteCoursesForm.style.display = "none";
+    deleteLecturersForm.style.display = "none";
 });
 function HandleAddLecturer(e) {
     e.preventDefault();
@@ -23,6 +25,8 @@ function HandleAddLecturer(e) {
 adminMenuAddCourse.addEventListener("click", function (e) {
     addCourseForm.style.display = "flex";
     addLecturerForm.style.display = "none";
+    deleteCoursesForm.style.display = "none";
+    deleteLecturersForm.style.display = "none";
     var htmlL = lecturers
         .map(function (lecturer) {
         return "<option> " + lecturer.name + "</option>";
@@ -47,20 +51,43 @@ deleteLecturers.addEventListener("click", function (e) {
     addCourseForm.style.display = "none";
     addLecturerForm.style.display = "none";
     deleteLecturersForm.style.display = "flex";
+    deleteCoursesForm.style.display = "none";
     var htmlL = lecturers
         .map(function (lecturer) {
         return "<option> " + lecturer.name + "</option>";
     })
         .join(" ");
-    listLecturersDel.innerHTML = "\n<select type=\"Lecturer[]\" class=\"addCourseForm__line__listLecturers\" name=\"lecturerD\">\n" + htmlL + "\n</select><br><br>";
+    listLecturersDel.innerHTML = "\n<select type=\"Lecturer[]\"  name=\"lecturerD\">\n" + htmlL + "\n</select><br><br>";
 });
 function HandleDeleteLecturer(e) {
     e.preventDefault();
     var lecturerD = e.target.elements.lecturerD.value;
-    var dlecturerIndex = lecturers.findIndex(function (lecturer) { return lecturer.name === lecturerD; });
-    if (dlecturerIndex !== -1) {
-        lecturers.splice(dlecturerIndex, 1);
+    var dLecturerIndex = lecturers.findIndex(function (lecturer) { return lecturer.name === lecturerD; });
+    if (dLecturerIndex !== -1) {
+        lecturers.splice(dLecturerIndex, 1);
         console.log("we deleted " + lecturerD);
     }
-    saveLecturerToLS;
+    saveLecturerToLS(lecturers);
+}
+deleteCourses.addEventListener("click", function (e) {
+    addCourseForm.style.display = "none";
+    addLecturerForm.style.display = "none";
+    deleteLecturersForm.style.display = "none";
+    deleteCoursesForm.style.display = "flex";
+    var htmlL = courses
+        .map(function (course) {
+        return "<option> " + course.nameCourse + "</option>";
+    })
+        .join(" ");
+    listCoursesDel.innerHTML = "\n<select type=\"Course[]\"  name=\"courseD\">\n" + htmlL + "\n</select><br><br>";
+});
+function HandleDeleteCourse(e) {
+    e.preventDefault();
+    var courseD = e.target.elements.courseD.value;
+    var dCourseIndex = courses.findIndex(function (course) { return course.nameCourse === courseD; });
+    if (dCourseIndex !== -1) {
+        courses.splice(dCourseIndex, 1);
+        console.log("we deleted " + courseD);
+    }
+    saveCourseToLS(courses);
 }

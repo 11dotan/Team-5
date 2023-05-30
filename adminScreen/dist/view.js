@@ -11,3 +11,5 @@ var deleteStudents = document.querySelector(".mainContainer__adminMenu__deleteSt
 var deleteCourses = document.querySelector(".mainContainer__adminMenu__deleteCourses");
 var listLecturersDel = document.querySelector(".deleteLecturerForm__line__listLecturers");
 var deleteLecturersForm = document.querySelector(".deleteLecturerForm");
+var listCoursesDel = document.querySelector(".deleteCourseForm__line__listCourses");
+var deleteCoursesForm = document.querySelector(".deleteCourseForm");
