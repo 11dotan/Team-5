@@ -119,3 +119,4 @@ function HandleDeleteCourse(e) {
   }
   saveCourseToLS(courses);
 }
+console.log(courses);

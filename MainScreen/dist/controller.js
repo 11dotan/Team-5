@@ -1,3 +1,7 @@
+var _courses = getCourseFromLS();
+if (_courses) {
+    courses = _courses;
+}
 var html = courses
     .map(function (course) {
     return "<option> " + course.nameCourse + "</option>";
