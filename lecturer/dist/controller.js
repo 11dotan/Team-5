@@ -19,9 +19,8 @@ function lecturerCourses(indexPass) {
         console.log(error);
     }
 }
-var courseIndex;
-function HandleOpenCourse(courseUid, nameCourseL, courseIndex) {
-    courseIndex = courses.findIndex(function (course) { return course.uid === courseUid; });
+function HandleOpenCourse(courseUid, nameCourseL) {
+    var courseIndex = courses.findIndex(function (course) { return course.uid === courseUid; });
     localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
     lecturerMenu.style.display = "none";
     courseMenu.style.display = "flex";

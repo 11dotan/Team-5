@@ -25,14 +25,8 @@ function lecturerCourses(indexPass) {
   }
 }
 
-let courseIndex: number;
-
-function HandleOpenCourse(
-  courseUid: string,
-  nameCourseL: string,
-  courseIndex: number
-) {
-  courseIndex = courses.findIndex((course) => course.uid === courseUid);
+function HandleOpenCourse(courseUid: string, nameCourseL: string) {
+  let courseIndex = courses.findIndex((course) => course.uid === courseUid);
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
   lecturerMenu.style.display = "none";
   courseMenu.style.display = "flex";
@@ -56,8 +50,6 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerVideos.style.display = "none";
   attendanceCourse();
 });
-
-
 
 function attendanceCourse() {
   let data = localStorage.getItem("courseIndex");
@@ -205,24 +197,20 @@ courseVideo.addEventListener("click", (e) => {
   lecturerInnerVideos.style.display = "flex";
 });
 
-
-
-
-function HandleAddVideo(e){
+function HandleAddVideo(e) {
   e.preventDefault();
   const div = document.createElement("div");
   const vid = document.createElement("video");
   const src = document.createElement("source");
   vid.controls = true;
-  vid.appendChild(src)
+  vid.appendChild(src);
   div.appendChild(vid);
   const file = inputfile.files?.[0];
-  if(file){
-      const videoURL = URL.createObjectURL(file);
-      src.src = videoURL;
-  }
-  else{
-      console.log("cant find file"); 
+  if (file) {
+    const videoURL = URL.createObjectURL(file);
+    src.src = videoURL;
+  } else {
+    console.log("cant find file");
   }
   document.body.appendChild(div);
 }

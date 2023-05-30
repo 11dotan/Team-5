@@ -24,8 +24,8 @@ function userCourses(indexEmail) {
         console.log(error);
     }
 }
-function HandleOpenCourseU(courseUid, nameCourseL, courseIndex) {
-    courseIndex = courses.findIndex(function (course) { return course.uid === courseUid; });
+function HandleOpenCourseU(courseUid, nameCourseL) {
+    var courseIndex = courses.findIndex(function (course) { return course.uid === courseUid; });
     localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
     userMenu.style.display = "none";
     userCourseMenu.style.display = "flex";
@@ -34,9 +34,6 @@ function HandleOpenCourseU(courseUid, nameCourseL, courseIndex) {
 userCourseBack.addEventListener("click", function (e) {
     userMenu.style.display = "flex";
     userCourseMenu.style.display = "none";
-    // lecturerInnerLessons.style.display = "none";
-    // lecturerInner.style.display = "flex";
-    // lecturerInnerGrades.style.display = "none";
 });
 userCourseAttendance.addEventListener("click", function (e) {
     userInner.style.display = "none";
@@ -59,7 +56,7 @@ function userAttendance() {
     var sum = 0;
     var html = "";
     for (var i = 0; i < datesArr.length; i++) {
-        html += "\n   \n   \n    Date: " + datesArr[i] + "<br>Attendance: " + checkAtt(i, _studentsCourse[_userIndex].attendance) + "<br><br>\n    ";
+        html += "\n\n    Date: " + datesArr[i] + "<br>Attendance: " + checkAtt(i, _studentsCourse[_userIndex].attendance) + "<br><br>\n    ";
     }
     for (var z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
         sum += _studentsCourse[_userIndex].attendance[z];
@@ -79,46 +76,41 @@ function checkAtt(i, userAttArr) {
         return "Lesson has not took place yet";
     }
 }
-// userCourseGrades.addEventListener("click", (e) => {
-//   userInner.style.display = "none";
-//   userInnerGrade.style.display = "block";
-//   userInnerAtt.style.display = "none";
-//   userGrades();
-// });
-// function userGrades() {
-//   let data = localStorage.getItem("courseIndex");
-//   if (!data) throw new Error("data is null");
-//   const _courseindex = JSON.parse(data);
-//   const idUser = students[indexEmail].id;
-//   const _studentsCourse = courses[_courseindex].studentsCourse;
-//   const _userIndex = _studentsCourse.findIndex(
-//     (student) => student.id === idUser
-//   );
-//   console.log(_courseindex);
-//   console.log(idUser);
-//   console.log(_userIndex);
-//   const datesArr = courses[_courseindex].datesCourse;
-//   let sum: number = 0;
-//   let html: string = "";
-//   for (let i = 0; i < datesArr.length; i++) {
-//     html += `
-//     Date: ${datesArr[i]}<br>Attendance: ${checkGrade(
-//       i,
-//       _studentsCourse[_userIndex].grades
-//     )}<br><br>
-//     `;
-//   }
-//   for (let z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
-//     sum += _studentsCourse[_userIndex].attendance[z];
-//   }
-//   let html2: string = `<h2>Summary: You have attendant ${sum} from ${_studentsCourse[_userIndex].attendance.length} lessons until now</h2>`;
-//   console.log(html);
-//   userInnerGrade.innerHTML = ` <div class="attLesson">${html}</div>${html2}`;
-// }
-// function checkGrade(i, userGradeArr): string {
-//   if (userGradeArr[i] >= 0) {
-//     return "userGradeArr[i]";
-//   } else {
-//     return "Grade not given yet";
-//   }
-// }
+userCourseGrades.addEventListener("click", function (e) {
+    userInner.style.display = "none";
+    userInnerGrade.style.display = "block";
+    userInnerAtt.style.display = "none";
+    userGrades();
+});
+function userGrades() {
+    var data = localStorage.getItem("courseIndex");
+    if (!data)
+        throw new Error("data is null");
+    var _courseindex = JSON.parse(data);
+    var idUser = students[indexEmail].id;
+    var _studentsCourse = courses[_courseindex].studentsCourse;
+    var _userIndex = _studentsCourse.findIndex(function (student) { return student.id === idUser; });
+    console.log(_courseindex);
+    console.log(idUser);
+    console.log(_userIndex);
+    var datesArr = courses[_courseindex].datesCourse;
+    var sum = 0;
+    var html = "";
+    for (var i = 0; i < datesArr.length; i++) {
+        html += "\n\n    Date: " + datesArr[i] + "<br>Attendance: " + checkGrade(i, _studentsCourse[_userIndex].grades) + "<br><br>\n    ";
+    }
+    for (var z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
+        sum += _studentsCourse[_userIndex].attendance[z];
+    }
+    var html2 = "<h2>Summary: You have attendant " + sum + " from " + _studentsCourse[_userIndex].attendance.length + " lessons until now</h2>";
+    console.log(html);
+    userInnerGrade.innerHTML = " <div class=\"attLesson\">" + html + "</div>" + html2;
+}
+function checkGrade(i, userGradeArr) {
+    if (userGradeArr[i] >= 0) {
+        return "userGradeArr[i]";
+    }
+    else {
+        return "Grade not given yet";
+    }
+}

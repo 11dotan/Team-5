@@ -30,12 +30,8 @@ function userCourses(indexEmail) {
   }
 }
 
-function HandleOpenCourseU(
-  courseUid: string,
-  nameCourseL: string,
-  courseIndex: number
-) {
-  courseIndex = courses.findIndex((course) => course.uid === courseUid);
+function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
+  let courseIndex = courses.findIndex((course) => course.uid === courseUid);
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
   userMenu.style.display = "none";
   userCourseMenu.style.display = "flex";
@@ -45,9 +41,6 @@ function HandleOpenCourseU(
 userCourseBack.addEventListener("click", (e) => {
   userMenu.style.display = "flex";
   userCourseMenu.style.display = "none";
-  // lecturerInnerLessons.style.display = "none";
-  // lecturerInner.style.display = "flex";
-  // lecturerInnerGrades.style.display = "none";
 });
 
 userCourseAttendance.addEventListener("click", (e) => {
@@ -79,8 +72,7 @@ function userAttendance() {
   let html: string = "";
   for (let i = 0; i < datesArr.length; i++) {
     html += `
-   
-   
+
     Date: ${datesArr[i]}<br>Attendance: ${checkAtt(
       i,
       _studentsCourse[_userIndex].attendance
@@ -108,57 +100,57 @@ function checkAtt(i, userAttArr): string {
   }
 }
 
-// userCourseGrades.addEventListener("click", (e) => {
-//   userInner.style.display = "none";
-//   userInnerGrade.style.display = "block";
-//   userInnerAtt.style.display = "none";
-//   userGrades();
-// });
+userCourseGrades.addEventListener("click", (e) => {
+  userInner.style.display = "none";
+  userInnerGrade.style.display = "block";
+  userInnerAtt.style.display = "none";
+  userGrades();
+});
 
-// function userGrades() {
-//   let data = localStorage.getItem("courseIndex");
-//   if (!data) throw new Error("data is null");
-//   const _courseindex = JSON.parse(data);
+function userGrades() {
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
 
-//   const idUser = students[indexEmail].id;
+  const idUser = students[indexEmail].id;
 
-//   const _studentsCourse = courses[_courseindex].studentsCourse;
-//   const _userIndex = _studentsCourse.findIndex(
-//     (student) => student.id === idUser
-//   );
+  const _studentsCourse = courses[_courseindex].studentsCourse;
+  const _userIndex = _studentsCourse.findIndex(
+    (student) => student.id === idUser
+  );
 
-//   console.log(_courseindex);
-//   console.log(idUser);
-//   console.log(_userIndex);
+  console.log(_courseindex);
+  console.log(idUser);
+  console.log(_userIndex);
 
-//   const datesArr = courses[_courseindex].datesCourse;
+  const datesArr = courses[_courseindex].datesCourse;
 
-//   let sum: number = 0;
-//   let html: string = "";
-//   for (let i = 0; i < datesArr.length; i++) {
-//     html += `
+  let sum: number = 0;
+  let html: string = "";
+  for (let i = 0; i < datesArr.length; i++) {
+    html += `
 
-//     Date: ${datesArr[i]}<br>Attendance: ${checkGrade(
-//       i,
-//       _studentsCourse[_userIndex].grades
-//     )}<br><br>
-//     `;
-//   }
+    Date: ${datesArr[i]}<br>Attendance: ${checkGrade(
+      i,
+      _studentsCourse[_userIndex].grades
+    )}<br><br>
+    `;
+  }
 
-//   for (let z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
-//     sum += _studentsCourse[_userIndex].attendance[z];
-//   }
+  for (let z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
+    sum += _studentsCourse[_userIndex].attendance[z];
+  }
 
-//   let html2: string = `<h2>Summary: You have attendant ${sum} from ${_studentsCourse[_userIndex].attendance.length} lessons until now</h2>`;
-//   console.log(html);
+  let html2: string = `<h2>Summary: You have attendant ${sum} from ${_studentsCourse[_userIndex].attendance.length} lessons until now</h2>`;
+  console.log(html);
 
-//   userInnerGrade.innerHTML = ` <div class="attLesson">${html}</div>${html2}`;
-// }
+  userInnerGrade.innerHTML = ` <div class="attLesson">${html}</div>${html2}`;
+}
 
-// function checkGrade(i, userGradeArr): string {
-//   if (userGradeArr[i] >= 0) {
-//     return "userGradeArr[i]";
-//   } else {
-//     return "Grade not given yet";
-//   }
-// }
+function checkGrade(i, userGradeArr): string {
+  if (userGradeArr[i] >= 0) {
+    return "userGradeArr[i]";
+  } else {
+    return "Grade not given yet";
+  }
+}
