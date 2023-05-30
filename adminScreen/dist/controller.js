@@ -43,3 +43,24 @@ function HandleAddCourse(e) {
     console.log(lecturerC);
     adminInnerMs2.innerHTML = "<h2>Course added successfully</h2>";
 }
+deleteLecturers.addEventListener("click", function (e) {
+    addCourseForm.style.display = "none";
+    addLecturerForm.style.display = "none";
+    deleteLecturersForm.style.display = "flex";
+    var htmlL = lecturers
+        .map(function (lecturer) {
+        return "<option> " + lecturer.name + "</option>";
+    })
+        .join(" ");
+    listLecturersDel.innerHTML = "\n<select type=\"Lecturer[]\" class=\"addCourseForm__line__listLecturers\" name=\"lecturerD\">\n" + htmlL + "\n</select><br><br>";
+});
+function HandleDeleteLecturer(e) {
+    e.preventDefault();
+    var lecturerD = e.target.elements.lecturerD.value;
+    var dlecturerIndex = lecturers.findIndex(function (lecturer) { return lecturer.name === lecturerD; });
+    if (dlecturerIndex !== -1) {
+        lecturers.splice(dlecturerIndex, 1);
+        console.log("we deleted " + lecturerD);
+    }
+    saveLecturerToLS;
+}

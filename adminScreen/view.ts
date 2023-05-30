@@ -29,3 +29,20 @@ const addCourseForm = document.querySelector(
 const listLecturers = document.querySelector(
   ".addCourseForm__line__listLecturers"
 ) as HTMLDivElement;
+
+const deleteLecturers = document.querySelector(
+  ".mainContainer__adminMenu__deleteLecturers"
+) as HTMLDivElement;
+const deleteStudents = document.querySelector(
+  ".mainContainer__adminMenu__deleteStudents"
+) as HTMLDivElement;
+const deleteCourses = document.querySelector(
+  ".mainContainer__adminMenu__deleteCourses"
+) as HTMLDivElement;
+
+const listLecturersDel = document.querySelector(
+  ".deleteLecturerForm__line__listLecturers"
+) as HTMLDivElement;
+const deleteLecturersForm = document.querySelector(
+  ".deleteLecturerForm"
+) as HTMLDivElement;

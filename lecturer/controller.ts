@@ -103,6 +103,7 @@ submitButton.addEventListener("click", () => {
       // console.log(courses[_courseindex].studentsCourse[i].attendance);
     }
   }
+
   saveCourseToLS(courses);
   saveStudentToLS(students);
   lecturerInnerAttendance.style.display = "flex";
