@@ -30,18 +30,60 @@ body {
 .mainContainer {
   margin-top: 150px;
   display: grid;
-  grid-template-columns: 18% 1fr;
-  grid-template-areas: "userMenu" "inner";
+  grid-template-columns: 22% 1fr;
+  grid-template-areas: "userMenu inner";
 }
-.mainContainer__userMenu {
+.mainContainer__userMenu, .mainContainer__courseMenu {
   grid-area: userMenu;
-  border-right: 1px solid black;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  padding: 20px;
   height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.mainContainer__userMenu__fullName {
+.mainContainer__courseMenu__top {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.mainContainer__courseMenu__top img {
+  width: 60px;
+  height: 30px;
+}
+.mainContainer__userMenu__fullName, .mainContainer__courseMenu__courseName {
   font-weight: bold;
   font-size: 30px;
+}
+.mainContainer__inner, .mainContainer__innerAtt, .mainContainer__innerGrade {
+  grid-area: inner;
+  margin-left: 100px;
+}
+
+.CourseCard {
+  background-color: #090e2b;
+  color: white;
+  margin-bottom: 50px;
+  padding: 30px;
+  width: 800px;
+  height: 220px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
+.CourseCard h2 {
+  color: #3284ba;
+  text-align: center;
+  font-size: 46px;
+}
+.CourseCard:hover {
+  transition: 0.5s;
+  background-color: rgba(9, 14, 43, 0.673);
+  cursor: pointer;
+}
+
+.attLesson {
+  width: 600px;
+  padding: 20px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  margin-bottom: 30px;
+  box-sizing: content-box;
 }

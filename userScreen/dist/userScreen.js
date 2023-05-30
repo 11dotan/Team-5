@@ -11,3 +11,4 @@ function userInnerFunc(indexEmail) {
         console.log(error);
     }
 }
+userCourses(indexEmail);

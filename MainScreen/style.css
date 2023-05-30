@@ -67,6 +67,9 @@ body {
   font-size: 40px;
   color: white;
 }
+.mainContainer .box1:hover {
+  background-color: rgba(255, 255, 255, 0.333);
+}
 .mainContainer .box2 {
   grid-area: box2;
   background-image: url(../images/devOps.jpg);
