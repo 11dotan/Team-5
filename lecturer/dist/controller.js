@@ -30,12 +30,17 @@ function HandleOpenCourse(courseUid, nameCourseL, courseIndex) {
 courseMenuBack.addEventListener("click", function (e) {
     lecturerMenu.style.display = "flex";
     courseMenu.style.display = "none";
-    lecturerInnerAttendance.style.display = "none";
+    lecturerInnerLessons.style.display = "none";
     lecturerInner.style.display = "flex";
+    lecturerInnerGrades.style.display = "none";
+    lecturerInnerVideos.style.display = "none";
 });
 courseAttendance.addEventListener("click", function (e) {
     lecturerInner.style.display = "none";
-    lecturerInnerAttendance.style.display = "flex";
+    lecturerInnerLessons.style.display = "flex";
+    lecturerInnerLessonsG.style.display = "none";
+    lecturerInnerGrades.style.display = "none";
+    lecturerInnerVideos.style.display = "none";
     attendanceCourse();
 });
 function attendanceCourse() {
@@ -46,18 +51,19 @@ function attendanceCourse() {
     var datesArr = courses[_courseindex].datesCourse;
     var html = "";
     for (var i = 0; i < datesArr.length; i++) {
-        html += "\n    <div class=\"cardDate\" onclick=\"markAttendance('" + i + "')\">\n    <h1>Lesson " + (i + 1) + "</h1>\n    <h3>Date: " + datesArr[i] + "</h3>\n  </div>\n  ";
+        html += "\n    <div class=\"cardDate\" onclick=\"markAttendance()\">\n    <h1>Lesson " + (i + 1) + "</h1>\n    <h3>Date: " + datesArr[i] + "</h3>\n  </div>\n  ";
     }
-    lecturerInnerAttendance.innerHTML = html;
+    lecturerInnerLessons.innerHTML = html;
 }
-function markAttendance(numlesson) {
+function markAttendance() {
+    studentsList === null || studentsList === void 0 ? void 0 : studentsList.innerHTML = "";
     var data = localStorage.getItem("courseIndex");
     if (!data)
         throw new Error("data is null");
     var _courseindex = JSON.parse(data);
-    lecturerInnerAttendance.style.display = "none";
-    lecturerInnerLessons.style.display = "flex";
-    lecturerInnerLessons.style.flexDirection = "column";
+    lecturerInnerLessons.style.display = "none";
+    lecturerInnerAttendance.style.display = "flex";
+    lecturerInnerAttendance.style.flexDirection = "column";
     for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
         var student = courses[_courseindex].studentsCourse[i];
         var listItem = document.createElement("li");
@@ -66,6 +72,7 @@ function markAttendance(numlesson) {
         listItem.appendChild(checkbox);
         listItem.appendChild(document.createTextNode(student.name));
         studentsList === null || studentsList === void 0 ? void 0 : studentsList.appendChild(listItem);
+        saveCourseToLS(courses);
     }
 }
 submitButton.addEventListener("click", function () {
@@ -83,15 +90,100 @@ submitButton.addEventListener("click", function () {
         }
         else {
             courses[_courseindex].studentsCourse[i].attendance.push(0);
-            // console.log(3);
-            // console.log(courses[_courseindex].studentsCourse[i].attendance);
         }
     }
     saveCourseToLS(courses);
     saveStudentToLS(students);
-    lecturerInnerAttendance.style.display = "flex";
-    lecturerInnerLessons.style.display = "none";
-    lecturerInnerLessons.innerHTML = "";
+    lecturerInnerAttendance.style.display = "none";
+    lecturerInnerLessons.style.display = "flex";
 });
-console.log(students[1]);
-console.log(students[1].attendance);
+courseGrades.addEventListener("click", function (e) {
+    lecturerInner.style.display = "none";
+    lecturerInnerLessonsG.style.display = "flex";
+    lecturerInnerLessons.style.display = "none";
+    lecturerInnerAttendance.style.display = "none";
+    lecturerInnerVideos.style.display = "none";
+    gradesCourse();
+});
+function gradesCourse() {
+    var data = localStorage.getItem("courseIndex");
+    if (!data)
+        throw new Error("data is null");
+    var _courseindex = JSON.parse(data);
+    var datesArr = courses[_courseindex].datesCourse;
+    var html = "";
+    for (var i = 0; i < datesArr.length; i++) {
+        html += "\n    <div class=\"cardDate\" onclick=\"markGrades()\">\n    <h1>Lesson " + (i + 1) + "</h1>\n    <h3>Date: " + datesArr[i] + "</h3>\n  </div>\n  ";
+    }
+    lecturerInnerLessonsG.innerHTML = html;
+}
+function markGrades() {
+    // studentsListG?.innerHTML = "";
+    var data = localStorage.getItem("courseIndex");
+    if (!data)
+        throw new Error("data is null");
+    var _courseindex = JSON.parse(data);
+    lecturerInnerLessonsG.style.display = "none";
+    lecturerInnerGrades.style.display = "flex";
+    for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+        var student = courses[_courseindex].studentsCourse[i];
+        var listItem = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var inputG = document.createElement("input");
+        inputG.id = "" + i;
+        inputG.type = "number";
+        td1.appendChild(document.createTextNode(student.name));
+        listItem.appendChild(td1);
+        td2.appendChild(inputG);
+        listItem.appendChild(td2);
+        studentsListG === null || studentsListG === void 0 ? void 0 : studentsListG.appendChild(listItem);
+        saveCourseToLS(courses);
+        saveStudentToLS(students);
+    }
+    submitButtonG.addEventListener("click", function (e) {
+        var data = localStorage.getItem("courseIndex");
+        if (!data)
+            throw new Error("data is null");
+        var _courseindex = JSON.parse(data);
+        for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+            var gradeS = document.getElementById("" + i);
+            var value = Number(gradeS.value);
+            var studentI = courses[_courseindex].studentsCourse[i];
+            studentI.grades.push(value);
+        }
+        saveCourseToLS(courses);
+        saveStudentToLS(students);
+        lecturerInnerGrades.style.display = "none";
+        lecturerInnerLessonsG.style.display = "flex";
+        console.log();
+    });
+}
+//---------------video
+courseVideo.addEventListener("click", function (e) {
+    lecturerInner.style.display = "none";
+    lecturerInnerLessonsG.style.display = "none";
+    lecturerInnerLessons.style.display = "none";
+    lecturerInnerLessonsV.style.display = "none";
+    lecturerInnerVideos.style.display = "none";
+    lecturerInnerVideos.style.display = "flex";
+});
+function HandleAddVideo(e) {
+    var _a;
+    e.preventDefault();
+    var div = document.createElement("div");
+    var vid = document.createElement("video");
+    var src = document.createElement("source");
+    vid.controls = true;
+    vid.appendChild(src);
+    div.appendChild(vid);
+    var file = (_a = inputfile.files) === null || _a === void 0 ? void 0 : _a[0];
+    if (file) {
+        var videoURL = URL.createObjectURL(file);
+        src.src = videoURL;
+    }
+    else {
+        console.log("cant find file");
+    }
+    document.body.appendChild(div);
+}

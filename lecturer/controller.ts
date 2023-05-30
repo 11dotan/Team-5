@@ -42,15 +42,22 @@ function HandleOpenCourse(
 courseMenuBack.addEventListener("click", (e) => {
   lecturerMenu.style.display = "flex";
   courseMenu.style.display = "none";
-  lecturerInnerAttendance.style.display = "none";
+  lecturerInnerLessons.style.display = "none";
   lecturerInner.style.display = "flex";
+  lecturerInnerGrades.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
 });
 
 courseAttendance.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerAttendance.style.display = "flex";
+  lecturerInnerLessons.style.display = "flex";
+  lecturerInnerLessonsG.style.display = "none";
+  lecturerInnerGrades.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
   attendanceCourse();
 });
+
+
 
 function attendanceCourse() {
   let data = localStorage.getItem("courseIndex");
@@ -62,22 +69,23 @@ function attendanceCourse() {
   let html: string = "";
   for (let i = 0; i < datesArr.length; i++) {
     html += `
-    <div class="cardDate" onclick="markAttendance('${i}')">
+    <div class="cardDate" onclick="markAttendance()">
     <h1>Lesson ${i + 1}</h1>
     <h3>Date: ${datesArr[i]}</h3>
   </div>
   `;
   }
-  lecturerInnerAttendance.innerHTML = html;
+  lecturerInnerLessons.innerHTML = html;
 }
 
-function markAttendance(numlesson: number) {
+function markAttendance() {
+  studentsList?.innerHTML = "";
   let data = localStorage.getItem("courseIndex");
   if (!data) throw new Error("data is null");
   const _courseindex = JSON.parse(data);
-  lecturerInnerAttendance.style.display = "none";
-  lecturerInnerLessons.style.display = "flex";
-  lecturerInnerLessons.style.flexDirection = "column";
+  lecturerInnerLessons.style.display = "none";
+  lecturerInnerAttendance.style.display = "flex";
+  lecturerInnerAttendance.style.flexDirection = "column";
   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     const student = courses[_courseindex].studentsCourse[i];
     const listItem = document.createElement("li");
@@ -86,6 +94,7 @@ function markAttendance(numlesson: number) {
     listItem.appendChild(checkbox);
     listItem.appendChild(document.createTextNode(student.name));
     studentsList?.appendChild(listItem);
+    saveCourseToLS(courses);
   }
 }
 submitButton.addEventListener("click", () => {
@@ -104,18 +113,116 @@ submitButton.addEventListener("click", () => {
       console.log(courses[_courseindex].studentsCourse[i]);
     } else {
       courses[_courseindex].studentsCourse[i].attendance.push(0);
-
-      // console.log(3);
-
-      // console.log(courses[_courseindex].studentsCourse[i].attendance);
     }
   }
+
   saveCourseToLS(courses);
   saveStudentToLS(students);
-  lecturerInnerAttendance.style.display = "flex";
-  lecturerInnerLessons.style.display = "none";
-  lecturerInnerLessons.innerHTML = "";
+  lecturerInnerAttendance.style.display = "none";
+  lecturerInnerLessons.style.display = "flex";
 });
 
-console.log(students[1]);
-console.log(students[1].attendance);
+courseGrades.addEventListener("click", (e) => {
+  lecturerInner.style.display = "none";
+  lecturerInnerLessonsG.style.display = "flex";
+  lecturerInnerLessons.style.display = "none";
+  lecturerInnerAttendance.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
+  gradesCourse();
+});
+
+function gradesCourse() {
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
+
+  const datesArr = courses[_courseindex].datesCourse;
+
+  let html: string = "";
+  for (let i = 0; i < datesArr.length; i++) {
+    html += `
+    <div class="cardDate" onclick="markGrades()">
+    <h1>Lesson ${i + 1}</h1>
+    <h3>Date: ${datesArr[i]}</h3>
+  </div>
+  `;
+  }
+  lecturerInnerLessonsG.innerHTML = html;
+}
+
+function markGrades() {
+  // studentsListG?.innerHTML = "";
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
+  lecturerInnerLessonsG.style.display = "none";
+  lecturerInnerGrades.style.display = "flex";
+  for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+    const student = courses[_courseindex].studentsCourse[i];
+    const listItem = document.createElement("tr");
+    const td1 = document.createElement("td");
+    const td2 = document.createElement("td");
+    const inputG = document.createElement("input");
+    inputG.id = `${i}`;
+    inputG.type = "number";
+    td1.appendChild(document.createTextNode(student.name));
+    listItem.appendChild(td1);
+    td2.appendChild(inputG);
+    listItem.appendChild(td2);
+
+    studentsListG?.appendChild(listItem);
+    saveCourseToLS(courses);
+    saveStudentToLS(students);
+  }
+
+  submitButtonG.addEventListener("click", (e) => {
+    let data = localStorage.getItem("courseIndex");
+    if (!data) throw new Error("data is null");
+    const _courseindex = JSON.parse(data);
+    for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+      const gradeS = document.getElementById(`${i}`) as HTMLInputElement;
+      const value = Number(gradeS.value);
+
+      const studentI = courses[_courseindex].studentsCourse[i];
+      studentI.grades.push(value);
+    }
+    saveCourseToLS(courses);
+    saveStudentToLS(students);
+    lecturerInnerGrades.style.display = "none";
+    lecturerInnerLessonsG.style.display = "flex";
+    console.log();
+  });
+}
+
+//---------------video
+
+courseVideo.addEventListener("click", (e) => {
+  lecturerInner.style.display = "none";
+  lecturerInnerLessonsG.style.display = "none";
+  lecturerInnerLessons.style.display = "none";
+  lecturerInnerLessonsV.style.display = "none";
+  lecturerInnerVideos.style.display = "none";
+  lecturerInnerVideos.style.display = "flex";
+});
+
+
+
+
+function HandleAddVideo(e){
+  e.preventDefault();
+  const div = document.createElement("div");
+  const vid = document.createElement("video");
+  const src = document.createElement("source");
+  vid.controls = true;
+  vid.appendChild(src)
+  div.appendChild(vid);
+  const file = inputfile.files?.[0];
+  if(file){
+      const videoURL = URL.createObjectURL(file);
+      src.src = videoURL;
+  }
+  else{
+      console.log("cant find file"); 
+  }
+  document.body.appendChild(div);
+}

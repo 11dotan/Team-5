@@ -1,3 +1,4 @@
+
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;
@@ -7,6 +8,9 @@ listCourse.innerHTML = `
 <select class="registerForm__line__listCourse" name="courses">
 ${html}
 </select><br><br>`;
+
+console.log(lecturers);
+
 
 function HandleSubmit(e) {
   e.preventDefault();
@@ -104,11 +108,6 @@ function getAdminFromLS(): Admin[] | undefined {
   const _admins = JSON.parse(data);
   return _admins;
 }
-
-saveStudentToLS(students);
-saveAdminToLS(admins);
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
 
 login.addEventListener("click", (e) => {
   loginLecturer.style.display = "block";

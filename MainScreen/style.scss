@@ -74,6 +74,9 @@ body {
     background-size: cover;
     font-size: 40px;
     color: white;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.333);
+    }
   }
   .box2 {
     grid-area: box2;

@@ -22,16 +22,6 @@ var Person = /** @class */ (function () {
     }
     return Person;
 }());
-var Lesson = /** @class */ (function () {
-    // studentsCourse: Student[];
-    // attendance: number[];
-    function Lesson(date, studentsCourse) {
-        this.date = date;
-        this.studentsCourse = studentsCourse;
-        // this.studentsCourse = [];
-    }
-    return Lesson;
-}());
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
     function Student(name, id, email, phone, password, address) {
@@ -43,7 +33,7 @@ var Student = /** @class */ (function (_super) {
         _this.password = password;
         _this.address = address;
         // this.coursesUser = [];
-        // this.grades = [];
+        _this.grades = [];
         _this.attendance = [];
         return _this;
     }
@@ -111,9 +101,6 @@ var qaC = new Course("QA", [
     "29.6.23",
 ], lecturers[2]);
 courses.push(fullC, devopsC, qaC);
-// ronL.courseTeach.push(fullC);
-// morL.courseTeach.push(devopsC);
-// ilanL.courseTeach.push(qaC);
 var fullS1 = new Student("oshrat sebbag", 200670054, "oshrat@gmail.com", 9725063214564, "159", "kinor 20");
 var fullS2 = new Student("dotan toledano", 123485725, "dotan@gmail.com", 972546042815, "25826", "kineret 2");
 var fullS3 = new Student("daniel daniel", 15248759, "daniel@gmail.com", 972506547825, "321456", "tamar 10");
@@ -121,23 +108,4 @@ var fullS4 = new Student("amit balsan", 122548743, "amit@gmail.com", 97252351487
 fullC.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
 var admin1 = new Admin("admin admin", 555555555, "admin@gmail.com", 97254875425, "admin", "hermon 7");
 admins.push(admin1);
-console.log(admins);
-// fullS1.coursesUser.push(fullC);
-// fullS2.coursesUser.push(fullC);
-// fullS3.coursesUser.push(fullC);
-// fullS4.coursesUser.push(fullC);
 students.push(fullS1, fullS2, fullS3, fullS4);
-var lessons = [];
-// const lesson1 = new Lesson("1 / 5 / 2023", fullC.studentsCourse);
-// const lesson2 = new Lesson("8 / 5 / 2023", fullC.studentsCourse);
-// const lesson3 = new Lesson("15 / 5 / 2023", fullC.studentsCourse);
-// const lesson4 = new Lesson("22 / 5 / 2023", fullC.studentsCourse);
-// const lesson5 = new Lesson("29/ 5 / 2023", fullC.studentsCourse);
-// const lesson6 = new Lesson("5/ 6 / 2023", fullC.studentsCourse);
-// lesson1.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// lesson2.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// lesson3.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// lesson4.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// lesson5.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// lesson6.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
-// fullC.lesson.push(lesson1, lesson2, lesson3, lesson4, lesson5, lesson6);

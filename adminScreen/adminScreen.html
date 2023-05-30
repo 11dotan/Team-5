@@ -35,7 +35,55 @@
         <div class="mainContainer__adminMenu__fullName"></div>
         <div class="mainContainer__adminMenu__addCourse">Add Course</div>
         <div class="mainContainer__adminMenu__addLecturer">Add Lecturer</div>
+        <div class="mainContainer__adminMenu__deleteLecturers">
+          Delete Lecturers
+        </div>
+        <div class="mainContainer__adminMenu__deleteStudents">
+          Delete Students
+        </div>
+        <div class="mainContainer__adminMenu__deleteCourses">
+          Delete Courses
+        </div>
       </div>
+      <form
+        class="deleteLecturerForm"
+        style="display: none"
+        onsubmit="HandleDeleteLecturer(event)"
+      >
+        <div class="deleteLecturerForm__line">
+          <label for="lecturerD">Choose a Lecturer:</label>
+          <div
+            type="Lecturer"
+            class="deleteLecturerForm__line__listLecturers"
+          ></div>
+        </div>
+
+        <button
+          class="deleteLecturerForm__delBtn"
+          type="submit"
+          value="deleteLecturer"
+        >
+          Delete
+        </button>
+      </form>
+      <form
+        class="deleteCourseForm"
+        style="display: none"
+        onsubmit="HandleDeleteCourse(event)"
+      >
+        <div class="deleteCourseForm__line">
+          <label for="courseD">Choose a course:</label>
+          <div type="Course" class="deleteCourseForm__line__listCourses"></div>
+        </div>
+
+        <button
+          class="deleteCourseForm__delBtn"
+          type="submit"
+          value="deleteCourse"
+        >
+          Delete
+        </button>
+      </form>
 
       <form
         class="addLecturerForm"

@@ -56,11 +56,28 @@
       </div>
 
       <div class="mainContainer__inner"></div>
-      <!-- <div class="mainContainer__lessons" style="display: none"></div> -->
-      <div class="mainContainer__attendance" style="display: none"></div>
-      <div class="mainContainer__lessons" style="display: none">
+      <div class="mainContainer__lessons" style="display: none"></div>
+      <div class="mainContainer__attendance" style="display: none">
         <ul id="studentsList"></ul>
         <button class="submitButton" type="submit">Submit</button>
+      </div>
+      <div class="mainContainer__lessonsG" style="display: none"></div>
+      <div class="mainContainer__grades" style="display: none">
+        <table id="studentsListG">
+          <tr>
+            <th>Student Name</th>
+            <th>Grade</th>
+          </tr>
+        </table>
+        <button class="submitButtonG" type="submit">Submit</button>
+      </div>
+      <div class="mainContainer__lessonsV" style="display: none"></div>
+      <div class="mainContainer__Videos" style="display: none">
+        <form onsubmit="HandleAddVideo(event)">
+            <input id="inputfile" type="file" accept="video/mp4">
+            <button id="btn" type="submit">Add Video</button>
+        </form>
+        <div class="videoContainer"></div>
       </div>
     </div>
   </body>

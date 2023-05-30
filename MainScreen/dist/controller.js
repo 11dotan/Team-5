@@ -4,6 +4,7 @@ var html = courses
 })
     .join(" ");
 listCourse.innerHTML = "\n<select class=\"registerForm__line__listCourse\" name=\"courses\">\n" + html + "\n</select><br><br>";
+console.log(lecturers);
 function HandleSubmit(e) {
     e.preventDefault();
     var name = e.target.elements.name.value;
@@ -97,10 +98,6 @@ function getAdminFromLS() {
     var _admins = JSON.parse(data);
     return _admins;
 }
-saveStudentToLS(students);
-saveAdminToLS(admins);
-saveCourseToLS(courses);
-saveLecturerToLS(lecturers);
 login.addEventListener("click", function (e) {
     loginLecturer.style.display = "block";
     loginStudent.style.display = "block";
