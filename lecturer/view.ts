@@ -22,6 +22,10 @@ const lecturerMenu = document.querySelector(
   ".mainContainer__lecturerMenu"
 ) as HTMLDivElement;
 
+const courseMenuBack = document.querySelector(
+  ".mainContainer__lecturerCourseM__back"
+) as HTMLDivElement;
+
 const courseMenu = document.querySelector(
   ".mainContainer__lecturerCourseM"
 ) as HTMLDivElement;
@@ -38,8 +42,20 @@ const lecturerInnerAttendance = document.querySelector(
   ".mainContainer__attendance"
 ) as HTMLDivElement;
 
+const lecturerInnerGrades = document.querySelector(
+  ".mainContainer__grades"
+) as HTMLDivElement;
+
+const lecturerInnerLessonsG = document.querySelector(
+  ".mainContainer__lessonsG"
+) as HTMLDivElement;
+
 const courseAttendance = document.querySelector(
   ".mainContainer__lecturerCourseM__attendance"
+) as HTMLDivElement;
+
+const courseGrades = document.querySelector(
+  ".mainContainer__lecturerCourseM__grades"
 ) as HTMLDivElement;
 
 const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
@@ -47,6 +63,14 @@ const studentsList = document.getElementById("studentsList");
 const submitButton = document.querySelector(
   ".submitButton"
 ) as HTMLButtonElement;
+
+const submitButtonG = document.querySelector(
+  ".submitButtonG"
+) as HTMLButtonElement;
+
+const studentsListG = document.getElementById(
+  "studentsListG"
+) as HTMLTableElement;
 
 // const lessonF1 = document.querySelector(
 //   ".mainContainer__lessons--les1"

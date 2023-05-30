@@ -4,14 +4,20 @@ var lecturerMenuProfile = document.querySelector(".mainContainer__lecturerMenu__
 var lecturerMenuContact = document.querySelector(".mainContainer__lecturerMenu__contact");
 var lecturerInner = document.querySelector(".mainContainer__inner");
 var lecturerMenu = document.querySelector(".mainContainer__lecturerMenu");
+var courseMenuBack = document.querySelector(".mainContainer__lecturerCourseM__back");
 var courseMenu = document.querySelector(".mainContainer__lecturerCourseM");
 var courseName = document.querySelector(".mainContainer__lecturerCourseM__courseName");
 var lecturerInnerLessons = document.querySelector(".mainContainer__lessons");
 var lecturerInnerAttendance = document.querySelector(".mainContainer__attendance");
+var lecturerInnerGrades = document.querySelector(".mainContainer__grades");
+var lecturerInnerLessonsG = document.querySelector(".mainContainer__lessonsG");
 var courseAttendance = document.querySelector(".mainContainer__lecturerCourseM__attendance");
+var courseGrades = document.querySelector(".mainContainer__lecturerCourseM__grades");
 var checkbox = document.querySelector(".checkbox");
 var studentsList = document.getElementById("studentsList");
 var submitButton = document.querySelector(".submitButton");
+var submitButtonG = document.querySelector(".submitButtonG");
+var studentsListG = document.getElementById("studentsListG");
 // const lessonF1 = document.querySelector(
 //   ".mainContainer__lessons--les1"
 // ) as HTMLDivElement;
