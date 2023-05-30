@@ -1,6 +1,8 @@
 adminMenuAddLecturer.addEventListener("click", (e) => {
   addLecturerForm.style.display = "flex";
   addCourseForm.style.display = "none";
+  deleteCoursesForm.style.display = "none";
+  deleteLecturersForm.style.display = "none";
 });
 
 function HandleAddLecturer(e) {
@@ -28,6 +30,8 @@ function HandleAddLecturer(e) {
 adminMenuAddCourse.addEventListener("click", (e) => {
   addCourseForm.style.display = "flex";
   addLecturerForm.style.display = "none";
+  deleteCoursesForm.style.display = "none";
+  deleteLecturersForm.style.display = "none";
 
   const htmlL: string = lecturers
     .map((lecturer) => {
@@ -59,3 +63,60 @@ function HandleAddCourse(e) {
 
   adminInnerMs2.innerHTML = `<h2>Course added successfully</h2>`;
 }
+
+deleteLecturers.addEventListener("click", (e) => {
+  addCourseForm.style.display = "none";
+  addLecturerForm.style.display = "none";
+  deleteLecturersForm.style.display = "flex";
+  deleteCoursesForm.style.display = "none";
+  const htmlL: string = lecturers
+    .map((lecturer) => {
+      return `<option> ${lecturer.name}</option>`;
+    })
+    .join(" ");
+  listLecturersDel.innerHTML = `
+<select type="Lecturer[]"  name="lecturerD">
+${htmlL}
+</select><br><br>`;
+});
+function HandleDeleteLecturer(e) {
+  e.preventDefault();
+  const lecturerD = e.target.elements.lecturerD.value;
+  const dLecturerIndex = lecturers.findIndex(
+    (lecturer) => lecturer.name === lecturerD
+  );
+  if (dLecturerIndex !== -1) {
+    lecturers.splice(dLecturerIndex, 1);
+    console.log(`we deleted ${lecturerD}`);
+  }
+  saveLecturerToLS(lecturers);
+}
+deleteCourses.addEventListener("click", (e) => {
+  addCourseForm.style.display = "none";
+  addLecturerForm.style.display = "none";
+  deleteLecturersForm.style.display = "none";
+  deleteCoursesForm.style.display = "flex";
+
+  const htmlL: string = courses
+    .map((course) => {
+      return `<option> ${course.nameCourse}</option>`;
+    })
+    .join(" ");
+  listCoursesDel.innerHTML = `
+<select type="Course[]"  name="courseD">
+${htmlL}
+</select><br><br>`;
+});
+function HandleDeleteCourse(e) {
+  e.preventDefault();
+  const courseD = e.target.elements.courseD.value;
+  const dCourseIndex = courses.findIndex(
+    (course) => course.nameCourse === courseD
+  );
+  if (dCourseIndex !== -1) {
+    courses.splice(dCourseIndex, 1);
+    console.log(`we deleted ${courseD}`);
+  }
+  saveCourseToLS(courses);
+}
+console.log(courses);

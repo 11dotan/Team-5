@@ -111,6 +111,7 @@ submitButton.addEventListener("click", () => {
       courses[_courseindex].studentsCourse[i].attendance.push(0);
     }
   }
+
   saveCourseToLS(courses);
   saveStudentToLS(students);
   lecturerInnerAttendance.style.display = "none";

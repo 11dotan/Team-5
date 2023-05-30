@@ -1,3 +1,8 @@
+const _courses = getCourseFromLS();
+if (_courses) {
+  courses = _courses;
+}
+
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;
@@ -7,6 +12,8 @@ listCourse.innerHTML = `
 <select class="registerForm__line__listCourse" name="courses">
 ${html}
 </select><br><br>`;
+
+
 
 function HandleSubmit(e) {
   e.preventDefault();
