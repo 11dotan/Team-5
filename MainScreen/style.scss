@@ -98,8 +98,6 @@ body {
     grid-area: registerForm;
     padding: 20px 50px 50px 50px;
     margin: 50px 0px 100px 350px;
-    // margin-top: 50px;
-    // margin-bottom: 100px;
     align-self: center;
     display: flex;
     justify-content: space-between;
@@ -124,10 +122,65 @@ body {
       font-size: 20px;
     }
     &__regBtn {
+      font-weight: bold;
+      font-size: 20px;
       margin-top: 50px;
-      width: 300px;
+      width: 150px;
       align-self: center;
-      height: 25px;
+      height: 40px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgba(19, 62, 90, 0.472);
+      &:hover {
+        background-color: rgb(9, 14, 43);
+        color: white;
+      }
     }
   }
+}
+
+.loginAdminForm,
+.loginLecturerForm,
+.loginStudentForm {
+  $self: &;
+  padding: 20px 50px 50px 50px;
+  align-self: center;
+  margin-left: 130px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  h2 {
+    text-align: center;
+  }
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+  &__line__inputS {
+    width: 350px;
+    height: 25px;
+  }
+  &__regBtn {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 65px;
+    width: 150px;
+    align-self: center;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(19, 62, 90, 0.472);
+    &:hover {
+      background-color: rgb(9, 14, 43);
+      color: white;
+    }
+  }
+}
+
+.loginAdminForm {
+  margin-left: 500px;
 }
