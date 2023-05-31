@@ -45,11 +45,11 @@ body {
 .mainContainer____adminMenu__fullName {
   font-size: 32px;
 }
-.mainContainer____adminMenu__fullName, .mainContainer__adminMenu__addCourse, .mainContainer__adminMenu__addLecturer {
+.mainContainer____adminMenu__fullName, .mainContainer__adminMenu__addCourse, .mainContainer__adminMenu__addLecturer, .mainContainer__adminMenu__deleteLecturers, .mainContainer__adminMenu__deleteStudents, .mainContainer__adminMenu__deleteCourses {
   padding: 10px;
   border-radius: 10px;
 }
-.mainContainer____adminMenu__fullName:hover, .mainContainer__adminMenu__addCourse:hover, .mainContainer__adminMenu__addLecturer:hover {
+.mainContainer____adminMenu__fullName:hover, .mainContainer__adminMenu__addCourse:hover, .mainContainer__adminMenu__addLecturer:hover, .mainContainer__adminMenu__deleteLecturers:hover, .mainContainer__adminMenu__deleteStudents:hover, .mainContainer__adminMenu__deleteCourses:hover {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
 }

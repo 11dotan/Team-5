@@ -51,7 +51,10 @@ body {
 
   &____adminMenu__fullName,
   &__adminMenu__addCourse,
-  &__adminMenu__addLecturer {
+  &__adminMenu__addLecturer,
+  &__adminMenu__deleteLecturers,
+  &__adminMenu__deleteStudents,
+  &__adminMenu__deleteCourses {
     padding: 10px;
     border-radius: 10px;
     &:hover {
