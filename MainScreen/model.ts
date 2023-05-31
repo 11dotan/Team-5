@@ -59,6 +59,7 @@ class Admin extends Person {
 class Course {
   public studentsCourse: Student[];
   public lesson: Lesson[];
+  public videos: string[]
   uid: string;
   constructor(
     public nameCourse: string,
@@ -68,6 +69,7 @@ class Course {
     this.uid = uniqueId();
     this.studentsCourse = [];
     this.lesson = [];
+    this.videos = [];
   }
 }
 

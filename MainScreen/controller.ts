@@ -70,12 +70,10 @@ if (_coursesN) {
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;
-  })
-  .join(" ");
-listCourse.innerHTML = `
-<select class="registerForm__line__listCourse" name="courses">
-${html}
-</select><br><br>`;
+  }).join(" ");
+listCourse.innerHTML = `<select class="registerForm__line__listCourse" name="courses">${html}</select><br><br>`;
+
+
 
 function HandleSubmit(e) {
   e.preventDefault();

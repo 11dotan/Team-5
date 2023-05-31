@@ -30,6 +30,7 @@ function userCourses(indexEmail) {
   }
 }
 
+
 function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
   let courseIndex = courses.findIndex((course) => course.uid === courseUid);
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
