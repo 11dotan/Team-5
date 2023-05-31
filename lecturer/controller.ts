@@ -48,6 +48,7 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerLessonsG.style.display = "none";
   lecturerInnerGrades.style.display = "none";
   lecturerInnerVideos.style.display = "none";
+  lecturerInnerAttendance.style.display = "none";
   attendanceCourse();
 });
 
@@ -116,7 +117,7 @@ submitButton.addEventListener("click", () => {
 
 courseGrades.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerLessonsG.style.display = "flex";
+  lecturerInnerGrades.style.display = "flex";
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
   lecturerInnerVideos.style.display = "none";
@@ -124,8 +125,6 @@ courseGrades.addEventListener("click", (e) => {
 });
 
 function gradesCourse() {
-  console.log("1");
-  
   let data = localStorage.getItem("courseIndex");
   if (!data) throw new Error("data is null");
   const _courseindex = JSON.parse(data);
@@ -141,16 +140,16 @@ function gradesCourse() {
   </div>
   `;
   }
-  lecturerInnerLessonsG.innerHTML = html;
+  lecturerInnerGrades.innerHTML = html;
 }
 
 function markGrades() {
-  // studentsListG?.innerHTML = "";
+  studentsListG?.innerHTML = "";
   let data = localStorage.getItem("courseIndex");
   if (!data) throw new Error("data is null");
   const _courseindex = JSON.parse(data);
-  lecturerInnerLessonsG.style.display = "none";
-  lecturerInnerGrades.style.display = "flex";
+  lecturerInnerLessonsG.style.display = "flex";
+  lecturerInnerGrades.style.display = "none";
   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     const student = courses[_courseindex].studentsCourse[i];
     const listItem = document.createElement("tr");
@@ -183,11 +182,7 @@ function markGrades() {
     saveCourseToLS(courses);
     saveStudentToLS(students);
     lecturerInnerGrades.style.display = "none";
-    lecturerInnerLessonsG.style.display = "flex";
+    // lecturerInnerLessonsG.style.display = "flex";
     console.log();
   });
 }
-
-
-
-

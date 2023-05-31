@@ -40,5 +40,5 @@ var studentsListG = document.getElementById("studentsListG");
 var lecturerInnerLessonsV = document.querySelector(".mainContainer__lessonsV");
 var lecturerInnerVideos = document.querySelector(".mainContainer__Videos");
 var videoContainer = document.querySelector(".videoContainer");
-var videoElement = document.getElementById('video');
-var inputfile = document.getElementById('inputfile');
+var videoElement = document.getElementById("video");
+var inputfile = document.getElementById("inputfile");

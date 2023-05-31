@@ -34,18 +34,18 @@ const userCourseAttendance = document.querySelector(
   ".mainContainer__courseMenu__attendance"
 ) as HTMLDivElement;
 
-const userCourseGrades = document.querySelector(
-  ".mainContainer__courseMenu__grades"
-) as HTMLDivElement;
+// const userCourseGrades = document.querySelector(
+//   ".mainContainer__courseMenu__grades"
+// ) as HTMLDivElement;
 
 const userInner = document.querySelector(
   ".mainContainer__inner"
 ) as HTMLDivElement;
 
-const userInnerGrade = document.querySelector(
-  ".mainContainer__innerGrade"
-) as HTMLDivElement;
+// const userInnerGrade = document.querySelector(
+//   ".mainContainer__innerGrade"
+// ) as HTMLDivElement;
 
-const userInnerAtt = document.querySelector(
-  ".mainContainer__innerAtt"
-) as HTMLDivElement;
+// const userInnerAtt = document.querySelector(
+//   ".mainContainer__innerAtt"
+// ) as HTMLDivElement;
