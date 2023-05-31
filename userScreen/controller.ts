@@ -1,3 +1,5 @@
+////
+
 userMenuCourses.addEventListener("click", () => {
   userCourses(indexEmail);
 });
