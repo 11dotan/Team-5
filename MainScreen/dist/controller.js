@@ -14,6 +14,22 @@ function getStudentFromLS() {
     var _students = JSON.parse(data);
     return _students;
 }
+function saveMessagesToLS(messages) {
+    try {
+        if (!messages)
+            throw new Error("info is null");
+        localStorage.setItem("messages", JSON.stringify(messages));
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+function getMessagesFromLS() {
+    var data = localStorage.getItem("messages");
+    // if (!data) throw new Error(`data not found`);
+    var _messages = JSON.parse(data);
+    return _messages;
+}
 function saveLecturerToLS(lecturers) {
     try {
         if (!lecturers)

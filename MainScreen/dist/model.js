@@ -76,10 +76,20 @@ var Course = /** @class */ (function () {
         this.lecturer = lecturer;
         this.uid = uniqueId();
         this.studentsCourse = [];
-        this.lesson = [];
     }
     return Course;
 }());
+var Message = /** @class */ (function () {
+    function Message(nameC, phoneC, emailC, msgC) {
+        this.nameC = nameC;
+        this.phoneC = phoneC;
+        this.emailC = emailC;
+        this.msgC = msgC;
+        this.uid = uniqueId();
+    }
+    return Message;
+}());
+var messages = [];
 var courses = [];
 var lecturers = [];
 var students = [];

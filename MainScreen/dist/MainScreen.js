@@ -14,7 +14,12 @@ var _admins = getAdminFromLS();
 if (_admins) {
     admins = _admins;
 }
+var _messages = getMessagesFromLS();
+if (_messages) {
+    messages = _messages;
+}
 saveStudentToLS(students);
 saveAdminToLS(admins);
 saveCourseToLS(courses);
 saveLecturerToLS(lecturers);
+saveMessagesToLS(messages);

@@ -58,7 +58,6 @@ class Admin extends Person {
 
 class Course {
   public studentsCourse: Student[];
-  public lesson: Lesson[];
   uid: string;
   constructor(
     public nameCourse: string,
@@ -67,10 +66,22 @@ class Course {
   ) {
     this.uid = uniqueId();
     this.studentsCourse = [];
-    this.lesson = [];
   }
 }
 
+class Message {
+  uid: string;
+  constructor(
+    public nameC: string,
+    public phoneC: number,
+    public emailC: string,
+    public msgC: string
+  ) {
+    this.uid = uniqueId();
+  }
+}
+
+let messages: Message[] = [];
 let courses: Course[] = [];
 let lecturers: Lecturer[] = [];
 let students: Student[] = [];
