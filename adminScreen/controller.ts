@@ -119,4 +119,23 @@ function HandleDeleteCourse(e) {
   }
   saveCourseToLS(courses);
 }
-console.log(courses);
+// console.log(courses);
+
+deleteStudents.addEventListener("click", () => {
+  addCourseForm.style.display = "none";
+  addLecturerForm.style.display = "none";
+  deleteLecturersForm.style.display = "none";
+  deleteCoursesForm.style.display = "none";
+  deleteStudentFromCourse.style.display = "flex";
+  console.log(123);
+
+  for (let i = 0; i < courses.length; i++) {
+    const buttonCourse = courses
+      .map((course) => {
+        return `<button class="courseNum${i} onclick="courseNum${i}">${course.nameCourse}</button>`;
+      })
+      .join("");
+    // const buttonCourse = `<button class="courseNum${i} onclick="courseNum${i}">${courseNamos}</button>`;
+    deleteStudentFromCourse.innerHTML = buttonCourse;
+  }
+});

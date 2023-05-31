@@ -91,4 +91,24 @@ function HandleDeleteCourse(e) {
     }
     saveCourseToLS(courses);
 }
-console.log(courses);
+// console.log(courses);
+deleteStudents.addEventListener("click", function () {
+    addCourseForm.style.display = "none";
+    addLecturerForm.style.display = "none";
+    deleteLecturersForm.style.display = "none";
+    deleteCoursesForm.style.display = "none";
+    deleteStudentFromCourse.style.display = "flex";
+    console.log(123);
+    var _loop_1 = function (i) {
+        var buttonCourse = courses
+            .map(function (course) {
+            return "<button class=\"courseNum" + i + " onclick=\"courseNum" + i + "\">" + course.nameCourse + "</button>";
+        })
+            .join("");
+        // const buttonCourse = `<button class="courseNum${i} onclick="courseNum${i}">${courseNamos}</button>`;
+        deleteStudentFromCourse.innerHTML = buttonCourse;
+    };
+    for (var i = 0; i < courses.length; i++) {
+        _loop_1(i);
+    }
+});
