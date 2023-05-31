@@ -48,6 +48,7 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerLessonsG.style.display = "none";
   lecturerInnerGrades.style.display = "none";
   lecturerInnerVideos.style.display = "none";
+  lecturerInnerAttendance.style.display = "none";
   attendanceCourse();
 });
 
@@ -80,11 +81,17 @@ function markAttendance() {
   lecturerInnerAttendance.style.flexDirection = "column";
   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
     const student = courses[_courseindex].studentsCourse[i];
-    const listItem = document.createElement("li");
+    const listItem = document.createElement("tr");
+    const td1 = document.createElement("td");
+    const td2 = document.createElement("td");
     const checkbox = document.createElement("input");
+    checkbox.id = `${i}`;
     checkbox.type = "checkbox";
-    listItem.appendChild(checkbox);
-    listItem.appendChild(document.createTextNode(student.name));
+    td1.appendChild(document.createTextNode(student.name));
+    listItem.appendChild(td1);
+    td2.appendChild(checkbox);
+    listItem.appendChild(td2);
+
     studentsList?.appendChild(listItem);
     saveCourseToLS(courses);
   }
@@ -120,6 +127,7 @@ courseGrades.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
   lecturerInnerVideos.style.display = "none";
+  lecturerInnerGrades.style.display = "none";
   gradesCourse();
 });
 
