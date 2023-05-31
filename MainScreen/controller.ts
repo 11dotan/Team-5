@@ -14,6 +14,22 @@ function getStudentFromLS(): Student[] | undefined {
   return _students;
 }
 
+function saveMessagesToLS(messages: Message[]) {
+  try {
+    if (!messages) throw new Error("info is null");
+    localStorage.setItem("messages", JSON.stringify(messages));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function getMessagesFromLS(): Message[] | undefined {
+  const data = localStorage.getItem("messages");
+  // if (!data) throw new Error(`data not found`);
+  const _messages = JSON.parse(data);
+  return _messages;
+}
+
 function saveLecturerToLS(lecturers: Lecturer[]) {
   try {
     if (!lecturers) throw new Error("lecturers is null");
@@ -70,12 +86,10 @@ if (_coursesN) {
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;
-  })
-  .join(" ");
-listCourse.innerHTML = `
-<select class="registerForm__line__listCourse" name="courses">
-${html}
-</select><br><br>`;
+  }).join(" ");
+listCourse.innerHTML = `<select class="registerForm__line__listCourse" name="courses">${html}</select><br><br>`;
+
+
 
 function HandleSubmit(e) {
   e.preventDefault();

@@ -106,8 +106,72 @@ body {
   font-size: 20px;
 }
 .mainContainer .registerForm__regBtn {
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 50px;
-  width: 300px;
+  width: 150px;
   align-self: center;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.mainContainer .registerForm__regBtn:hover {
+  background-color: #090e2b;
+  color: white;
+}
+
+.loginAdminForm,
+.loginLecturerForm,
+.loginStudentForm {
+  padding: 20px 50px 50px 50px;
+  align-self: center;
+  margin-left: 130px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
+.loginAdminForm h2,
+.loginLecturerForm h2,
+.loginStudentForm h2 {
+  text-align: center;
+}
+.loginAdminForm__line,
+.loginLecturerForm__line,
+.loginStudentForm__line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.loginAdminForm__line__inputS,
+.loginLecturerForm__line__inputS,
+.loginStudentForm__line__inputS {
+  width: 350px;
   height: 25px;
+}
+.loginAdminForm__regBtn,
+.loginLecturerForm__regBtn,
+.loginStudentForm__regBtn {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 65px;
+  width: 150px;
+  align-self: center;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.loginAdminForm__regBtn:hover,
+.loginLecturerForm__regBtn:hover,
+.loginStudentForm__regBtn:hover {
+  background-color: #090e2b;
+  color: white;
+}
+
+.loginAdminForm {
+  margin-left: 500px;
 }

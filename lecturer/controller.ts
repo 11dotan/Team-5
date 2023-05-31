@@ -124,6 +124,8 @@ courseGrades.addEventListener("click", (e) => {
 });
 
 function gradesCourse() {
+  console.log("1");
+  
   let data = localStorage.getItem("courseIndex");
   if (!data) throw new Error("data is null");
   const _courseindex = JSON.parse(data);
@@ -186,31 +188,6 @@ function markGrades() {
   });
 }
 
-//---------------video
 
-courseVideo.addEventListener("click", (e) => {
-  lecturerInner.style.display = "none";
-  lecturerInnerLessonsG.style.display = "none";
-  lecturerInnerLessons.style.display = "none";
-  lecturerInnerLessonsV.style.display = "none";
-  lecturerInnerVideos.style.display = "none";
-  lecturerInnerVideos.style.display = "flex";
-});
 
-function HandleAddVideo(e) {
-  e.preventDefault();
-  const div = document.createElement("div");
-  const vid = document.createElement("video");
-  const src = document.createElement("source");
-  vid.controls = true;
-  vid.appendChild(src);
-  div.appendChild(vid);
-  const file = inputfile.files?.[0];
-  if (file) {
-    const videoURL = URL.createObjectURL(file);
-    src.src = videoURL;
-  } else {
-    console.log("cant find file");
-  }
-  document.body.appendChild(div);
-}
+

@@ -60,7 +60,7 @@ body {
   margin-left: 100px;
 }
 
-.CourseCard {
+.cardUserCourse {
   background-color: #090e2b;
   color: white;
   margin-bottom: 50px;
@@ -69,12 +69,12 @@ body {
   height: 220px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
 }
-.CourseCard h2 {
+.cardUserCourse h2 {
   color: #3284ba;
   text-align: center;
   font-size: 46px;
 }
-.CourseCard:hover {
+.cardUserCourse:hover {
   transition: 0.5s;
   background-color: rgba(9, 14, 43, 0.673);
   cursor: pointer;
