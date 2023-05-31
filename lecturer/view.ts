@@ -63,7 +63,7 @@ const courseVideo = document.querySelector(
 ) as HTMLDivElement;
 
 const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
-const studentsList = document.getElementById("studentsList");
+const studentsList = document.getElementById("studentsList") as HTMLTableElement;
 const submitButton = document.querySelector(
   ".submitButton"
 ) as HTMLButtonElement;
