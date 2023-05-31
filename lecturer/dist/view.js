@@ -1,19 +1,39 @@
-var lecturerMenuName = document.querySelector(".mainContainer__lecturerMenu__fullName");
-var lecturerMenuCourses = document.querySelector(".mainContainer__lecturerMenu__courses");
-var lecturerMenuProfile = document.querySelector(".mainContainer__lecturerMenu__profile");
-var lecturerMenuContact = document.querySelector(".mainContainer__lecturerMenu__contact");
+var lecturerMenuName = document.querySelector(
+  ".mainContainer__lecturerMenu__fullName"
+);
+var lecturerMenuCourses = document.querySelector(
+  ".mainContainer__lecturerMenu__courses"
+);
+var lecturerMenuProfile = document.querySelector(
+  ".mainContainer__lecturerMenu__profile"
+);
+var lecturerMenuContact = document.querySelector(
+  ".mainContainer__lecturerMenu__contact"
+);
 var lecturerInner = document.querySelector(".mainContainer__inner");
 var lecturerMenu = document.querySelector(".mainContainer__lecturerMenu");
-var courseMenuBack = document.querySelector(".mainContainer__lecturerCourseM__back");
+var courseMenuBack = document.querySelector(
+  ".mainContainer__lecturerCourseM__back"
+);
 var courseMenu = document.querySelector(".mainContainer__lecturerCourseM");
-var courseName = document.querySelector(".mainContainer__lecturerCourseM__courseName");
+var courseName = document.querySelector(
+  ".mainContainer__lecturerCourseM__courseName"
+);
 var lecturerInnerLessons = document.querySelector(".mainContainer__lessons");
-var lecturerInnerAttendance = document.querySelector(".mainContainer__attendance");
+var lecturerInnerAttendance = document.querySelector(
+  ".mainContainer__attendance"
+);
 var lecturerInnerGrades = document.querySelector(".mainContainer__grades");
 var lecturerInnerLessonsG = document.querySelector(".mainContainer__lessonsG");
-var courseAttendance = document.querySelector(".mainContainer__lecturerCourseM__attendance");
-var courseGrades = document.querySelector(".mainContainer__lecturerCourseM__grades");
-var courseVideo = document.querySelector(".mainContainer__lecturerCourseM__video");
+var courseAttendance = document.querySelector(
+  ".mainContainer__lecturerCourseM__attendance"
+);
+var courseGrades = document.querySelector(
+  ".mainContainer__lecturerCourseM__grades"
+);
+var courseVideo = document.querySelector(
+  ".mainContainer__lecturerCourseM__video"
+);
 var checkbox = document.querySelector(".checkbox");
 var studentsList = document.getElementById("studentsList");
 var submitButton = document.querySelector(".submitButton");
@@ -39,6 +59,6 @@ var studentsListG = document.getElementById("studentsListG");
 // ) as HTMLDivElement;
 var lecturerInnerLessonsV = document.querySelector(".mainContainer__lessonsV");
 var lecturerInnerVideos = document.querySelector(".mainContainer__Videos");
-var videoContainer = document.querySelector(".videoContainer");
+var VideoShow = document.querySelector(".VideoShow");
 var videoElement = document.getElementById("video");
 var inputfile = document.getElementById("inputfile");

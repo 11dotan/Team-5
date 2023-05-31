@@ -58,11 +58,8 @@ class Admin extends Person {
 
 class Course {
   public studentsCourse: Student[];
-<<<<<<< HEAD
   public lesson: Lesson[];
   public videos: string[]
-=======
->>>>>>> 7d826be8d3446dbc0e4656faf75361132e8d29a2
   uid: string;
   constructor(
     public nameCourse: string,
@@ -71,11 +68,8 @@ class Course {
   ) {
     this.uid = uniqueId();
     this.studentsCourse = [];
-<<<<<<< HEAD
     this.lesson = [];
     this.videos = [];
-=======
->>>>>>> 7d826be8d3446dbc0e4656faf75361132e8d29a2
   }
 }
 

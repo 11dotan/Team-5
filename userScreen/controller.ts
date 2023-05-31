@@ -1,4 +1,6 @@
-userMenuCourses.addEventListener("click", (e) => {
+////
+
+userMenuCourses.addEventListener("click", () => {
   userCourses(indexEmail);
 });
 
@@ -6,18 +8,17 @@ function userCourses(indexEmail: number) {
   const idUser = students[indexEmail].id;
   try {
     if (!students) throw new Error(`students not found`);
-    console.log(idUser);
-
     const html: string = courses
       .map((course) => {
         return course.studentsCourse
           .map((student) => {
             if (idUser === student.id) {
-              return `<div class="cardUserCourse" onclick="HandleOpenCourseU('${course.uid}','${course.nameCourse}')">
-              <h2>${course.nameCourse}</h2>
-              <h3>Lecturer: ${course.lecturer.name}</h3>
-              <h3>Start Date: ${course.datesCourse[0]}</h3>
-              </div>`;
+              return `
+                    <div class="cardUserCourse" onclick="HandleOpenCourseU('${course.uid}','${course.nameCourse}')">
+                        <h2>${course.nameCourse}</h2>
+                        <h3>Lecturer: ${course.lecturer.name}</h3>
+                        <h3> Start Date: ${course.datesCourse[0]}</h3>
+                    </div>`;
             }
           })
           .join(" ");
