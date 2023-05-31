@@ -76,11 +76,25 @@ var Course = /** @class */ (function () {
         this.lecturer = lecturer;
         this.uid = uniqueId();
         this.studentsCourse = [];
+<<<<<<< HEAD
         this.lesson = [];
         this.videos = [];
+=======
+>>>>>>> 7d826be8d3446dbc0e4656faf75361132e8d29a2
     }
     return Course;
 }());
+var Message = /** @class */ (function () {
+    function Message(nameC, phoneC, emailC, msgC) {
+        this.nameC = nameC;
+        this.phoneC = phoneC;
+        this.emailC = emailC;
+        this.msgC = msgC;
+        this.uid = uniqueId();
+    }
+    return Message;
+}());
+var messages = [];
 var courses = [];
 var lecturers = [];
 var students = [];

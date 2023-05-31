@@ -17,7 +17,13 @@ if (_admins) {
   admins = _admins;
 }
 
+const _messages = getMessagesFromLS();
+if (_messages) {
+  messages = _messages;
+}
+
 saveStudentToLS(students);
 saveAdminToLS(admins);
 saveCourseToLS(courses);
 saveLecturerToLS(lecturers);
+saveMessagesToLS(messages);

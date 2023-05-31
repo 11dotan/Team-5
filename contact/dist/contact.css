@@ -27,14 +27,30 @@ body {
   border-radius: 10px;
 }
 
-.containerForm {
+.contactForm {
   grid-area: registerForm;
   padding: 20px 50px 50px 50px;
-  margin: 50px 0px 100px 350px;
+  margin: 100px 0px 100px 350px;
   align-self: center;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 600px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
+.contactForm h1 {
+  text-align: center;
+}
+.contactForm__line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.contactForm__line__inputS {
+  width: 350px;
+  height: 25px;
+}
+
+.map {
+  margin-left: 15%;
 }
