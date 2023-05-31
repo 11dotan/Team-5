@@ -57,9 +57,10 @@ body {
   font-weight: bold;
   font-size: 30px;
 }
-.mainContainer__inner, .mainContainer__attendance, .mainContainer__lessons, .mainContainer__grades {
+.mainContainer__inner, .mainContainer__attendance, .mainContainer__lessons, .mainContainer__grades, .mainContainer__lessonsG {
   grid-area: inner;
   margin-left: 100px;
+  flex-wrap: wrap;
 }
 .mainContainer__attendance {
   flex-direction: column;
@@ -92,4 +93,14 @@ body {
   transition: 0.5s;
   background-color: rgba(9, 14, 43, 0.673);
   cursor: pointer;
+}
+
+.cardDate {
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  background-color: rgba(195, 201, 207, 0.662);
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(11, 4, 35, 0.358);
+  margin-right: 50px;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=lecturer.css.map */
