@@ -71,13 +71,16 @@
         </table>
         <button class="submitButtonG" type="submit">Submit</button>
       </div>
-      <div class="mainContainer__lessonsV" style="display: none"></div>
-      <div class="mainContainer__Videos" style="display: none">
-        <form onsubmit="HandleAddVideo(event)">
-          <input id="inputfile" type="file" accept="video/mp4">
-          <button id="btn" type="submit">Add Video</button>
-        </form>
+      <div class="mainContainer__lessonsV" style="display: none">
+        <div class="mainContainer__Videos" style="display: none">
+          <form onsubmit="HandleAddVideo(event)">
+            <input id="inputfile" type="file" accept="video/mp4">
+            <button id="btn" type="submit">Add Video</button>
+          </form>
+        </div>
+        <div class="VideoShow"></div>
       </div>
+
     </div>
   </body>
 </html>
