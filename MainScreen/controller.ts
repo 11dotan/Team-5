@@ -83,6 +83,7 @@ if (_coursesN) {
   courses = _coursesN;
 }
 
+
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;

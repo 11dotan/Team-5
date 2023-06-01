@@ -55,10 +55,6 @@ body {
   font-weight: bold;
   font-size: 30px;
 }
-.mainContainer__inner, .mainContainer__innerAtt, .mainContainer__innerGrade {
-  grid-area: inner;
-  margin-left: 100px;
-}
 
 .cardUserCourse {
   background-color: rgb(9, 14, 43);

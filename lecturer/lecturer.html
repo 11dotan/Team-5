@@ -27,7 +27,7 @@
         ><img src="../MainScreen/images/home.png"
       /></a>
       <div><a href="#">about us</a></div>
-      <div><a href="#">contact</a></div>
+      <div><a href="../contact/contact.html">contact</a></div>
       <div><a href="#">courses</a></div>
       <!-- <div class="navbar__login"><a href="#">login</a></div> -->
     </nav>
@@ -58,12 +58,17 @@
       <div class="mainContainer__inner"></div>
       <div class="mainContainer__lessons" style="display: none"></div>
       <div class="mainContainer__attendance" style="display: none">
-        <ul id="studentsList"></ul>
+        <table id="studentsList">
+        <tr>
+          <th>Student Name</th>
+          <th>Student Attendance</th>
+        </tr>
+      </table>
         <button class="submitButton" type="submit">Submit</button>
       </div>
       <div class="mainContainer__lessonsG" style="display: none"></div>
       <div class="mainContainer__grades" style="display: none">
-        <table id="studentsListG">
+        <table class="tableAtt" id="studentsListG">
           <tr>
             <th>Student Name</th>
             <th>Grade</th>
@@ -74,7 +79,7 @@
       <div class="mainContainer__lessonsV" style="display: none"></div>
       <div class="mainContainer__Videos" style="display: none">
         <form onsubmit="HandleAddVideo(event)">
-          <input id="inputfile" type="file" accept="video/mp4">
+          <input id="inputfile" type="file" accept="video/mp4" />
           <button id="btn" type="submit">Add Video</button>
         </form>
       </div>

@@ -63,7 +63,7 @@ const courseVideo = document.querySelector(
 ) as HTMLDivElement;
 
 const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
-const studentsList = document.getElementById("studentsList");
+const studentsList = document.getElementById("studentsList") as HTMLTableElement;
 const submitButton = document.querySelector(
   ".submitButton"
 ) as HTMLButtonElement;
@@ -104,6 +104,6 @@ const lecturerInnerVideos = document.querySelector(
   ".mainContainer__Videos"
 ) as HTMLDivElement;
 
-const videoContainer = document.querySelector(".videoContainer") as HTMLDivElement;
+const VideoShow = document.querySelector(".VideoShow") as HTMLDivElement;
 const videoElement = document.getElementById('video') as HTMLVideoElement;
 const inputfile = document.getElementById('inputfile') as HTMLInputElement;
