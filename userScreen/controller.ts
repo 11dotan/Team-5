@@ -12,24 +12,23 @@ function userCourses(indexEmail) {
       .map((course) => {
         return course.studentsCourse
           .map((student) => {
-            if (idUser === student.id) {                            
+            if (idUser === student.id) {
               return `
                     <div class="cardUserCourse" onclick="HandleOpenCourseU('${course.uid}','${course.nameCourse}')">
                         <h2>${course.nameCourse}</h2>
                         <h3>Lecturer: ${course.lecturer.name}</h3>
                         <h3> Start Date: ${course.datesCourse[0]}</h3>
-                    </div>`;        
+                    </div>`;
             }
           })
           .join(" ");
       })
-      .join(" ");      
+      .join(" ");
     userInner.innerHTML = html;
   } catch (error) {
     console.log(error);
   }
 }
-
 
 function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
   let courseIndex = courses.findIndex((course) => course.uid === courseUid);
@@ -42,6 +41,10 @@ function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
 userCourseBack.addEventListener("click", (e) => {
   userMenu.style.display = "flex";
   userCourseMenu.style.display = "none";
+  userInnerGrade.style.display = "none";
+  userInnerAtt.style.display = "none";
+  userInner.style.display = "flex";
+  userCourses(indexEmail);
 });
 
 userCourseAttendance.addEventListener("click", (e) => {
@@ -138,11 +141,13 @@ function userGrades() {
     `;
   }
 
-  for (let z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
-    sum += _studentsCourse[_userIndex].attendance[z];
+  for (let z = 0; z < _studentsCourse[_userIndex].grades.length; z++) {
+    sum += _studentsCourse[_userIndex].grades[z];
   }
 
-  let html2: string = `<h2>Summary: You have attendant ${sum} from ${_studentsCourse[_userIndex].attendance.length} lessons until now</h2>`;
+  let html2: string = `<h2>Your grade average is: ${
+    sum / _studentsCourse[_userIndex].grades.length
+  }</h2>`;
   console.log(html);
 
   userInnerGrade.innerHTML = ` <div class="attLesson">${html}</div>${html2}`;
@@ -150,7 +155,7 @@ function userGrades() {
 
 function checkGrade(i, userGradeArr): string {
   if (userGradeArr[i] >= 0) {
-    return "userGradeArr[i]";
+    return userGradeArr[i];
   } else {
     return "Grade not given yet";
   }

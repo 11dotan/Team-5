@@ -34,6 +34,10 @@ function HandleOpenCourseU(courseUid, nameCourseL) {
 userCourseBack.addEventListener("click", function (e) {
     userMenu.style.display = "flex";
     userCourseMenu.style.display = "none";
+    userInnerGrade.style.display = "none";
+    userInnerAtt.style.display = "none";
+    userInner.style.display = "flex";
+    userCourses(indexEmail);
 });
 userCourseAttendance.addEventListener("click", function (e) {
     userInner.style.display = "none";
@@ -99,16 +103,16 @@ function userGrades() {
     for (var i = 0; i < datesArr.length; i++) {
         html += "\n\n    Date: " + datesArr[i] + "<br>Attendance: " + checkGrade(i, _studentsCourse[_userIndex].grades) + "<br><br>\n    ";
     }
-    for (var z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
-        sum += _studentsCourse[_userIndex].attendance[z];
+    for (var z = 0; z < _studentsCourse[_userIndex].grades.length; z++) {
+        sum += _studentsCourse[_userIndex].grades[z];
     }
-    var html2 = "<h2>Summary: You have attendant " + sum + " from " + _studentsCourse[_userIndex].attendance.length + " lessons until now</h2>";
+    var html2 = "<h2>Your grade average is: " + sum / _studentsCourse[_userIndex].grades.length + "</h2>";
     console.log(html);
     userInnerGrade.innerHTML = " <div class=\"attLesson\">" + html + "</div>" + html2;
 }
 function checkGrade(i, userGradeArr) {
     if (userGradeArr[i] >= 0) {
-        return "userGradeArr[i]";
+        return userGradeArr[i];
     }
     else {
         return "Grade not given yet";

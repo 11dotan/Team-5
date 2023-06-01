@@ -54,24 +54,72 @@ body {
 
 .mainContainer {
   margin-top: 20px;
+  margin-bottom: 100px;
+  height: 1500px;
   display: grid;
-  grid-template-rows: 35% 1fr;
-  grid-template-columns: 50% 50%;
-  grid-gap: 15px;
-  grid-template-areas: "box1 box2" "registerForm registerForm";
+  grid-template-rows: 25% 50% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 25px;
+  grid-template-areas: "box1 box1 box2 box2" "box3 registerForm registerForm box4" "box5 box5 box6 box6";
+}
+.mainContainer .box1,
+.mainContainer .box2,
+.mainContainer .box3,
+.mainContainer .box4,
+.mainContainer .box5,
+.mainContainer .box6 {
+  transition: all 0.5s ease-in-out;
+}
+.mainContainer .box1:hover,
+.mainContainer .box2:hover,
+.mainContainer .box3:hover,
+.mainContainer .box4:hover,
+.mainContainer .box5:hover,
+.mainContainer .box6:hover {
+  transform: scale(105%);
+  font-size: 60px;
+  cursor: pointer;
 }
 .mainContainer .box1 {
   grid-area: box1;
-  background-image: url(../images/fullStack.jpg);
+  background-image: url(../images/QA.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: 40px;
+  color: white;
+}
+.mainContainer .box2 {
+  grid-area: box2;
+  background-image: url(../images/cyber.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: 40px;
+  color: white;
+}
+.mainContainer .box3 {
+  grid-area: box3;
+  background-image: url(../images/fullstuck.jfif);
   background-size: cover;
   font-size: 40px;
   color: white;
 }
-.mainContainer .box1:hover {
-  background-color: rgba(255, 255, 255, 0.333);
+.mainContainer .box4 {
+  grid-area: box4;
+  background-image: url(../images/uxui.jpg);
+  background-size: cover;
+  font-size: 40px;
+  color: white;
 }
-.mainContainer .box2 {
-  grid-area: box2;
+.mainContainer .box5 {
+  grid-area: box5;
+  background-image: url(../images/sap.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: 40px;
+  color: white;
+}
+.mainContainer .box6 {
+  grid-area: box6;
   background-image: url(../images/devOps.jpg);
   background-size: cover;
   font-size: 40px;
@@ -80,13 +128,11 @@ body {
 .mainContainer .registerForm {
   grid-area: registerForm;
   padding: 20px 50px 50px 50px;
-  margin: 50px 0px 100px 350px;
   align-self: center;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 600px;
-  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  box-shadow: 0px 0px 10.45px 10.45px rgba(10, 4, 92, 0.6);
 }
 .mainContainer .registerForm h2 {
   text-align: center;
@@ -97,7 +143,7 @@ body {
   margin-top: 25px;
 }
 .mainContainer .registerForm__line__inputS {
-  width: 350px;
+  width: 300px;
   height: 25px;
 }
 .mainContainer .registerForm__line__listCourse {

@@ -51,9 +51,30 @@ body {
   width: 60px;
   height: 30px;
 }
+.mainContainer__courseMenu__back:hover {
+  cursor: pointer;
+}
 .mainContainer__userMenu__fullName, .mainContainer__courseMenu__courseName {
   font-weight: bold;
   font-size: 30px;
+}
+.mainContainer__courseMenu__attendance, .mainContainer__courseMenu__grades, .mainContainer__courseMenu__video, .mainContainer__courseMenu__zoom, .mainContainer__userMenu__courses, .mainContainer__userMenu__profile, .mainContainer__userMenu__contact {
+  padding: 10px;
+  border-radius: 10px;
+}
+.mainContainer__courseMenu__attendance:hover, .mainContainer__courseMenu__grades:hover, .mainContainer__courseMenu__video:hover, .mainContainer__courseMenu__zoom:hover, .mainContainer__userMenu__courses:hover, .mainContainer__userMenu__profile:hover, .mainContainer__userMenu__contact:hover {
+  background-color: rgba(50, 132, 186, 0.472);
+  cursor: pointer;
+}
+.mainContainer__inner {
+  grid-area: inner;
+  margin-left: 100px;
+}
+.mainContainer__innerAtt {
+  margin-left: 100px;
+}
+.mainContainer__innerGrade {
+  margin-left: 100px;
 }
 
 .cardUserCourse {

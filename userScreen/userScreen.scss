@@ -58,18 +58,45 @@ body {
     }
   }
 
+  &__courseMenu__back {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &__userMenu__fullName,
   &__courseMenu__courseName {
     font-weight: bold;
     font-size: 30px;
   }
 
-  // &__inner,
-  // &__innerAtt,
-  // &__innerGrade {
-  //   grid-area: inner;
-  //   margin-left: 100px;
-  // }
+  &__courseMenu__attendance,
+  &__courseMenu__grades,
+  &__courseMenu__video,
+  &__courseMenu__zoom,
+  &__userMenu__courses,
+  &__userMenu__profile,
+  &__userMenu__contact {
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+      background-color: rgba(50, 132, 186, 0.472);
+      cursor: pointer;
+    }
+  }
+
+  &__inner {
+    grid-area: inner;
+    margin-left: 100px;
+  }
+
+  &__innerAtt {
+    margin-left: 100px;
+  }
+
+  &__innerGrade {
+    margin-left: 100px;
+  }
 }
 
 .cardUserCourse {

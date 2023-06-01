@@ -42,6 +42,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+.mainContainer__lecturerCourseM__back:hover {
+  cursor: pointer;
+}
 .mainContainer____lecturerMenu__fullName {
   font-size: 32px;
 }

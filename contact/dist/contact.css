@@ -27,11 +27,16 @@ body {
   border-radius: 10px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
 .contactForm {
-  grid-area: registerForm;
   padding: 20px 50px 50px 50px;
-  margin: 100px 0px 100px 350px;
-  align-self: center;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -50,7 +55,23 @@ body {
   width: 350px;
   height: 25px;
 }
+.contactForm__regBtn {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 50px;
+  width: 150px;
+  align-self: center;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.contactForm__regBtn:hover {
+  background-color: #090e2b;
+  color: white;
+}
 
 .map {
-  margin-left: 15%;
+  width: 600px;
+  height: 500px;
 }
