@@ -33,7 +33,8 @@ body {
   grid-template-columns: 22% 1fr;
   grid-template-areas: "userMenu inner";
 }
-.mainContainer__lecturerMenu, .mainContainer__lecturerCourseM {
+.mainContainer__lecturerMenu,
+.mainContainer__lecturerCourseM {
   grid-area: userMenu;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
   padding: 20px;
@@ -48,31 +49,53 @@ body {
 .mainContainer____lecturerMenu__fullName {
   font-size: 32px;
 }
-.mainContainer____lecturerMenu__fullName, .mainContainer__lecturerMenu__courses, .mainContainer__lecturerMenu__profile, .mainContainer__lecturerMenu__contact, .mainContainer__lecturerCourseM__attendance, .mainContainer__lecturerCourseM__grades, .mainContainer__lecturerCourseM__video, .mainContainer__lecturerCourseM__zoom {
+.mainContainer____lecturerMenu__fullName,
+.mainContainer__lecturerMenu__courses,
+.mainContainer__lecturerMenu__profile,
+.mainContainer__lecturerMenu__contact,
+.mainContainer__lecturerCourseM__attendance,
+.mainContainer__lecturerCourseM__grades,
+.mainContainer__lecturerCourseM__video,
+.mainContainer__lecturerCourseM__zoom {
   padding: 10px;
   border-radius: 10px;
 }
-.mainContainer____lecturerMenu__fullName:hover, .mainContainer__lecturerMenu__courses:hover, .mainContainer__lecturerMenu__profile:hover, .mainContainer__lecturerMenu__contact:hover, .mainContainer__lecturerCourseM__attendance:hover, .mainContainer__lecturerCourseM__grades:hover, .mainContainer__lecturerCourseM__video:hover, .mainContainer__lecturerCourseM__zoom:hover {
+.mainContainer____lecturerMenu__fullName:hover,
+.mainContainer__lecturerMenu__courses:hover,
+.mainContainer__lecturerMenu__profile:hover,
+.mainContainer__lecturerMenu__contact:hover,
+.mainContainer__lecturerCourseM__attendance:hover,
+.mainContainer__lecturerCourseM__grades:hover,
+.mainContainer__lecturerCourseM__video:hover,
+.mainContainer__lecturerCourseM__zoom:hover {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
 }
-.mainContainer__lecturerMenu__fullName, .mainContainer__lecturerCourseM__courseName {
+.mainContainer__lecturerMenu__fullName,
+.mainContainer__lecturerCourseM__courseName {
   font-weight: bold;
   font-size: 30px;
 }
-.mainContainer__grades__tableGrade, .mainContainer__attendance__tableAtt {
+.mainContainer__grades__tableGrade,
+.mainContainer__attendance__tableAtt {
   width: 500px;
 }
-.mainContainer__grades, .mainContainer__attendance {
+.mainContainer__grades,
+.mainContainer__attendance {
   display: flex;
   flex-direction: column;
 }
-.mainContainer__inner, .mainContainer__attendance, .mainContainer__lessons, .mainContainer__grades, .mainContainer__lessonsG {
+.mainContainer__inner,
+.mainContainer__attendance,
+.mainContainer__lessons,
+.mainContainer__grades,
+.mainContainer__lessonsG {
   grid-area: inner;
   margin-left: 100px;
   flex-wrap: wrap;
 }
-.mainContainer__attendance__submitButton, .mainContainer__grades__submitButtonG {
+.mainContainer__attendance__submitButton,
+.mainContainer__grades__submitButtonG {
   font-weight: bold;
   font-size: 20px;
   margin-top: 50px;
@@ -83,7 +106,8 @@ body {
   border: none;
   background-color: rgba(19, 62, 90, 0.472);
 }
-.mainContainer__attendance__submitButton:hover, .mainContainer__grades__submitButtonG:hover {
+.mainContainer__attendance__submitButton:hover,
+.mainContainer__grades__submitButtonG:hover {
   background-color: rgb(9, 14, 43);
   color: white;
 }
@@ -130,4 +154,4 @@ body {
   background-color: rgb(11, 4, 35);
   color: white;
   cursor: pointer;
-}/*# sourceMappingURL=lecturer.css.map */
+} /*# sourceMappingURL=lecturer.css.map */

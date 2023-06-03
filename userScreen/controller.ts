@@ -4,7 +4,7 @@ userMenuCourses.addEventListener("click", () => {
   userCourses(indexEmail);
 });
 
-function userCourses(indexEmail) {
+function userCourses(indexEmail: number) {
   const idUser = students[indexEmail].id;
   try {
     if (!students) throw new Error(`students not found`);
@@ -31,6 +31,7 @@ function userCourses(indexEmail) {
 }
 
 function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
+  console.log(`123`);
   let courseIndex = courses.findIndex((course) => course.uid === courseUid);
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
   userMenu.style.display = "none";

@@ -124,7 +124,7 @@ submitButton.addEventListener("click", () => {
 
 courseGrades.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerLessonsG.style.display = "flex";
+  lecturerInnerGrades.style.display = "flex";
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
   lecturerInnerVideos.style.display = "none";
@@ -148,7 +148,7 @@ function gradesCourse() {
   </div>
   `;
   }
-  lecturerInnerLessonsG.innerHTML = html;
+  lecturerInnerGrades.innerHTML = html;
 }
 
 function markGrades() {
@@ -193,7 +193,7 @@ function markGrades() {
     saveCourseToLS(courses);
     saveStudentToLS(students);
     lecturerInnerGrades.style.display = "none";
-    lecturerInnerLessonsG.style.display = "flex";
+    // lecturerInnerLessonsG.style.display = "flex";
     console.log();
   });
 }
