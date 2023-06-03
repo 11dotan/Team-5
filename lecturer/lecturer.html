@@ -57,25 +57,45 @@
       <div class="mainContainer__inner"></div>
       <div class="mainContainer__lessons" style="display: none"></div>
       <div class="mainContainer__attendance" style="display: none">
-        <table id="studentsList">
+        <table class="mainContainer__attendance__tableAtt" id="studentsList">
           <tr>
             <th>Student Name</th>
             <th>Student Attendance</th>
           </tr>
         </table>
-        <button class="submitButton" type="submit">Submit</button>
+        <button class="mainContainer__attendance__submitButton" type="submit">
+          Submit
+        </button>
       </div>
       <div class="mainContainer__lessonsG" style="display: none"></div>
       <div class="mainContainer__grades" style="display: none">
-        <table class="tableAtt" id="studentsListG">
+        <table class="mainContainer__grades__tableGrade" id="studentsListG">
           <tr>
             <th>Student Name</th>
             <th>Grade</th>
           </tr>
         </table>
-        <button class="submitButtonG" type="submit">Submit</button>
+        <button class="mainContainer__grades__submitButtonG" type="submit">
+          Submit
+        </button>
       </div>
-      <div class="mainContainer__lessonsV" style="display: none">
+      <div class="mainContainer__videos" style="display: none">
+        <img class="addVideo" src="./images/plus.png" />
+        <form onsubmit="HandleAddVideo(event)">
+          <label for="videoFile">Choose file</label>
+          <input type="file" accept="video/mp4" name="videoFile" /><br />
+          <button class="btn" type="submit" name="AddVideo">Add Video</button>
+        </form>
+        <div class="mainContainer__videos__innerVideos"></div>
+        <!-- <video
+          class="mainContainer__videos__innerVideos"
+          width="500px"
+          height="500px"
+          controls
+        ></video> -->
+      </div>
+
+      <!-- <div class="mainContainer__lessonsV" style="display: none">
         <div class="mainContainer__Videos" style="display: none">
           <form onsubmit="HandleAddVideo(event)">
             <input id="inputfile" type="file" accept="video/mp4" />
@@ -83,7 +103,7 @@
           </form>
         </div>
         <div class="VideoShow"></div>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>

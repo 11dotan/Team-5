@@ -63,47 +63,39 @@ const courseVideo = document.querySelector(
 ) as HTMLDivElement;
 
 const checkbox = document.querySelector(".checkbox") as HTMLInputElement;
-const studentsList = document.getElementById("studentsList") as HTMLTableElement;
+const studentsList = document.getElementById(
+  "studentsList"
+) as HTMLTableElement;
 const submitButton = document.querySelector(
-  ".submitButton"
+  ".mainContainer__attendance__submitButton"
 ) as HTMLButtonElement;
 
 const submitButtonG = document.querySelector(
-  ".submitButtonG"
+  ".mainContainer__grades__submitButtonG"
 ) as HTMLButtonElement;
 
 const studentsListG = document.getElementById(
   "studentsListG"
 ) as HTMLTableElement;
 
-// const lessonF1 = document.querySelector(
-//   ".mainContainer__lessons--les1"
-// ) as HTMLDivElement;
-// const lessonF2 = document.querySelector(
-//   ".mainContainer__lessons--les2"
-// ) as HTMLDivElement;
-// const lessonF3 = document.querySelector(
-//   ".mainContainer__lessons--les3"
-// ) as HTMLDivElement;
-// const lessonF4 = document.querySelector(
-//   ".mainContainer__lessons--les4"
-// ) as HTMLDivElement;
-// const lessonF5 = document.querySelector(
-//   ".mainContainer__lessons--les5"
-// ) as HTMLDivElement;
-// const lessonF6 = document.querySelector(
-//   ".mainContainer__lessons--les6"
-// ) as HTMLDivElement;
-
-
-const lecturerInnerLessonsV = document.querySelector(
-  ".mainContainer__lessonsV"
+const videoPage = document.querySelector(
+  ".mainContainer__videos"
 ) as HTMLDivElement;
 
-const lecturerInnerVideos = document.querySelector(
-  ".mainContainer__Videos"
+const myVideo = document.getElementById("myVideo") as HTMLVideoElement;
+
+const innerVideos = document.querySelector(
+  ".mainContainer__videos__innerVideos"
 ) as HTMLDivElement;
 
-const VideoShow = document.querySelector(".VideoShow") as HTMLDivElement;
-const videoElement = document.getElementById('video') as HTMLVideoElement;
-const inputfile = document.getElementById('inputfile') as HTMLInputElement;
+// const lecturerInnerLessonsV = document.querySelector(
+//   ".mainContainer__lessonsV"
+// ) as HTMLDivElement;
+
+// const lecturerInnerVideos = document.querySelector(
+//   ".mainContainer__Videos"
+// ) as HTMLDivElement;
+
+// const VideoShow = document.querySelector(".VideoShow") as HTMLDivElement;
+// const videoElement = document.getElementById("video") as HTMLVideoElement;
+// const inputfile = document.getElementById("inputfile") as HTMLInputElement;

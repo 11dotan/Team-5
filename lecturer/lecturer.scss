@@ -78,11 +78,18 @@ body {
     font-weight: bold;
     font-size: 30px;
   }
-  &__attendance {
-    .tableAtt {
-      width: 10%;
-    }
+
+  &__grades__tableGrade,
+  &__attendance__tableAtt {
+    width: 500px;
   }
+
+  &__grades,
+  &__attendance {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__inner,
   &__attendance,
   &__lessons,
@@ -93,8 +100,21 @@ body {
     flex-wrap: wrap;
   }
 
-  &__attendance {
-    flex-direction: column;
+  &__attendance__submitButton,
+  &__grades__submitButtonG {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(19, 62, 90, 0.472);
+    &:hover {
+      background-color: rgb(9, 14, 43);
+      color: white;
+    }
   }
 
   &__lecturerCourseM__top {
@@ -105,6 +125,15 @@ body {
     img {
       width: 60px;
       height: 30px;
+    }
+  }
+
+  &__videos {
+    flex-direction: column;
+    img {
+      width: 70px;
+      height: 70px;
+      align-self: center;
     }
   }
 }
@@ -130,11 +159,16 @@ body {
 }
 
 .cardDate {
-  width: 250px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   padding: 15px;
   background-color: rgba(195, 201, 207, 0.662);
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(11, 4, 35, 0.358);
   margin-right: 50px;
   margin-bottom: 30px;
+  &:hover {
+    background-color: rgba(11, 4, 35);
+    color: white;
+    cursor: pointer;
+  }
 }

@@ -76,8 +76,9 @@ var Course = /** @class */ (function () {
         this.lecturer = lecturer;
         this.uid = uniqueId();
         this.studentsCourse = [];
-        this.lesson = [];
+        // this.lesson = [];
         this.videos = [];
+        this.checkAtt = [];
     }
     return Course;
 }());

@@ -60,16 +60,32 @@ body {
   font-weight: bold;
   font-size: 30px;
 }
-.mainContainer__attendance .tableAtt {
-  width: 10%;
+.mainContainer__grades__tableGrade, .mainContainer__attendance__tableAtt {
+  width: 500px;
+}
+.mainContainer__grades, .mainContainer__attendance {
+  display: flex;
+  flex-direction: column;
 }
 .mainContainer__inner, .mainContainer__attendance, .mainContainer__lessons, .mainContainer__grades, .mainContainer__lessonsG {
   grid-area: inner;
   margin-left: 100px;
   flex-wrap: wrap;
 }
-.mainContainer__attendance {
-  flex-direction: column;
+.mainContainer__attendance__submitButton, .mainContainer__grades__submitButtonG {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 150px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.mainContainer__attendance__submitButton:hover, .mainContainer__grades__submitButtonG:hover {
+  background-color: #090e2b;
+  color: white;
 }
 .mainContainer__lecturerCourseM__top {
   margin-bottom: 30px;
@@ -79,6 +95,14 @@ body {
 .mainContainer__lecturerCourseM__top img {
   width: 60px;
   height: 30px;
+}
+.mainContainer__videos {
+  flex-direction: column;
+}
+.mainContainer__videos img {
+  width: 70px;
+  height: 70px;
+  align-self: center;
 }
 
 .CourseCard {
@@ -102,11 +126,16 @@ body {
 }
 
 .cardDate {
-  width: 250px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   padding: 15px;
   background-color: rgba(195, 201, 207, 0.662);
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(11, 4, 35, 0.358);
   margin-right: 50px;
   margin-bottom: 30px;
+}
+.cardDate:hover {
+  background-color: #0b0423;
+  color: white;
+  cursor: pointer;
 }

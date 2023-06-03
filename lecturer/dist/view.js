@@ -16,29 +16,18 @@ var courseGrades = document.querySelector(".mainContainer__lecturerCourseM__grad
 var courseVideo = document.querySelector(".mainContainer__lecturerCourseM__video");
 var checkbox = document.querySelector(".checkbox");
 var studentsList = document.getElementById("studentsList");
-var submitButton = document.querySelector(".submitButton");
-var submitButtonG = document.querySelector(".submitButtonG");
+var submitButton = document.querySelector(".mainContainer__attendance__submitButton");
+var submitButtonG = document.querySelector(".mainContainer__grades__submitButtonG");
 var studentsListG = document.getElementById("studentsListG");
-// const lessonF1 = document.querySelector(
-//   ".mainContainer__lessons--les1"
+var videoPage = document.querySelector(".mainContainer__videos");
+var myVideo = document.getElementById("myVideo");
+var innerVideos = document.querySelector(".mainContainer__videos__innerVideos");
+// const lecturerInnerLessonsV = document.querySelector(
+//   ".mainContainer__lessonsV"
 // ) as HTMLDivElement;
-// const lessonF2 = document.querySelector(
-//   ".mainContainer__lessons--les2"
+// const lecturerInnerVideos = document.querySelector(
+//   ".mainContainer__Videos"
 // ) as HTMLDivElement;
-// const lessonF3 = document.querySelector(
-//   ".mainContainer__lessons--les3"
-// ) as HTMLDivElement;
-// const lessonF4 = document.querySelector(
-//   ".mainContainer__lessons--les4"
-// ) as HTMLDivElement;
-// const lessonF5 = document.querySelector(
-//   ".mainContainer__lessons--les5"
-// ) as HTMLDivElement;
-// const lessonF6 = document.querySelector(
-//   ".mainContainer__lessons--les6"
-// ) as HTMLDivElement;
-var lecturerInnerLessonsV = document.querySelector(".mainContainer__lessonsV");
-var lecturerInnerVideos = document.querySelector(".mainContainer__Videos");
-var VideoShow = document.querySelector(".VideoShow");
-var videoElement = document.getElementById('video');
-var inputfile = document.getElementById('inputfile');
+// const VideoShow = document.querySelector(".VideoShow") as HTMLDivElement;
+// const videoElement = document.getElementById("video") as HTMLVideoElement;
+// const inputfile = document.getElementById("inputfile") as HTMLInputElement;
