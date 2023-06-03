@@ -7,13 +7,8 @@ var userCourseMenu = document.querySelector(".mainContainer__courseMenu");
 var userCourseBack = document.querySelector(".mainContainer__courseMenu__back");
 var userCourseName = document.querySelector(".mainContainer__courseMenu__courseName");
 var userCourseAttendance = document.querySelector(".mainContainer__courseMenu__attendance");
-// const userCourseGrades = document.querySelector(
-//   ".mainContainer__courseMenu__grades"
-// ) as HTMLDivElement;
+var userCourseGrades = document.querySelector(".mainContainer__courseMenu__grades");
 var userInner = document.querySelector(".mainContainer__inner");
-// const userInnerGrade = document.querySelector(
-//   ".mainContainer__innerGrade"
-// ) as HTMLDivElement;
-// const userInnerAtt = document.querySelector(
-//   ".mainContainer__innerAtt"
-// ) as HTMLDivElement;
+var userInnerProfile = document.querySelector(".mainContainer__innerProfile");
+var userInnerGrade = document.querySelector(".mainContainer__innerGrade");
+var userInnerAtt = document.querySelector(".mainContainer__innerAtt");

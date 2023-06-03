@@ -83,6 +83,10 @@ body {
       background-color: rgba(50, 132, 186, 0.472);
       cursor: pointer;
     }
+    a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.654);
+    }
   }
 
   &__inner {
@@ -125,4 +129,9 @@ body {
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
   margin-bottom: 30px;
   box-sizing: content-box;
+}
+
+.profileCard {
+  margin-left: 100px;
+  color: rgba(0, 0, 0, 0.654);
 }

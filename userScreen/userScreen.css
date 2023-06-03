@@ -66,6 +66,10 @@ body {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
 }
+.mainContainer__courseMenu__attendance a, .mainContainer__courseMenu__grades a, .mainContainer__courseMenu__video a, .mainContainer__courseMenu__zoom a, .mainContainer__userMenu__courses a, .mainContainer__userMenu__profile a, .mainContainer__userMenu__contact a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.654);
+}
 .mainContainer__inner {
   grid-area: inner;
   margin-left: 100px;
@@ -103,4 +107,9 @@ body {
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
   margin-bottom: 30px;
   box-sizing: content-box;
+}
+
+.profileCard {
+  margin-left: 100px;
+  color: rgba(0, 0, 0, 0.654);
 }/*# sourceMappingURL=userScreen.css.map */

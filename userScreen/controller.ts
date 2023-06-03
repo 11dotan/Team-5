@@ -1,6 +1,8 @@
 ////
 
 userMenuCourses.addEventListener("click", () => {
+  userInnerProfile.style.display = "none";
+  userInner.style.display = "flex";
   userCourses(indexEmail);
 });
 
@@ -52,6 +54,7 @@ userCourseAttendance.addEventListener("click", (e) => {
   userInner.style.display = "none";
   userInnerGrade.style.display = "none";
   userInnerAtt.style.display = "block";
+  userMenuProfile.style.display = "none";
   userAttendance();
 });
 
@@ -109,6 +112,7 @@ userCourseGrades.addEventListener("click", (e) => {
   userInner.style.display = "none";
   userInnerGrade.style.display = "block";
   userInnerAtt.style.display = "none";
+  userMenuProfile.style.display = "none";
   userGrades();
 });
 
@@ -161,3 +165,26 @@ function checkGrade(i, userGradeArr): string {
     return "Grade not given yet";
   }
 }
+
+function profileUser(indexEmail) {
+  try {
+    if (!students) throw new Error(`students not found`);
+    userInnerProfile.innerHTML = `
+    <div class="profileCard">
+  <h2>Hello ${students[indexEmail].name}</h2>
+  <h4>ID Number: ${students[indexEmail].id}</h4>
+  <h4>Address: ${students[indexEmail].address}</h4>
+  <h4>Email: ${students[indexEmail].email}</h4>
+  <h4>Password: ${students[indexEmail].password}</h4>
+  <h4>Phone Number: ${students[indexEmail].phone}</h4>
+  </div>`;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+userMenuProfile?.addEventListener("click", (e) => {
+  userInner.style.display = "none";
+  userInnerProfile.style.display = "block";
+  profileUser(indexEmail);
+});

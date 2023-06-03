@@ -79,21 +79,25 @@
           Submit
         </button>
       </div>
-      <<<<<<< HEAD
-      <div class="mainContainer__videos" style="display: none">
-        <img class="addVideo" src="./images/plus.png" />
-        <form onsubmit="HandleAddVideo(event)">
-          <label for="videoFile">Choose file</label>
-          <input type="file" accept="video/mp4" name="videoFile" /><br />
-          <button class="btn" type="submit" name="AddVideo">Add Video</button>
+      <div class="mainContainer__videos">
+        <img
+          class="mainContainer__videos__plus"
+          src="./images/plus.png"
+          style="display: none"
+        />
+        <form
+          class="mainContainer__videos__newVideo"
+          onsubmit="HandleAddVideo(event)"
+          style="display: none"
+        >
+          <h2>Upload New Video</h2>
+          <div class="uploadNew">
+            <label class="chooseFile" for="videoFile"></label>
+            <input type="file" accept="video/mp4" name="videoFile" /><br />
+            <button class="btn" type="submit" name="AddVideo">Add Video</button>
+          </div>
         </form>
         <div class="mainContainer__videos__innerVideos"></div>
-        <!-- <video
-          class="mainContainer__videos__innerVideos"
-          width="500px"
-          height="500px"
-          controls
-        ></video> -->
       </div>
 
       <!-- <div class="mainContainer__lessonsV" style="display: none">
@@ -105,15 +109,13 @@
         </div>
         <div class="VideoShow"></div>
       </div> -->
-      =======
-      <div class="mainContainer__lessonsV" style="display: none"></div>
+      <!-- <div class="mainContainer__lessonsV" style="display: none"></div>
       <div class="mainContainer__Videos" style="display: none">
         <form onsubmit="HandleAddVideo(event)">
           <input id="inputfile" type="file" accept="video/mp4" />
           <button id="btn" type="submit">Add Video</button>
         </form>
-      </div>
-      >>>>>>> 333022feb37d65cf930d686a28f8e42bc0816eb0
+      </div> -->
     </div>
   </body>
 </html>

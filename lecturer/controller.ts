@@ -1,4 +1,5 @@
 lecturerMenuCourses.addEventListener("click", (e) => {
+  lecturerInner.style.display = "flex";
   lecturerCourses(indexPass);
 });
 
@@ -30,6 +31,7 @@ function HandleOpenCourse(courseUid: string, nameCourseL: string) {
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
   lecturerMenu.style.display = "none";
   courseMenu.style.display = "flex";
+  lecturerMenuProfile.style.display = "none";
   courseName.innerHTML = `${nameCourseL}`;
 }
 
@@ -40,7 +42,8 @@ courseMenuBack.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "none";
   lecturerInner.style.display = "flex";
   lecturerInnerGrades.style.display = "none";
-  lecturerInnerVideos.style.display = "none";
+  // lecturerInnerVideos.style.display = "none";
+  videoPage.style.display = "none";
 });
 
 courseAttendance.addEventListener("click", (e) => {
@@ -48,8 +51,10 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "flex";
   lecturerInnerLessonsG.style.display = "none";
   lecturerInnerGrades.style.display = "none";
-  lecturerInnerVideos.style.display = "none";
+  // lecturerInnerVideos.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
+  videoPage.style.display = "none";
+
   attendanceCourse();
 });
 
@@ -69,7 +74,7 @@ function attendanceCourse() {
   </div>
   `;
   }
-  lecturerInnerLessonletML = html;
+  lecturerInnerLessons.innerHTML = html;
 }
 
 function markAttendance() {
@@ -124,11 +129,13 @@ submitButton.addEventListener("click", () => {
 
 courseGrades.addEventListener("click", (e) => {
   lecturerInner.style.display = "none";
-  lecturerInnerGrades.style.display = "flex";
+  lecturerInnerLessonsG.style.display = "flex";
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
-  lecturerInnerVideos.style.display = "none";
+  // lecturerInnerVideos.style.display = "none";
   lecturerInnerGrades.style.display = "none";
+  videoPage.style.display = "none";
+
   gradesCourse();
 });
 
@@ -148,7 +155,7 @@ function gradesCourse() {
   </div>
   `;
   }
-  lecturerInnerGrades.innerHTML = html;
+  lecturerInnerLessonsG.innerHTML = html;
 }
 
 function markGrades() {
@@ -193,7 +200,7 @@ function markGrades() {
     saveCourseToLS(courses);
     saveStudentToLS(students);
     lecturerInnerGrades.style.display = "none";
-    // lecturerInnerLessonsG.style.display = "flex";
+    lecturerInnerLessonsG.style.display = "flex";
     console.log();
   });
 }
@@ -207,7 +214,12 @@ courseVideo.addEventListener("click", (e) => {
   lecturerInnerAttendance.style.display = "none";
   lecturerInnerGrades.style.display = "none";
   videoPage.style.display = "flex";
+  plus.style.display = "block";
   videosCourse();
+});
+
+plus.addEventListener("click", (e) => {
+  newVideo.style.display = "flex";
 });
 
 function videosCourse() {
@@ -218,29 +230,15 @@ function videosCourse() {
   innerVideos.innerHTML = "";
 
   courses[_courseindex].videos.forEach((video) => {
-    let videoCard = document.createElement("div");
-    videoCard.className = "videoCard";
+    // let videoCard = document.createElement("div");
+    // videoCard.className = "videoCard";
     let videoElement = document.createElement("video");
+    videoElement.className = "videoCard";
     videoElement.src = video;
     videoElement.controls = true;
-    videoCard.appendChild(videoElement);
-    innerVideos.appendChild(videoCard);
+    // videoCard.appendChild(videoElement);
+    innerVideos.appendChild(videoElement);
   });
-
-  // const html = courses[_courseindex].videos
-  //   .map((video) => {
-  //     return `
-
-  //               <div class="videoCard">
-  //               <video id="myVideo" controls>
-  //               <source src="${video}"  type="video/mp4">
-  //               </video>
-  //               </div>`;
-  //   })
-  //   .join(" ");
-  // console.log(courses[_courseindex].videos);
-
-  // innerVideos.innerHTML = html;
 }
 
 function HandleAddVideo(e) {
@@ -254,6 +252,15 @@ function HandleAddVideo(e) {
 
   courses[_courseindex].videos.push(blobURL);
   console.log(courses[_courseindex].videos);
+
+  // let videoCard = document.createElement("div");
+  // videoCard.className = "videoCard";
+  let videoElement = document.createElement("video");
+  videoElement.src = blobURL;
+  videoElement.controls = true;
+  innerVideos.appendChild(videoElement);
+
+  newVideo.style.display = "none";
 
   saveCourseToLS(courses);
   videosCourse();
@@ -316,3 +323,25 @@ function HandleAddVideo(e) {
 //     saveCourseToLS(courses);
 //   }
 // }
+
+function profileLecturer(indexPass) {
+  try {
+    if (!lecturers) throw new Error(`lecturer not found`);
+    lecturerInner.innerHTML = `
+    <div class="profileCard">
+  <h2>Hello ${lecturers[indexPass].name}</h2>
+  <h4>ID Number: ${lecturers[indexPass].id}</h4>
+  <h4>Address: ${lecturers[indexPass].address}</h4>
+  <h4>Email: ${lecturers[indexPass].email}</h4>
+  <h4>Password: ${lecturers[indexPass].password}</h4>
+  <h4>Phone Number: ${lecturers[indexPass].phone}</h4>
+  </div>`;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+lecturerMenuProfile.addEventListener("click", (e) => {
+  lecturerInner.style.display = "block";
+  profileLecturer(indexPass);
+});

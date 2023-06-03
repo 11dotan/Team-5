@@ -82,11 +82,19 @@ const videoPage = document.querySelector(
   ".mainContainer__videos"
 ) as HTMLDivElement;
 
-const myVideo = document.getElementById("myVideo") as HTMLVideoElement;
-
 const innerVideos = document.querySelector(
   ".mainContainer__videos__innerVideos"
 ) as HTMLDivElement;
+
+const newVideo = document.querySelector(
+  ".mainContainer__videos__newVideo"
+) as HTMLFormElement;
+
+const plus = document.querySelector(
+  ".mainContainer__videos__plus"
+) as HTMLElement;
+
+// const myVideo = document.getElementById("myVideo") as HTMLVideoElement;
 
 // const lecturerInnerLessonsV = document.querySelector(
 //   ".mainContainer__lessonsV"
