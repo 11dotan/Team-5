@@ -1,6 +1,5 @@
 ////
 userMenuCourses.addEventListener("click", function () {
-    userInnerProfile.style.display = "none";
     userInner.style.display = "flex";
     userCourses(indexEmail);
 });
@@ -27,7 +26,6 @@ function userCourses(indexEmail) {
     }
 }
 function HandleOpenCourseU(courseUid, nameCourseL) {
-    console.log("123");
     var courseIndex = courses.findIndex(function (course) { return course.uid === courseUid; });
     localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
     userMenu.style.display = "none";
@@ -39,6 +37,7 @@ userCourseBack.addEventListener("click", function (e) {
     userCourseMenu.style.display = "none";
     userInnerGrade.style.display = "none";
     userInnerAtt.style.display = "none";
+    userInnerVideos.style.display = "none";
     userInner.style.display = "flex";
     userCourses(indexEmail);
 });
@@ -46,6 +45,7 @@ userCourseAttendance.addEventListener("click", function (e) {
     userInner.style.display = "none";
     userInnerGrade.style.display = "none";
     userInnerAtt.style.display = "block";
+    userInnerVideos.style.display = "none";
     userMenuProfile.style.display = "none";
     userAttendance();
 });
@@ -89,6 +89,7 @@ userCourseGrades.addEventListener("click", function (e) {
     userInnerGrade.style.display = "block";
     userInnerAtt.style.display = "none";
     userMenuProfile.style.display = "none";
+    userInnerVideos.style.display = "none";
     userGrades();
 });
 function userGrades() {
@@ -137,4 +138,25 @@ userMenuProfile === null || userMenuProfile === void 0 ? void 0 : userMenuProfil
     userInner.style.display = "none";
     userInnerProfile.style.display = "block";
     profileUser(indexEmail);
+});
+function renderVideosU() {
+    var data = localStorage.getItem("courseIndex");
+    if (!data)
+        throw new Error("data is null");
+    var _courseindex = JSON.parse(data);
+    userInnerVideos.innerHTML = "";
+    courses[_courseindex].videos.forEach(function (video) {
+        var videoElement = document.createElement("video");
+        videoElement.className = "videoCard";
+        videoElement.src = video;
+        videoElement.controls = true;
+        userInnerVideos.appendChild(videoElement);
+    });
+}
+userCourseVideos.addEventListener("click", function (e) {
+    userInner.style.display = "none";
+    userInnerGrade.style.display = "none";
+    userInnerAtt.style.display = "none";
+    userInnerVideos.style.display = "flex";
+    renderVideosU();
 });

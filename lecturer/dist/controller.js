@@ -25,7 +25,6 @@ function HandleOpenCourse(courseUid, nameCourseL) {
     localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
     lecturerMenu.style.display = "none";
     courseMenu.style.display = "flex";
-    lecturerMenuProfile.style.display = "none";
     courseName.innerHTML = "" + nameCourseL;
 }
 courseMenuBack.addEventListener("click", function (e) {
@@ -35,6 +34,7 @@ courseMenuBack.addEventListener("click", function (e) {
     lecturerInnerLessons.style.display = "none";
     lecturerInner.style.display = "flex";
     lecturerInnerGrades.style.display = "none";
+    lecturerInnerAttendance.style.display = "none";
     // lecturerInnerVideos.style.display = "none";
     videoPage.style.display = "none";
 });
@@ -192,13 +192,10 @@ function videosCourse() {
     var _courseindex = JSON.parse(data);
     innerVideos.innerHTML = "";
     courses[_courseindex].videos.forEach(function (video) {
-        // let videoCard = document.createElement("div");
-        // videoCard.className = "videoCard";
         var videoElement = document.createElement("video");
         videoElement.className = "videoCard";
         videoElement.src = video;
         videoElement.controls = true;
-        // videoCard.appendChild(videoElement);
         innerVideos.appendChild(videoElement);
     });
 }

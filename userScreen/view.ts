@@ -38,6 +38,10 @@ const userCourseGrades = document.querySelector(
   ".mainContainer__courseMenu__grades"
 ) as HTMLDivElement;
 
+const userCourseVideos = document.querySelector(
+  ".mainContainer__courseMenu__video"
+) as HTMLDivElement;
+
 const userInner = document.querySelector(
   ".mainContainer__inner"
 ) as HTMLDivElement;
@@ -52,4 +56,8 @@ const userInnerGrade = document.querySelector(
 
 const userInnerAtt = document.querySelector(
   ".mainContainer__innerAtt"
+) as HTMLDivElement;
+
+const userInnerVideos = document.querySelector(
+  ".mainContainer__innerVideos"
 ) as HTMLDivElement;

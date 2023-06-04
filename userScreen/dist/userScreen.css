@@ -80,6 +80,13 @@ body {
 .mainContainer__innerGrade {
   margin-left: 100px;
 }
+.mainContainer__innerVideos {
+  grid-area: inner;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+}
 
 .cardUserCourse {
   background-color: #090e2b;
@@ -112,4 +119,10 @@ body {
 .profileCard {
   margin-left: 100px;
   color: rgba(0, 0, 0, 0.654);
+}
+
+.videoCard {
+  width: 450px;
+  height: 400px;
+  margin-right: 20px;
 }
