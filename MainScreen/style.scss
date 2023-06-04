@@ -40,7 +40,7 @@ body {
   &__boxes__admin {
     border: none;
     background-color: $button_background;
-    box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+    box-shadow: $box_shadow;
     @include size_wh(200px, 200px);
     font-size: 40px;
     font-weight: bold;
@@ -163,7 +163,7 @@ body {
   margin-left: 130px;
   @include flex_style(flex, column, space-between, "");
   width: 300px;
-  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  box-shadow: $box_shadow;
   h2 {
     text-align: center;
   }

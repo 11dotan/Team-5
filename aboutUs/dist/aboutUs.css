@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +24,7 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
@@ -33,7 +34,9 @@ body {
 .container .Section {
   margin-top: 100px;
   display: flex;
-  text-align: center;
+  flex-direction: "";
+  justify-content: "";
+  align-items: center;
 }
 .container .Section img {
   margin-right: 50px;

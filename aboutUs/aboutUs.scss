@@ -1,21 +1,18 @@
+@import "../MainScreen/var.scss";
+@import "../MainScreen/_mixin.scss";
+
 body {
-  color: rgba(0, 0, 0, 0.654);
-  font-size: 26px;
-  margin-right: 12%;
-  margin-left: 12%;
+  @include body_style(rgba(0, 0, 0, 0.654), 26px, 12%, 12%);
 }
 
 .navbar {
   border-top: 1px solid black;
   margin-top: 120px;
   font-size: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex_style(flex, "", space-between, center);
 
   img {
-    width: 50px;
-    height: 50px;
+    @include size_wh(50px, 50px);
   }
 
   a {
@@ -23,37 +20,33 @@ body {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.654);
     &:hover {
-      background-color: rgba(50, 132, 186, 0.472);
+      background-color: $button_background;
       border-radius: 10px;
     }
   }
 }
 
-.container{
+.container {
   margin-top: 60px;
-  // display: flex;
-  // flex-direction: column;
-  .Section{
-    margin-top:  100px;
-    display: flex;
-    text-align: center;
-    img{
+  .Section {
+    margin-top: 100px;
+    @include flex_style(flex, "", "", center);
+    img {
       margin-right: 50px;
-      width: 300px;
-      height: 200px;
+      @include size_wh(300px, 200px);
     }
-    .img2{
+    .img2 {
       width: 400px;
       margin-left: 50px;
       margin-top: 100px;
     }
   }
   h3 {
-    color: rgb(9, 14, 43);
+    color: $hover_background;
   }
 
-  .SectionUL{
-    margin-top:  100px;
+  .SectionUL {
+    margin-top: 100px;
     margin-left: 500px;
   }
 }
