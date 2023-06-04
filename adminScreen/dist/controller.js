@@ -122,7 +122,7 @@ function courseNum(numOfCourse) {
         return " <option>" + student.name + " </option>";
     })
         .join("");
-    studentsListToDel.innerHTML = "\n  <form onsubmit=\"HandleDeleteStudent(event," + numOfCourse + ")\">\n  <label for=\"studentD\">Choose a Student To delete</label>\n  <input list=\"students\" name=\"studentD\" id=\"studentD\">\n  <datalist id=\"students\">\n  " + studentsListOfCourseName + "\n  </datalist>\n  <br><br>\n  <input type=\"submit\" value=\"submit\">\n";
+    studentsListToDel.innerHTML = "\n  <form onsubmit=\"HandleDeleteStudent(event," + numOfCourse + ")\" \">\n  <label for=\"studentD\">Choose a Student To delete</label>\n  <input list=\"students\" name=\"studentD\" id=\"studentD\">\n  <datalist id=\"students\">\n  " + studentsListOfCourseName + "\n  </datalist>\n  <br><br>\n  <input type=\"submit\" value=\"submit\" \">\n";
 }
 function HandleDeleteStudent(e, courseIndex3) {
     e.preventDefault();

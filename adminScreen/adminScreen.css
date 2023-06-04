@@ -53,6 +53,18 @@ body {
   background-color: rgba(50, 132, 186, 0.472);
   cursor: pointer;
 }
+.mainContainer .deleteLecturerForm,
+.mainContainer .deleteCourseForm,
+.mainContainer .deleteStudents {
+  padding: 20px 50px 50px 50px;
+  margin: 0px 0px 100px 150px;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 600px;
+  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
 .mainContainer .addLecturerForm,
 .mainContainer .addCourseForm {
   grid-area: innerForms;

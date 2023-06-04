@@ -160,14 +160,14 @@ function courseNum(numOfCourse: number) {
     .join("");
 
   studentsListToDel.innerHTML = `
-  <form onsubmit="HandleDeleteStudent(event,${numOfCourse})">
+  <form onsubmit="HandleDeleteStudent(event,${numOfCourse})" ">
   <label for="studentD">Choose a Student To delete</label>
   <input list="students" name="studentD" id="studentD">
   <datalist id="students">
   ${studentsListOfCourseName}
   </datalist>
   <br><br>
-  <input type="submit" value="submit">
+  <input type="submit" value="submit" ">
 `;
 }
 function HandleDeleteStudent(e, courseIndex3: number) {
