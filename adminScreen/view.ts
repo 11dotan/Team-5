@@ -56,3 +56,6 @@ const deleteCoursesForm = document.querySelector(
 const deleteStudentFromCourse = document.querySelector(
   ".deleteStudents"
 ) as HTMLDivElement;
+const deleteStudentButton = document.querySelector(
+  ".deleteStudentFromList__delBtn"
+) as HTMLButtonElement;
