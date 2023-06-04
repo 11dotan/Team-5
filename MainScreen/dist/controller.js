@@ -10,7 +10,6 @@ function saveStudentToLS(students) {
 }
 function getStudentFromLS() {
     var data = localStorage.getItem("students");
-    // if (!data) throw new Error(`data not found`);
     var _students = JSON.parse(data);
     return _students;
 }
@@ -26,7 +25,6 @@ function saveMessagesToLS(messages) {
 }
 function getMessagesFromLS() {
     var data = localStorage.getItem("messages");
-    // if (!data) throw new Error(`data not found`);
     var _messages = JSON.parse(data);
     return _messages;
 }
@@ -42,7 +40,6 @@ function saveLecturerToLS(lecturers) {
 }
 function getLecturerFromLS() {
     var data = localStorage.getItem("lecturers");
-    // if (!data) throw new Error(`data not found`);
     var _lecturers = JSON.parse(data);
     return _lecturers;
 }
@@ -58,7 +55,6 @@ function saveCourseToLS(courses) {
 }
 function getCourseFromLS() {
     var data = localStorage.getItem("courses");
-    // if (!data) throw new Error(`data not found`);
     var _courses = JSON.parse(data);
     return _courses;
 }

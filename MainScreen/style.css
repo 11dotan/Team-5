@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +24,7 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
@@ -33,9 +34,10 @@ body {
 }
 .enterUser__boxes {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
-  width: 650px;
   align-items: center;
+  width: 650px;
   text-align: center;
 }
 .enterUser__boxes__lecturer, .enterUser__boxes__student, .enterUser__boxes__admin {
@@ -100,6 +102,7 @@ body {
   grid-area: box3;
   background-image: url(../images/fullstuck.jfif);
   background-size: cover;
+  background-position: "";
   font-size: 40px;
   color: white;
 }
@@ -107,6 +110,7 @@ body {
   grid-area: box4;
   background-image: url(../images/uxui.jpg);
   background-size: cover;
+  background-position: "";
   font-size: 40px;
   color: white;
 }
@@ -122,16 +126,18 @@ body {
   grid-area: box6;
   background-image: url(../images/devOps.jpg);
   background-size: cover;
+  background-position: "";
   font-size: 40px;
   color: white;
 }
 .mainContainer .registerForm {
   grid-area: registerForm;
   padding: 20px 50px 50px 50px;
-  align-self: center;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: "";
+  align-self: center;
   box-shadow: 0px 0px 10.45px 10.45px rgba(10, 4, 92, 0.6);
 }
 .mainContainer .registerForm h2 {
@@ -139,7 +145,9 @@ body {
 }
 .mainContainer .registerForm__line {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
   margin-top: 25px;
 }
 .mainContainer .registerForm__line__inputS {
@@ -156,8 +164,8 @@ body {
   font-size: 20px;
   margin-top: 50px;
   width: 150px;
-  align-self: center;
   height: 40px;
+  align-self: center;
   border-radius: 10px;
   border: none;
   background-color: rgba(19, 62, 90, 0.472);
@@ -174,8 +182,9 @@ body {
   align-self: center;
   margin-left: 130px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: "";
   width: 300px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
 }
@@ -188,7 +197,9 @@ body {
 .loginLecturerForm__line,
 .loginStudentForm__line {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
   margin-top: 25px;
 }
 .loginAdminForm__line__inputS,
@@ -205,8 +216,8 @@ body {
   margin-top: 50px;
   margin-left: 65px;
   width: 150px;
-  align-self: center;
   height: 40px;
+  align-self: center;
   border-radius: 10px;
   border: none;
   background-color: rgba(19, 62, 90, 0.472);

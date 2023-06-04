@@ -95,7 +95,6 @@ function HandleDeleteCourse(e) {
     }
     saveCourseToLS(courses);
 }
-// console.log(courses);
 deleteStudents.addEventListener("click", function () {
     addCourseForm.style.display = "none";
     addLecturerForm.style.display = "none";
