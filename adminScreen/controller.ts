@@ -3,6 +3,7 @@ adminMenuAddLecturer.addEventListener("click", (e) => {
   addCourseForm.style.display = "none";
   deleteCoursesForm.style.display = "none";
   deleteLecturersForm.style.display = "none";
+  deleteStudentFromCourse.style.display = "none";
 });
 
 function HandleAddLecturer(e) {
@@ -32,7 +33,7 @@ adminMenuAddCourse.addEventListener("click", (e) => {
   addLecturerForm.style.display = "none";
   deleteCoursesForm.style.display = "none";
   deleteLecturersForm.style.display = "none";
-
+  deleteStudentFromCourse.style.display = "none";
   const htmlL: string = lecturers
     .map((lecturer) => {
       return `<option> ${lecturer.name}</option>`;
@@ -57,7 +58,10 @@ function HandleAddCourse(e) {
   const newCourse = new Course(name, datesArray, lecturers[lecturerIndex]);
 
   courses.push(newCourse);
+
   saveCourseToLS(courses);
+  console.log(lecturerC);
+
   adminInnerMs2.innerHTML = `<h2>Course added successfully</h2>`;
 }
 
@@ -66,6 +70,7 @@ deleteLecturers.addEventListener("click", (e) => {
   addLecturerForm.style.display = "none";
   deleteLecturersForm.style.display = "flex";
   deleteCoursesForm.style.display = "none";
+  deleteStudentFromCourse.style.display = "none";
   const htmlL: string = lecturers
     .map((lecturer) => {
       return `<option> ${lecturer.name}</option>`;
@@ -93,6 +98,7 @@ deleteCourses.addEventListener("click", (e) => {
   addLecturerForm.style.display = "none";
   deleteLecturersForm.style.display = "none";
   deleteCoursesForm.style.display = "flex";
+  deleteStudentFromCourse.style.display = "none";
 
   const htmlL: string = courses
     .map((course) => {
@@ -124,15 +130,58 @@ deleteStudents.addEventListener("click", () => {
   deleteLecturersForm.style.display = "none";
   deleteCoursesForm.style.display = "none";
   deleteStudentFromCourse.style.display = "flex";
-  console.log(123);
 
-  for (let i = 0; i < courses.length; i++) {
-    const buttonCourse = courses
-      .map((course) => {
-        return `<button class="courseNum${i} onclick="courseNum${i}">${course.nameCourse}</button>`;
-      })
-      .join("");
-    // const buttonCourse = `<button class="courseNum${i} onclick="courseNum${i}">${courseNamos}</button>`;
-    deleteStudentFromCourse.innerHTML = buttonCourse;
-  }
+  const buttonCourse = courses
+    .map((course, i) => {
+      return `<button class="courseNum" onclick="courseNum(${i})">${course.nameCourse}</button> 
+        <div class="studentsListToDel${i}"></div>`;
+    })
+    .join("");
+
+  deleteStudentFromCourse.innerHTML = buttonCourse;
 });
+
+function courseNum(numOfCourse: number) {
+  let htmlofStudents = document.querySelectorAll(
+    `.courseNum`
+  ) as NodeListOf<Element>;
+  htmlofStudents.forEach((element) => {
+    element.style.display = "none";
+  });
+  let studentsListToDel = document.querySelector(
+    `.studentsListToDel${numOfCourse}`
+  ) as HTMLDivElement;
+  console.log(numOfCourse);
+  var studentsListOfCourse = courses[numOfCourse].studentsCourse;
+  const studentsListOfCourseName = studentsListOfCourse
+    .map((student) => {
+      return ` <option>${student.name} </option>`;
+    })
+    .join("");
+
+  studentsListToDel.innerHTML = `
+  <form onsubmit="HandleDeleteStudent(event,${numOfCourse})">
+  <label for="studentD">Choose a Student To delete</label>
+  <input list="students" name="studentD" id="studentD">
+  <datalist id="students">
+  ${studentsListOfCourseName}
+  </datalist>
+  <br><br>
+  <input type="submit" value="submit">
+`;
+}
+function HandleDeleteStudent(e, courseIndex3: number) {
+  e.preventDefault();
+
+  const studentsListOfCourse = courses[courseIndex3].studentsCourse;
+  const studentD = e.target.elements.studentD.value;
+  const numOfStudent = studentsListOfCourse.findIndex(
+    (student) => student.name === studentD
+  );
+  if (numOfStudent !== -1) {
+    console.log(`delete ${studentD}`);
+
+    studentsListOfCourse.splice(numOfStudent, 1);
+    saveCourseToLS(courses);
+  }
+}

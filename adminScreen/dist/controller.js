@@ -3,6 +3,7 @@ adminMenuAddLecturer.addEventListener("click", function (e) {
     addCourseForm.style.display = "none";
     deleteCoursesForm.style.display = "none";
     deleteLecturersForm.style.display = "none";
+    deleteStudentFromCourse.style.display = "none";
 });
 function HandleAddLecturer(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ adminMenuAddCourse.addEventListener("click", function (e) {
     addLecturerForm.style.display = "none";
     deleteCoursesForm.style.display = "none";
     deleteLecturersForm.style.display = "none";
+    deleteStudentFromCourse.style.display = "none";
     var htmlL = lecturers
         .map(function (lecturer) {
         return "<option> " + lecturer.name + "</option>";
@@ -44,6 +46,7 @@ function HandleAddCourse(e) {
     var newCourse = new Course(name, datesArray, lecturers[lecturerIndex]);
     courses.push(newCourse);
     saveCourseToLS(courses);
+    console.log(lecturerC);
     adminInnerMs2.innerHTML = "<h2>Course added successfully</h2>";
 }
 deleteLecturers.addEventListener("click", function (e) {
@@ -51,6 +54,7 @@ deleteLecturers.addEventListener("click", function (e) {
     addLecturerForm.style.display = "none";
     deleteLecturersForm.style.display = "flex";
     deleteCoursesForm.style.display = "none";
+    deleteStudentFromCourse.style.display = "none";
     var htmlL = lecturers
         .map(function (lecturer) {
         return "<option> " + lecturer.name + "</option>";
@@ -73,6 +77,7 @@ deleteCourses.addEventListener("click", function (e) {
     addLecturerForm.style.display = "none";
     deleteLecturersForm.style.display = "none";
     deleteCoursesForm.style.display = "flex";
+    deleteStudentFromCourse.style.display = "none";
     var htmlL = courses
         .map(function (course) {
         return "<option> " + course.nameCourse + "</option>";
@@ -97,17 +102,36 @@ deleteStudents.addEventListener("click", function () {
     deleteLecturersForm.style.display = "none";
     deleteCoursesForm.style.display = "none";
     deleteStudentFromCourse.style.display = "flex";
-    console.log(123);
-    var _loop_1 = function (i) {
-        var buttonCourse = courses
-            .map(function (course) {
-            return "<button class=\"courseNum" + i + " onclick=\"courseNum" + i + "\">" + course.nameCourse + "</button>";
-        })
-            .join("");
-        // const buttonCourse = `<button class="courseNum${i} onclick="courseNum${i}">${courseNamos}</button>`;
-        deleteStudentFromCourse.innerHTML = buttonCourse;
-    };
-    for (var i = 0; i < courses.length; i++) {
-        _loop_1(i);
-    }
+    var buttonCourse = courses
+        .map(function (course, i) {
+        return "<button class=\"courseNum\" onclick=\"courseNum(" + i + ")\">" + course.nameCourse + "</button> \n        <div class=\"studentsListToDel" + i + "\"></div>";
+    })
+        .join("");
+    deleteStudentFromCourse.innerHTML = buttonCourse;
 });
+function courseNum(numOfCourse) {
+    var htmlofStudents = document.querySelectorAll(".courseNum");
+    htmlofStudents.forEach(function (element) {
+        element.style.display = "none";
+    });
+    var studentsListToDel = document.querySelector(".studentsListToDel" + numOfCourse);
+    console.log(numOfCourse);
+    var studentsListOfCourse = courses[numOfCourse].studentsCourse;
+    var studentsListOfCourseName = studentsListOfCourse
+        .map(function (student) {
+        return " <option>" + student.name + " </option>";
+    })
+        .join("");
+    studentsListToDel.innerHTML = "\n  <form onsubmit=\"HandleDeleteStudent(event," + numOfCourse + ")\">\n  <label for=\"studentD\">Choose a Student To delete</label>\n  <input list=\"students\" name=\"studentD\" id=\"studentD\">\n  <datalist id=\"students\">\n  " + studentsListOfCourseName + "\n  </datalist>\n  <br><br>\n  <input type=\"submit\" value=\"submit\">\n";
+}
+function HandleDeleteStudent(e, courseIndex3) {
+    e.preventDefault();
+    var studentsListOfCourse = courses[courseIndex3].studentsCourse;
+    var studentD = e.target.elements.studentD.value;
+    var numOfStudent = studentsListOfCourse.findIndex(function (student) { return student.name === studentD; });
+    if (numOfStudent !== -1) {
+        console.log("delete " + studentD);
+        studentsListOfCourse.splice(numOfStudent, 1);
+        saveCourseToLS(courses);
+    }
+}
