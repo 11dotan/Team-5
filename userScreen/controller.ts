@@ -2,6 +2,7 @@
 
 userMenuCourses.addEventListener("click", () => {
   userInner.style.display = "flex";
+  userInnerProfile.style.display = "none";
   userCourses(indexEmail);
 });
 

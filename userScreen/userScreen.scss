@@ -102,9 +102,13 @@ body {
     margin-left: 100px;
   }
 
+  &__innerProfile {
+    // grid-area: inner;
+    margin-left: 100px;
+  }
+
   &__innerVideos {
     grid-area: inner;
-
     margin-top: 100px;
     display: flex;
     flex-wrap: wrap;

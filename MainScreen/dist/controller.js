@@ -74,7 +74,6 @@ function saveAdminToLS(admins) {
 }
 function getAdminFromLS() {
     var data = localStorage.getItem("admins");
-    // if (!data) throw new Error(`data not found`);
     var _admins = JSON.parse(data);
     return _admins;
 }
@@ -85,7 +84,8 @@ if (_coursesN) {
 var html = courses
     .map(function (course) {
     return "<option> " + course.nameCourse + "</option>";
-}).join(" ");
+})
+    .join(" ");
 listCourse.innerHTML = "<select class=\"registerForm__line__listCourse\" name=\"courses\">" + html + "</select><br><br>";
 function HandleSubmit(e) {
     e.preventDefault();

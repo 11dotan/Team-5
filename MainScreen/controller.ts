@@ -73,7 +73,6 @@ function saveAdminToLS(admins: Admin[]) {
 
 function getAdminFromLS(): Admin[] | undefined {
   const data = localStorage.getItem("admins");
-  // if (!data) throw new Error(`data not found`);
   const _admins = JSON.parse(data);
   return _admins;
 }
@@ -83,14 +82,12 @@ if (_coursesN) {
   courses = _coursesN;
 }
 
-
 const html: string = courses
   .map((course) => {
     return `<option> ${course.nameCourse}</option>`;
-  }).join(" ");
+  })
+  .join(" ");
 listCourse.innerHTML = `<select class="registerForm__line__listCourse" name="courses">${html}</select><br><br>`;
-
-
 
 function HandleSubmit(e) {
   e.preventDefault();

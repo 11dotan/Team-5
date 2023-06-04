@@ -250,14 +250,11 @@ function HandleAddVideo(e) {
   courses[_courseindex].videos.push(blobURL);
   console.log(courses[_courseindex].videos);
 
-  // let videoCard = document.createElement("div");
-  // videoCard.className = "videoCard";
   let videoElement = document.createElement("video");
+  videoElement.className = "videoCard";
   videoElement.src = blobURL;
   videoElement.controls = true;
   innerVideos.appendChild(videoElement);
-
-  newVideo.style.display = "none";
 
   saveCourseToLS(courses);
   videosCourse();
