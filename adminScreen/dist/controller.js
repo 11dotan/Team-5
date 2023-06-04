@@ -44,7 +44,6 @@ function HandleAddCourse(e) {
     var newCourse = new Course(name, datesArray, lecturers[lecturerIndex]);
     courses.push(newCourse);
     saveCourseToLS(courses);
-    console.log(lecturerC);
     adminInnerMs2.innerHTML = "<h2>Course added successfully</h2>";
 }
 deleteLecturers.addEventListener("click", function (e) {

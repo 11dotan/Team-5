@@ -10,7 +10,6 @@ class Person {
 }
 
 class Student extends Person {
-  //   coursesUser: Course[];
   grades: number[];
   attendance: number[];
   constructor(
@@ -22,14 +21,12 @@ class Student extends Person {
     public address: string
   ) {
     super(name, id, email, phone, password, address);
-    // this.coursesUser = [];
     this.grades = [];
     this.attendance = [];
   }
 }
 
 class Lecturer extends Person {
-  //   courseTeach: Course[];
   constructor(
     public name: string,
     public id: number,
@@ -39,7 +36,6 @@ class Lecturer extends Person {
     public address: string
   ) {
     super(name, id, email, phone, password, address);
-    // this.courseTeach = [];
   }
 }
 
@@ -58,8 +54,8 @@ class Admin extends Person {
 
 class Course {
   public studentsCourse: Student[];
-  public lesson: Lesson[];
-  public videos: string[]
+  public checkAtt: string[];
+  public videos: string[];
   uid: string;
   constructor(
     public nameCourse: string,
@@ -68,8 +64,8 @@ class Course {
   ) {
     this.uid = uniqueId();
     this.studentsCourse = [];
-    this.lesson = [];
     this.videos = [];
+    this.checkAtt = [];
   }
 }
 

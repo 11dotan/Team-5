@@ -28,8 +28,7 @@
       /></a>
       <div><a href="#">about us</a></div>
       <div><a href="../contact/contact.html">contact</a></div>
-      <div><a href="#">courses</a></div>
-      <!-- <div class="navbar__login"><a href="#">login</a></div> -->
+      <div><a href="../courses/courses.html">courses</a></div>
     </nav>
 
     <div class="mainContainer">
@@ -58,31 +57,65 @@
       <div class="mainContainer__inner"></div>
       <div class="mainContainer__lessons" style="display: none"></div>
       <div class="mainContainer__attendance" style="display: none">
-        <table id="studentsList">
-        <tr>
-          <th>Student Name</th>
-          <th>Student Attendance</th>
-        </tr>
-      </table>
-        <button class="submitButton" type="submit">Submit</button>
+        <table class="mainContainer__attendance__tableAtt" id="studentsList">
+          <tr>
+            <th>Student Name</th>
+            <th>Student Attendance</th>
+          </tr>
+        </table>
+        <button class="mainContainer__attendance__submitButton" type="submit">
+          Submit
+        </button>
       </div>
       <div class="mainContainer__lessonsG" style="display: none"></div>
       <div class="mainContainer__grades" style="display: none">
-        <table class="tableAtt" id="studentsListG">
+        <table class="mainContainer__grades__tableGrade" id="studentsListG">
           <tr>
             <th>Student Name</th>
             <th>Grade</th>
           </tr>
         </table>
-        <button class="submitButtonG" type="submit">Submit</button>
+        <button class="mainContainer__grades__submitButtonG" type="submit">
+          Submit
+        </button>
       </div>
-      <div class="mainContainer__lessonsV" style="display: none"></div>
+      <div class="mainContainer__videos">
+        <img
+          class="mainContainer__videos__plus"
+          src="./images/plus.png"
+          style="display: none"
+        />
+        <form
+          class="mainContainer__videos__newVideo"
+          onsubmit="HandleAddVideo(event)"
+          style="display: none"
+        >
+          <h2>Upload New Video</h2>
+          <div class="uploadNew">
+            <label class="chooseFile" for="videoFile"></label>
+            <input type="file" accept="video/mp4" name="videoFile" /><br />
+            <button class="btn" type="submit" name="AddVideo">Add Video</button>
+          </div>
+        </form>
+        <div class="mainContainer__videos__innerVideos"></div>
+      </div>
+
+      <!-- <div class="mainContainer__lessonsV" style="display: none">
+        <div class="mainContainer__Videos" style="display: none">
+          <form onsubmit="HandleAddVideo(event)">
+            <input id="inputfile" type="file" accept="video/mp4" />
+            <button id="btn" type="submit">Add Video</button>
+          </form>
+        </div>
+        <div class="VideoShow"></div>
+      </div> -->
+      <!-- <div class="mainContainer__lessonsV" style="display: none"></div>
       <div class="mainContainer__Videos" style="display: none">
         <form onsubmit="HandleAddVideo(event)">
           <input id="inputfile" type="file" accept="video/mp4" />
           <button id="btn" type="submit">Add Video</button>
         </form>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>

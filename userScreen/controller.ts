@@ -1,6 +1,7 @@
 ////
 
 userMenuCourses.addEventListener("click", () => {
+  userInner.style.display = "flex";
   userCourses(indexEmail);
 });
 
@@ -31,7 +32,6 @@ function userCourses(indexEmail: number) {
 }
 
 function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
-  console.log(`123`);
   let courseIndex = courses.findIndex((course) => course.uid === courseUid);
   localStorage.setItem("courseIndex", JSON.stringify(courseIndex));
   userMenu.style.display = "none";
@@ -42,12 +42,19 @@ function HandleOpenCourseU(courseUid: string, nameCourseL: string) {
 userCourseBack.addEventListener("click", (e) => {
   userMenu.style.display = "flex";
   userCourseMenu.style.display = "none";
+  userInnerGrade.style.display = "none";
+  userInnerAtt.style.display = "none";
+  userInnerVideos.style.display = "none";
+  userInner.style.display = "flex";
+  userCourses(indexEmail);
 });
 
 userCourseAttendance.addEventListener("click", (e) => {
   userInner.style.display = "none";
   userInnerGrade.style.display = "none";
   userInnerAtt.style.display = "block";
+  userInnerVideos.style.display = "none";
+  userMenuProfile.style.display = "none";
   userAttendance();
 });
 
@@ -105,6 +112,8 @@ userCourseGrades.addEventListener("click", (e) => {
   userInner.style.display = "none";
   userInnerGrade.style.display = "block";
   userInnerAtt.style.display = "none";
+  userMenuProfile.style.display = "none";
+  userInnerVideos.style.display = "none";
   userGrades();
 });
 
@@ -138,11 +147,13 @@ function userGrades() {
     `;
   }
 
-  for (let z = 0; z < _studentsCourse[_userIndex].attendance.length; z++) {
-    sum += _studentsCourse[_userIndex].attendance[z];
+  for (let z = 0; z < _studentsCourse[_userIndex].grades.length; z++) {
+    sum += _studentsCourse[_userIndex].grades[z];
   }
 
-  let html2: string = `<h2>Summary: You have attendant ${sum} from ${_studentsCourse[_userIndex].attendance.length} lessons until now</h2>`;
+  let html2: string = `<h2>Your grade average is: ${
+    sum / _studentsCourse[_userIndex].grades.length
+  }</h2>`;
   console.log(html);
 
   userInnerGrade.innerHTML = ` <div class="attLesson">${html}</div>${html2}`;
@@ -150,8 +161,53 @@ function userGrades() {
 
 function checkGrade(i, userGradeArr): string {
   if (userGradeArr[i] >= 0) {
-    return "userGradeArr[i]";
+    return userGradeArr[i];
   } else {
     return "Grade not given yet";
   }
 }
+
+function profileUser(indexEmail) {
+  try {
+    if (!students) throw new Error(`students not found`);
+    userInnerProfile.innerHTML = `
+    <div class="profileCard">
+  <h2>Hello ${students[indexEmail].name}</h2>
+  <h4>ID Number: ${students[indexEmail].id}</h4>
+  <h4>Address: ${students[indexEmail].address}</h4>
+  <h4>Email: ${students[indexEmail].email}</h4>
+  <h4>Password: ${students[indexEmail].password}</h4>
+  <h4>Phone Number: ${students[indexEmail].phone}</h4>
+  </div>`;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+userMenuProfile?.addEventListener("click", (e) => {
+  userInner.style.display = "none";
+  userInnerProfile.style.display = "block";
+  profileUser(indexEmail);
+});
+
+function renderVideosU() {
+  let data = localStorage.getItem("courseIndex");
+  if (!data) throw new Error("data is null");
+  const _courseindex = JSON.parse(data);
+  userInnerVideos.innerHTML = "";
+  courses[_courseindex].videos.forEach((video) => {
+    let videoElement = document.createElement("video");
+    videoElement.className = "videoCard";
+    videoElement.src = video;
+    videoElement.controls = true;
+    userInnerVideos.appendChild(videoElement);
+  });
+}
+
+userCourseVideos.addEventListener("click", (e) => {
+  userInner.style.display = "none";
+  userInnerGrade.style.display = "none";
+  userInnerAtt.style.display = "none";
+  userInnerVideos.style.display = "flex";
+  renderVideosU();
+});

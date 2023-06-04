@@ -47,6 +47,12 @@ body {
     justify-content: space-between;
   }
 
+  &__lecturerCourseM__back {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &____lecturerMenu__fullName {
     font-size: 32px;
   }
@@ -72,26 +78,43 @@ body {
     font-weight: bold;
     font-size: 30px;
   }
-  &__attendance {
-    .tableAtt {
-      width: 10%;
-    }
+
+  &__grades__tableGrade,
+  &__attendance__tableAtt {
+    width: 500px;
   }
+
+  &__grades,
+  &__attendance {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__inner,
   &__attendance,
   &__lessons,
   &__grades,
-  <<<<<<<
-    HEAD
-    =======>>>>>>>989d5afa85e2e6bbcc6669895c8a43b03efe1c78
-    &__lessonsG {
+  &__lessonsG {
     grid-area: inner;
     margin-left: 100px;
     flex-wrap: wrap;
   }
 
-  &__attendance {
-    flex-direction: column;
+  &__attendance__submitButton,
+  &__grades__submitButtonG {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(19, 62, 90, 0.472);
+    &:hover {
+      background-color: rgb(9, 14, 43);
+      color: white;
+    }
   }
 
   &__lecturerCourseM__top {
@@ -103,6 +126,51 @@ body {
       width: 60px;
       height: 30px;
     }
+  }
+
+  &__videos {
+    display: flex;
+    flex-direction: column;
+  }
+  &__videos__plus {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    font-weight: bold;
+    font-size: 20px;
+
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(19, 62, 90, 0.472);
+    &:hover {
+      background-color: rgb(9, 14, 43);
+      color: white;
+    }
+  }
+
+  &__videos__newVideo {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .uploadNew {
+    display: flex;
+  }
+
+  &__videos__innerVideos {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
   }
 }
 
@@ -127,11 +195,27 @@ body {
 }
 
 .cardDate {
-  width: 250px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   padding: 15px;
   background-color: rgba(195, 201, 207, 0.662);
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(11, 4, 35, 0.358);
   margin-right: 50px;
   margin-bottom: 30px;
+  &:hover {
+    background-color: rgba(11, 4, 35);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.videoCard {
+  width: 450px;
+  height: 400px;
+  margin-right: 20px;
+}
+
+.profileCard {
+  margin-left: 100px;
+  color: rgba(0, 0, 0, 0.654);
 }

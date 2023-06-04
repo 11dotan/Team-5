@@ -32,7 +32,6 @@ var Student = /** @class */ (function (_super) {
         _this.phone = phone;
         _this.password = password;
         _this.address = address;
-        // this.coursesUser = [];
         _this.grades = [];
         _this.attendance = [];
         return _this;
@@ -41,7 +40,6 @@ var Student = /** @class */ (function (_super) {
 }(Person));
 var Lecturer = /** @class */ (function (_super) {
     __extends(Lecturer, _super);
-    //   courseTeach: Course[];
     function Lecturer(name, id, email, phone, password, address) {
         var _this = _super.call(this, name, id, email, phone, password, address) || this;
         _this.name = name;
@@ -51,7 +49,6 @@ var Lecturer = /** @class */ (function (_super) {
         _this.password = password;
         _this.address = address;
         return _this;
-        // this.courseTeach = [];
     }
     return Lecturer;
 }(Person));
@@ -76,8 +73,8 @@ var Course = /** @class */ (function () {
         this.lecturer = lecturer;
         this.uid = uniqueId();
         this.studentsCourse = [];
-        this.lesson = [];
         this.videos = [];
+        this.checkAtt = [];
     }
     return Course;
 }());

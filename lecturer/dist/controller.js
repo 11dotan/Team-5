@@ -1,4 +1,5 @@
 lecturerMenuCourses.addEventListener("click", function (e) {
+    lecturerInner.style.display = "flex";
     lecturerCourses(indexPass);
 });
 function lecturerCourses(indexPass) {
@@ -29,18 +30,22 @@ function HandleOpenCourse(courseUid, nameCourseL) {
 courseMenuBack.addEventListener("click", function (e) {
     lecturerMenu.style.display = "flex";
     courseMenu.style.display = "none";
+    lecturerInnerLessonsG.style.display = "none";
     lecturerInnerLessons.style.display = "none";
     lecturerInner.style.display = "flex";
     lecturerInnerGrades.style.display = "none";
-    lecturerInnerVideos.style.display = "none";
+    lecturerInnerAttendance.style.display = "none";
+    // lecturerInnerVideos.style.display = "none";
+    videoPage.style.display = "none";
 });
 courseAttendance.addEventListener("click", function (e) {
     lecturerInner.style.display = "none";
     lecturerInnerLessons.style.display = "flex";
     lecturerInnerLessonsG.style.display = "none";
     lecturerInnerGrades.style.display = "none";
-    lecturerInnerVideos.style.display = "none";
+    // lecturerInnerVideos.style.display = "none";
     lecturerInnerAttendance.style.display = "none";
+    videoPage.style.display = "none";
     attendanceCourse();
 });
 function attendanceCourse() {
@@ -51,7 +56,7 @@ function attendanceCourse() {
     var datesArr = courses[_courseindex].datesCourse;
     var html = "";
     for (var i = 0; i < datesArr.length; i++) {
-        html += "\n    <div class=\"cardDate\" onclick=\"markAttendance()\">\n    <h1>Lesson " + (i + 1) + "</h1>\n    <h3>Date: " + datesArr[i] + "</h3>\n  </div>\n  ";
+        html += "\n    <div class=\"cardDate\" onclick=\"markAttendance()\">\n    <h3>Lesson " + (i + 1) + "</h3>\n    <h5>Date: " + datesArr[i] + "</h5>\n  </div>\n  ";
     }
     lecturerInnerLessons.innerHTML = html;
 }
@@ -107,12 +112,12 @@ courseGrades.addEventListener("click", function (e) {
     lecturerInnerLessonsG.style.display = "flex";
     lecturerInnerLessons.style.display = "none";
     lecturerInnerAttendance.style.display = "none";
-    lecturerInnerVideos.style.display = "none";
+    // lecturerInnerVideos.style.display = "none";
     lecturerInnerGrades.style.display = "none";
+    videoPage.style.display = "none";
     gradesCourse();
 });
 function gradesCourse() {
-    console.log("1");
     var data = localStorage.getItem("courseIndex");
     if (!data)
         throw new Error("data is null");
@@ -120,7 +125,7 @@ function gradesCourse() {
     var datesArr = courses[_courseindex].datesCourse;
     var html = "";
     for (var i = 0; i < datesArr.length; i++) {
-        html += "\n    <div class=\"cardDate\" onclick=\"markGrades()\">\n    <h1>Lesson " + (i + 1) + "</h1>\n    <h3>Date: " + datesArr[i] + "</h3>\n  </div>\n  ";
+        html += "\n    <div class=\"cardDate\" onclick=\"markGrades()\">\n    <h3>Lesson " + (i + 1) + "</h3>\n    <h5>Date: " + datesArr[i] + "</h5>\n  </div>\n  ";
     }
     lecturerInnerLessonsG.innerHTML = html;
 }
@@ -170,69 +175,117 @@ function markGrades() {
 courseVideo.addEventListener("click", function (e) {
     lecturerInner.style.display = "none";
     lecturerInnerLessonsG.style.display = "none";
-    // lecturerInnerLessons.style.display = "none";
-    lecturerInnerLessonsV.style.display = "flex";
-    lecturerInnerVideos.style.display = "flex";
+    lecturerInnerLessons.style.display = "none";
+    lecturerInnerAttendance.style.display = "none";
+    lecturerInnerGrades.style.display = "none";
+    videoPage.style.display = "flex";
+    plus.style.display = "block";
+    videosCourse();
 });
-function HandleAddVideo(e) {
-    var _a;
-    e.preventDefault();
-    var file = (_a = inputfile.files) === null || _a === void 0 ? void 0 : _a[0];
-    if (file) {
-        var videoURL = URL.createObjectURL(file);
-        src.src = videoURL;
-    }
-    // function HandleAddVideo(e) {
-    e.preventDefault();
-    var div = document.createElement("div");
-    var h1 = document.createElement("h1");
-    var vid = document.createElement("video");
-    var src = document.createElement("source");
-    vid.controls = true;
-    vid.appendChild(src);
-    div.appendChild(h1);
-    div.appendChild(vid);
-    // const file = inputfile.files?.[0];
-    // if (file) {
-    //   const videoURL = URL.createObjectURL(file);
-    //   src.src = videoURL;
-    // } else {
-    //   console.log("cant find file");
-    // }
-    document.body.appendChild(div);
-}
-function markVideos() {
+plus.addEventListener("click", function (e) {
+    newVideo.style.display = "flex";
+});
+function videosCourse() {
     var data = localStorage.getItem("courseIndex");
     if (!data)
         throw new Error("data is null");
     var _courseindex = JSON.parse(data);
-    lecturerInnerLessons.style.display = "none";
-    lecturerInnerLessonsV.style.display = "none";
-    lecturerInnerVideos.style.display = "flex";
-    var _loop_1 = function (i) {
-        var div = document.createElement("div");
-        var inputfile = document.createElement("input");
-        inputfile.type = "file";
-        inputfile.accept = "video/mp4";
-        var btn = document.createElement("button");
-        btn.id = "btn";
-        var btnd = document.getElementById("btn");
-        div.appendChild(inputfile);
-        div.appendChild(btn);
-        btnd === null || btnd === void 0 ? void 0 : btnd.addEventListener("click", function (e) {
-            var _a;
-            var file = (_a = inputfile.files) === null || _a === void 0 ? void 0 : _a[0];
-            var video = document.createElement("video");
-            video.controls = true;
-            if (file) {
-                var videoURL = URL.createObjectURL(file);
-                video.src = videoURL;
-            }
-        });
-        saveCourseToLS(courses);
-    };
-    // lecturerInnerLessonsV.style.flexDirection = "column";
-    for (var i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-        _loop_1(i);
+    innerVideos.innerHTML = "";
+    courses[_courseindex].videos.forEach(function (video) {
+        var videoElement = document.createElement("video");
+        videoElement.className = "videoCard";
+        videoElement.src = video;
+        videoElement.controls = true;
+        innerVideos.appendChild(videoElement);
+    });
+}
+function HandleAddVideo(e) {
+    e.preventDefault();
+    var data = localStorage.getItem("courseIndex");
+    if (!data)
+        throw new Error("data is null");
+    var _courseindex = JSON.parse(data);
+    var file = e.target.elements.videoFile.files[0];
+    var blobURL = URL.createObjectURL(file);
+    courses[_courseindex].videos.push(blobURL);
+    console.log(courses[_courseindex].videos);
+    // let videoCard = document.createElement("div");
+    // videoCard.className = "videoCard";
+    var videoElement = document.createElement("video");
+    videoElement.src = blobURL;
+    videoElement.controls = true;
+    innerVideos.appendChild(videoElement);
+    newVideo.style.display = "none";
+    saveCourseToLS(courses);
+    videosCourse();
+}
+// function HandleAddVideo(e) {
+//   e.preventDefault();
+//   const file = inputfile.files?.[0];
+//   if (file) {
+//     const videoURL = URL.createObjectURL(file);
+//     src.src = videoURL;
+//   }
+//   // function HandleAddVideo(e) {
+//   e.preventDefault();
+//   const div = document.createElement("div");
+//   const h1 = document.createElement("h1");
+//   const vid = document.createElement("video");
+//   const src = document.createElement("source");
+//   vid.controls = true;
+//   vid.appendChild(src);
+//   div.appendChild(h1);
+//   div.appendChild(vid);
+//   // const file = inputfile.files?.[0];
+//   // if (file) {
+//   //   const videoURL = URL.createObjectURL(file);
+//   //   src.src = videoURL;
+//   // } else {
+//   //   console.log("cant find file");
+//   // }
+//   document.body.appendChild(div);
+// }
+// function markVideos() {
+//   let data = localStorage.getItem("courseIndex");
+//   if (!data) throw new Error("data is null");
+//   const _courseindex = JSON.parse(data);
+//   lecturerInnerLessons.style.display = "none";
+//   lecturerInnerLessonsV.style.display = "none";
+//   lecturerInnerVideos.style.display = "flex";
+//   // lecturerInnerLessonsV.style.flexDirection = "column";
+//   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
+//     const div = document.createElement("div");
+//     const inputfile = document.createElement("input");
+//     inputfile.type = "file";
+//     inputfile.accept = "video/mp4";
+//     const btn = document.createElement("button");
+//     btn.id = "btn";
+//     const btnd = document.getElementById("btn");
+//     div.appendChild(inputfile);
+//     div.appendChild(btn);
+//     btnd?.addEventListener("click", (e) => {
+//       const file = inputfile.files?.[0];
+//       const video = document.createElement("video");
+//       video.controls = true;
+//       if (file) {
+//         const videoURL = URL.createObjectURL(file);
+//         video.src = videoURL;
+//       }
+//     });
+//     saveCourseToLS(courses);
+//   }
+// }
+function profileLecturer(indexPass) {
+    try {
+        if (!lecturers)
+            throw new Error("lecturer not found");
+        lecturerInner.innerHTML = "\n    <div class=\"profileCard\">\n  <h2>Hello " + lecturers[indexPass].name + "</h2>\n  <h4>ID Number: " + lecturers[indexPass].id + "</h4>\n  <h4>Address: " + lecturers[indexPass].address + "</h4>\n  <h4>Email: " + lecturers[indexPass].email + "</h4>\n  <h4>Password: " + lecturers[indexPass].password + "</h4>\n  <h4>Phone Number: " + lecturers[indexPass].phone + "</h4>\n  </div>";
+    }
+    catch (error) {
+        console.log(error);
     }
 }
+lecturerMenuProfile.addEventListener("click", function (e) {
+    lecturerInner.style.display = "block";
+    profileLecturer(indexPass);
+});
