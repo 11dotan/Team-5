@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +24,7 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
@@ -41,9 +42,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: "";
 }
-.mainContainer____adminMenu__fullName {
+.mainContainer__adminMenu__fullName {
   font-size: 32px;
+  font-weight: bold;
 }
 .mainContainer____adminMenu__fullName, .mainContainer__adminMenu__addCourse, .mainContainer__adminMenu__addLecturer, .mainContainer__adminMenu__deleteLecturers, .mainContainer__adminMenu__deleteStudents, .mainContainer__adminMenu__deleteCourses {
   padding: 10px;
@@ -58,22 +61,44 @@ body {
 .mainContainer .deleteStudents {
   padding: 20px 50px 50px 50px;
   margin: 0px 0px 100px 150px;
-  align-self: center;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: "";
+  align-self: center;
   width: 600px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+}
+.mainContainer .deleteLecturerForm__delBtn,
+.mainContainer .deleteCourseForm__delBtn,
+.mainContainer .deleteStudents__delBtn {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 50px;
+  width: 150px;
+  height: 40px;
+  align-self: center;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.mainContainer .deleteLecturerForm__delBtn:hover,
+.mainContainer .deleteCourseForm__delBtn:hover,
+.mainContainer .deleteStudents__delBtn:hover {
+  background-color: rgb(9, 14, 43);
+  color: white;
+  cursor: pointer;
 }
 .mainContainer .addLecturerForm,
 .mainContainer .addCourseForm {
   grid-area: innerForms;
   padding: 20px 50px 50px 50px;
   margin: 0px 0px 100px 150px;
-  align-self: center;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: "";
+  align-self: center;
   width: 600px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
 }
@@ -84,7 +109,9 @@ body {
 .mainContainer .addLecturerForm__line,
 .mainContainer .addCourseForm__line {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
   margin-top: 25px;
 }
 .mainContainer .addLecturerForm__line__inputS,
@@ -94,8 +121,36 @@ body {
 }
 .mainContainer .addLecturerForm__regBtn,
 .mainContainer .addCourseForm__regBtn {
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 50px;
-  width: 300px;
+  width: 150px;
+  height: 40px;
   align-self: center;
-  height: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.mainContainer .addLecturerForm__regBtn:hover,
+.mainContainer .addCourseForm__regBtn:hover {
+  background-color: rgb(9, 14, 43);
+  color: white;
+  cursor: pointer;
+}
+
+.courseNum {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 50px;
+  width: 150px;
+  height: 40px;
+  align-self: center;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 62, 90, 0.472);
+}
+.courseNum:hover {
+  background-color: rgb(9, 14, 43);
+  color: white;
+  cursor: pointer;
 }/*# sourceMappingURL=adminScreen.css.map */

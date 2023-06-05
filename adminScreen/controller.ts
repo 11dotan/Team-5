@@ -81,6 +81,7 @@ deleteLecturers.addEventListener("click", (e) => {
 ${htmlL}
 </select><br><br>`;
 });
+
 function HandleDeleteLecturer(e) {
   e.preventDefault();
   const lecturerD = e.target.elements.lecturerD.value;
@@ -110,6 +111,7 @@ deleteCourses.addEventListener("click", (e) => {
 ${htmlL}
 </select><br><br>`;
 });
+
 function HandleDeleteCourse(e) {
   e.preventDefault();
   const courseD = e.target.elements.courseD.value;
