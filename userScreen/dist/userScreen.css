@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +24,7 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
@@ -41,11 +42,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: "";
 }
 .mainContainer__courseMenu__top {
   margin-bottom: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
 }
 .mainContainer__courseMenu__top img {
   width: 60px;
@@ -63,7 +67,7 @@ body {
   border-radius: 10px;
 }
 .mainContainer__courseMenu__attendance:hover, .mainContainer__courseMenu__grades:hover, .mainContainer__courseMenu__video:hover, .mainContainer__courseMenu__zoom:hover, .mainContainer__userMenu__courses:hover, .mainContainer__userMenu__profile:hover, .mainContainer__userMenu__contact:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   cursor: pointer;
 }
 .mainContainer__courseMenu__attendance a, .mainContainer__courseMenu__grades a, .mainContainer__courseMenu__video a, .mainContainer__courseMenu__zoom a, .mainContainer__userMenu__courses a, .mainContainer__userMenu__profile a, .mainContainer__userMenu__contact a {

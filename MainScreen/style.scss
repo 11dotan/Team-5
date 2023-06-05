@@ -1,21 +1,18 @@
+@import "./var.scss";
+@import "./_mixin.scss";
+
 body {
-  color: rgba(0, 0, 0, 0.654);
-  font-size: 26px;
-  margin-right: 12%;
-  margin-left: 12%;
+  @include body_style(rgba(0, 0, 0, 0.654), 26px, 12%, 12%);
 }
 
 .navbar {
   border-top: 1px solid black;
   margin-top: 120px;
   font-size: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex_style(flex, "", space-between, center);
 
   img {
-    width: 50px;
-    height: 50px;
+    @include size_wh(50px, 50px);
   }
 
   a {
@@ -23,7 +20,7 @@ body {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.654);
     &:hover {
-      background-color: rgba(50, 132, 186, 0.472);
+      background-color: $button_background;
       border-radius: 10px;
     }
   }
@@ -34,20 +31,17 @@ body {
   margin-left: 370px;
   $self: &;
   &__boxes {
-    display: flex;
-    justify-content: space-between;
+    @include flex_style(flex, "", space-between, center);
     width: 650px;
-    align-items: center;
     text-align: center;
   }
   &__boxes__lecturer,
   &__boxes__student,
   &__boxes__admin {
     border: none;
-    background-color: rgba(19, 62, 90, 0.472);
-    box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
-    width: 200px;
-    height: 200px;
+    background-color: $button_background;
+    box-shadow: $box_shadow;
+    @include size_wh(200px, 200px);
     font-size: 40px;
     font-weight: bold;
     &:hover {
@@ -95,83 +89,65 @@ body {
   .box2 {
     grid-area: box2;
     background-image: URL(../images/cyber.jpg);
-    background-size: cover;
-    background-position: center;
-    font-size: 40px;
-    color: white;
+    @include pic_Background(cover, center, 40px, white);
   }
 
   .box3 {
     grid-area: box3;
     background-image: URL(../images/fullstuck.jfif);
-    background-size: cover;
-    font-size: 40px;
-    color: white;
+    @include pic_Background(cover, "", 40px, white);
   }
 
   .box4 {
     grid-area: box4;
     background-image: URL(../images/uxui.jpg);
-    background-size: cover;
-    font-size: 40px;
-    color: white;
+    @include pic_Background(cover, "", 40px, white);
   }
 
   .box5 {
     grid-area: box5;
     background-image: URL(../images/sap.jpg);
-    background-size: cover;
-    background-position: center;
-    font-size: 40px;
-    color: white;
+    @include pic_Background(cover, center, 40px, white);
   }
 
   .box6 {
     grid-area: box6;
     background-image: URL(../images/devOps.jpg);
-    background-size: cover;
-    font-size: 40px;
-    color: white;
+    @include pic_Background(cover, "", 40px, white);
   }
 
   .registerForm {
     $self: &;
     grid-area: registerForm;
     padding: 20px 50px 50px 50px;
+    @include flex_style(flex, column, space-between, "");
     align-self: center;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     box-shadow: 0px 0px 10.45px 10.45px rgba(10, 4, 92, 0.6);
     h2 {
       text-align: center;
     }
     &__line {
-      display: flex;
-      justify-content: space-between;
+      @include flex_style(flex, "", space-between, "");
       margin-top: 25px;
     }
     &__line__inputS {
-      width: 300px;
-      height: 25px;
+      @include size_wh(300px, 25px);
     }
     &__line__listCourse {
-      width: 358px;
-      height: 30px;
+      @include size_wh(358px, 30px);
       font-size: 20px;
     }
     &__regBtn {
       font-weight: bold;
       font-size: 20px;
       margin-top: 50px;
-      width: 150px;
+      @include size_wh(150px, 40px);
       align-self: center;
-      height: 40px;
       border-radius: 10px;
       border: none;
-      background-color: rgba(19, 62, 90, 0.472);
+      background-color: $button_background;
       &:hover {
-        background-color: rgb(9, 14, 43);
+        background-color: $hover_background;
         color: white;
       }
     }
@@ -185,36 +161,31 @@ body {
   padding: 20px 50px 50px 50px;
   align-self: center;
   margin-left: 130px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  @include flex_style(flex, column, space-between, "");
   width: 300px;
-  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  box-shadow: $box_shadow;
   h2 {
     text-align: center;
   }
   &__line {
-    display: flex;
-    justify-content: space-between;
+    @include flex_style(flex, "", space-between, "");
     margin-top: 25px;
   }
   &__line__inputS {
-    width: 350px;
-    height: 25px;
+    @include size_wh(350px, 25px);
   }
   &__regBtn {
     font-weight: bold;
     font-size: 20px;
     margin-top: 50px;
     margin-left: 65px;
-    width: 150px;
+    @include size_wh(150px, 40px);
     align-self: center;
-    height: 40px;
     border-radius: 10px;
     border: none;
-    background-color: rgba(19, 62, 90, 0.472);
+    background-color: $button_background;
     &:hover {
-      background-color: rgb(9, 14, 43);
+      background-color: $hover_background;
       color: white;
     }
   }

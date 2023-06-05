@@ -109,12 +109,17 @@ var qaC = new Course("QA", [
     "22.6.23",
     "29.6.23",
 ], lecturers[2]);
-courses.push(fullC, devopsC, qaC);
+var cyber = new Course("cyber", ["22.5.23", "29.5.23", "5.6.23", "10.6.23", "15.6.23", "22.6.23"], lecturers[0]);
+courses.push(fullC, devopsC, qaC, cyber);
 var fullS1 = new Student("oshrat sebbag", 200670054, "oshrat@gmail.com", 9725063214564, "159", "kinor 20");
 var fullS2 = new Student("dotan toledano", 123485725, "dotan@gmail.com", 972546042815, "25826", "kineret 2");
 var fullS3 = new Student("daniel daniel", 15248759, "daniel@gmail.com", 972506547825, "321456", "tamar 10");
 var fullS4 = new Student("amit balsan", 122548743, "amit@gmail.com", 972523514875, "11147", "reshef 42");
 fullC.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
+var cyberS1 = new Student("hofit kashi", 122548743, "hofit@gmail.com", 972523514875, "1524", "reshef 42");
+var cyberS2 = new Student("adi tahor", 122548743, "adi@gmail.com", 972523514875, "adi", "reshef 42");
+var cyberS3 = new Student("oshrat sebbag", 200670054, "oshrat@gmail.com", 9725063214564, "159", "kinor 20");
+cyber.studentsCourse.push(cyberS1, cyberS2, cyberS3);
 var admin1 = new Admin("admin admin", 555555555, "admin@gmail.com", 97254875425, "admin", "hermon 7");
 admins.push(admin1);
 students.push(fullS1, fullS2, fullS3, fullS4);

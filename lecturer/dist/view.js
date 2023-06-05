@@ -23,13 +23,3 @@ var videoPage = document.querySelector(".mainContainer__videos");
 var innerVideos = document.querySelector(".mainContainer__videos__innerVideos");
 var newVideo = document.querySelector(".mainContainer__videos__newVideo");
 var plus = document.querySelector(".mainContainer__videos__plus");
-// const myVideo = document.getElementById("myVideo") as HTMLVideoElement;
-// const lecturerInnerLessonsV = document.querySelector(
-//   ".mainContainer__lessonsV"
-// ) as HTMLDivElement;
-// const lecturerInnerVideos = document.querySelector(
-//   ".mainContainer__Videos"
-// ) as HTMLDivElement;
-// const VideoShow = document.querySelector(".VideoShow") as HTMLDivElement;
-// const videoElement = document.getElementById("video") as HTMLVideoElement;
-// const inputfile = document.getElementById("inputfile") as HTMLInputElement;

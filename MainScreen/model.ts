@@ -143,7 +143,13 @@ const qaC = new Course(
   lecturers[2]
 );
 
-courses.push(fullC, devopsC, qaC);
+const cyber = new Course(
+  "cyber",
+  ["22.5.23", "29.5.23", "5.6.23", "10.6.23", "15.6.23", "22.6.23"],
+  lecturers[0]
+);
+
+courses.push(fullC, devopsC, qaC, cyber);
 
 const fullS1 = new Student(
   "oshrat sebbag",
@@ -182,6 +188,35 @@ const fullS4 = new Student(
 );
 
 fullC.studentsCourse.push(fullS1, fullS2, fullS3, fullS4);
+
+const cyberS1 = new Student(
+  "hofit kashi",
+  122548743,
+  "hofit@gmail.com",
+  972523514875,
+  "1524",
+  "reshef 42"
+);
+
+const cyberS2 = new Student(
+  "adi tahor",
+  122548743,
+  "adi@gmail.com",
+  972523514875,
+  "adi",
+  "reshef 42"
+);
+
+const cyberS3 = new Student(
+  "oshrat sebbag",
+  200670054,
+  "oshrat@gmail.com",
+  9725063214564,
+  "159",
+  "kinor 20"
+);
+
+cyber.studentsCourse.push(cyberS1, cyberS2, cyberS3);
 
 const admin1 = new Admin(
   "admin admin",

@@ -1,4 +1,3 @@
-////
 userMenuCourses.addEventListener("click", function () {
     userInner.style.display = "flex";
     userInnerProfile.style.display = "none";

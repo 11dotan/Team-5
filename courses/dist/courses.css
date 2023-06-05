@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +24,7 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
@@ -42,6 +43,8 @@ body {
   background-image: url(../images/QA.jpg);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course1Pic:hover {
@@ -55,6 +58,8 @@ body {
   background-image: url(../images/cyber.jpg);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course2Pic:hover {
@@ -68,6 +73,8 @@ body {
   background-image: url(../images/fullstuck.jfif);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course3Pic:hover {
@@ -81,6 +88,8 @@ body {
   background-image: url(../images/uxui.jpg);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course4Pic:hover {
@@ -94,6 +103,8 @@ body {
   background-image: url(../images/sap.jpg);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course5Pic:hover {
@@ -107,6 +118,8 @@ body {
   background-image: url(../images/devOps.jpg);
   background-size: cover;
   background-position: center;
+  font-size: "";
+  color: "";
   transition: all 0.5s ease-in-out;
 }
 .container__course6Pic:hover {

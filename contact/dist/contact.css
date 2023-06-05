@@ -10,6 +10,7 @@ body {
   margin-top: 120px;
   font-size: 30px;
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
   align-items: center;
 }
@@ -23,13 +24,15 @@ body {
   color: rgba(0, 0, 0, 0.654);
 }
 .navbar a:hover {
-  background-color: rgba(50, 132, 186, 0.472);
+  background-color: rgba(19, 62, 90, 0.472);
   border-radius: 10px;
 }
 
 .container {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
   margin-top: 100px;
   margin-bottom: 100px;
   width: 100%;
@@ -38,8 +41,9 @@ body {
 .contactForm {
   padding: 20px 50px 50px 50px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: "";
   width: 600px;
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
 }
@@ -48,7 +52,9 @@ body {
 }
 .contactForm__line {
   display: flex;
+  flex-direction: "";
   justify-content: space-between;
+  align-items: "";
   margin-top: 25px;
 }
 .contactForm__line__inputS {
@@ -60,8 +66,8 @@ body {
   font-size: 20px;
   margin-top: 50px;
   width: 150px;
-  align-self: center;
   height: 40px;
+  align-self: center;
   border-radius: 10px;
   border: none;
   background-color: rgba(19, 62, 90, 0.472);

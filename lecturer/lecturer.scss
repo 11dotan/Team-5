@@ -1,21 +1,18 @@
+@import "../MainScreen/var.scss";
+@import "../MainScreen/_mixin.scss";
+
 body {
-  color: rgba(0, 0, 0, 0.654);
-  font-size: 26px;
-  margin-right: 12%;
-  margin-left: 12%;
+  @include body_style(rgba(0, 0, 0, 0.654), 26px, 12%, 12%);
 }
 
 .navbar {
   border-top: 1px solid black;
   margin-top: 120px;
   font-size: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex_style(flex, "", space-between, center);
 
   img {
-    width: 50px;
-    height: 50px;
+    @include size_wh(50px, 50px);
   }
 
   a {
@@ -23,7 +20,7 @@ body {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.654);
     &:hover {
-      background-color: rgba(50, 132, 186, 0.472);
+      background-color: $button_background;
       border-radius: 10px;
     }
   }
@@ -39,12 +36,10 @@ body {
   &__lecturerMenu,
   &__lecturerCourseM {
     grid-area: userMenu;
-    box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+    box-shadow: $box_shadow;
     padding: 20px;
     height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex_style(flex, column, space-between, "");
   }
 
   &__lecturerCourseM__back {
@@ -68,7 +63,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     &:hover {
-      background-color: rgba(50, 132, 186, 0.472);
+      background-color: $button_background;
       cursor: pointer;
     }
   }
@@ -86,8 +81,7 @@ body {
 
   &__grades,
   &__attendance {
-    display: flex;
-    flex-direction: column;
+    @include flex_style(flex, column, "", "");
   }
 
   &__inner,
@@ -106,35 +100,30 @@ body {
     font-size: 20px;
     margin-top: 50px;
     margin-left: 150px;
-    width: 150px;
-    height: 40px;
+    @include size_wh(150px, 40px);
     border-radius: 10px;
     border: none;
-    background-color: rgba(19, 62, 90, 0.472);
+    background-color: $button_background;
     &:hover {
-      background-color: rgb(9, 14, 43);
+      background-color: $hover_background;
       color: white;
     }
   }
 
   &__lecturerCourseM__top {
     margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
+    @include flex_style(flex, "", space-between, "");
 
     img {
-      width: 60px;
-      height: 30px;
+      @include size_wh(60px, 30px);
     }
   }
 
   &__videos {
-    display: flex;
-    flex-direction: column;
+    @include flex_style(flex, column, "", "");
   }
   &__videos__plus {
-    width: 70px;
-    height: 70px;
+    @include size_wh(70px, 70px);
     align-self: center;
     &:hover {
       cursor: pointer;
@@ -144,23 +133,18 @@ body {
   .btn {
     font-weight: bold;
     font-size: 20px;
-
-    width: 150px;
-    height: 30px;
+    @include size_wh(150px, 30px);
     border-radius: 10px;
     border: none;
-    background-color: rgba(19, 62, 90, 0.472);
+    background-color: $button_background;
     &:hover {
-      background-color: rgb(9, 14, 43);
+      background-color: $hover_background;
       color: white;
     }
   }
 
   &__videos__newVideo {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    @include flex_style(flex, column, space-between, center);
   }
   .uploadNew {
     display: flex;
@@ -175,13 +159,12 @@ body {
 }
 
 .CourseCard {
-  background-color: rgb(9, 14, 43);
+  background-color: $hover_background;
   color: white;
   margin-bottom: 50px;
   padding: 30px;
-  width: 800px;
-  height: 220px;
-  box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(175, 165, 146, 0.6);
+  @include size_wh(800px, 220px);
+  box-shadow: $box_shadow;
   h2 {
     color: rgba(50, 132, 186);
     text-align: center;
@@ -195,8 +178,7 @@ body {
 }
 
 .cardDate {
-  width: 150px;
-  height: 150px;
+  @include size_wh(150px, 150px);
   padding: 15px;
   background-color: rgba(195, 201, 207, 0.662);
   box-shadow: 4.45px 4.45px 4.45px 4.45px rgba(11, 4, 35, 0.358);
@@ -210,8 +192,7 @@ body {
 }
 
 .videoCard {
-  width: 450px;
-  height: 400px;
+  @include size_wh(450px, 400px);
   margin-right: 20px;
 }
 

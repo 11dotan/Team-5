@@ -42,7 +42,6 @@ courseMenuBack.addEventListener("click", (e) => {
   lecturerInner.style.display = "flex";
   lecturerInnerGrades.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
-  // lecturerInnerVideos.style.display = "none";
   videoPage.style.display = "none";
 });
 
@@ -51,7 +50,6 @@ courseAttendance.addEventListener("click", (e) => {
   lecturerInnerLessons.style.display = "flex";
   lecturerInnerLessonsG.style.display = "none";
   lecturerInnerGrades.style.display = "none";
-  // lecturerInnerVideos.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
   videoPage.style.display = "none";
 
@@ -132,7 +130,6 @@ courseGrades.addEventListener("click", (e) => {
   lecturerInnerLessonsG.style.display = "flex";
   lecturerInnerLessons.style.display = "none";
   lecturerInnerAttendance.style.display = "none";
-  // lecturerInnerVideos.style.display = "none";
   lecturerInnerGrades.style.display = "none";
   videoPage.style.display = "none";
 
@@ -260,63 +257,7 @@ function HandleAddVideo(e) {
   videosCourse();
 }
 
-// function HandleAddVideo(e) {
-//   e.preventDefault();
-//   const file = inputfile.files?.[0];
-//   if (file) {
-//     const videoURL = URL.createObjectURL(file);
-//     src.src = videoURL;
-//   }
-//   // function HandleAddVideo(e) {
-//   e.preventDefault();
-//   const div = document.createElement("div");
-//   const h1 = document.createElement("h1");
-//   const vid = document.createElement("video");
-//   const src = document.createElement("source");
-//   vid.controls = true;
-//   vid.appendChild(src);
-//   div.appendChild(h1);
-//   div.appendChild(vid);
-//   // const file = inputfile.files?.[0];
-//   // if (file) {
-//   //   const videoURL = URL.createObjectURL(file);
-//   //   src.src = videoURL;
-//   // } else {
-//   //   console.log("cant find file");
-//   // }
-//   document.body.appendChild(div);
-// }
 
-// function markVideos() {
-//   let data = localStorage.getItem("courseIndex");
-//   if (!data) throw new Error("data is null");
-//   const _courseindex = JSON.parse(data);
-//   lecturerInnerLessons.style.display = "none";
-//   lecturerInnerLessonsV.style.display = "none";
-//   lecturerInnerVideos.style.display = "flex";
-//   // lecturerInnerLessonsV.style.flexDirection = "column";
-//   for (let i = 0; i < courses[_courseindex].studentsCourse.length; i++) {
-//     const div = document.createElement("div");
-//     const inputfile = document.createElement("input");
-//     inputfile.type = "file";
-//     inputfile.accept = "video/mp4";
-//     const btn = document.createElement("button");
-//     btn.id = "btn";
-//     const btnd = document.getElementById("btn");
-//     div.appendChild(inputfile);
-//     div.appendChild(btn);
-//     btnd?.addEventListener("click", (e) => {
-//       const file = inputfile.files?.[0];
-//       const video = document.createElement("video");
-//       video.controls = true;
-//       if (file) {
-//         const videoURL = URL.createObjectURL(file);
-//         video.src = videoURL;
-//       }
-//     });
-//     saveCourseToLS(courses);
-//   }
-// }
 
 function profileLecturer(indexPass) {
   try {
