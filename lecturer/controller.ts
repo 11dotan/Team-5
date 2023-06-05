@@ -257,8 +257,6 @@ function HandleAddVideo(e) {
   videosCourse();
 }
 
-
-
 function profileLecturer(indexPass) {
   try {
     if (!lecturers) throw new Error(`lecturer not found`);
