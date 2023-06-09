@@ -69,6 +69,7 @@ function HandleDeleteLecturer(e) {
     if (dLecturerIndex !== -1) {
         lecturers.splice(dLecturerIndex, 1);
         console.log("we deleted " + lecturerD);
+        deleteLecturersSms.innerHTML = "<h2>we deleted " + lecturerD + "</h2>";
     }
     saveLecturerToLS(lecturers);
 }
@@ -92,6 +93,7 @@ function HandleDeleteCourse(e) {
     if (dCourseIndex !== -1) {
         courses.splice(dCourseIndex, 1);
         console.log("we deleted " + courseD);
+        deleteCoursesSms.innerHTML = "<h2>we deleted " + courseD + "</h2>";
     }
     saveCourseToLS(courses);
 }
